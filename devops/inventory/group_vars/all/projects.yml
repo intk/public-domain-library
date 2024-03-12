@@ -1,0 +1,7 @@
+---
+project_folders:
+  # Path to store www.publicdomainlibrary.org postgres data
+  - path: "/srv/public-domain-library/data"
+    owner: 999
+    group: 999
+    mode: "0750"
