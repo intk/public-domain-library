@@ -8,12 +8,11 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME_PREFIX: github.com/intk/public-domain-library
+  IMAGE_NAME_PREFIX: intkbv/public-domain-library
   IMAGE_NAME_SUFFIX: backend
   PYTHON_VERSION: "3.11"
 
 jobs:
-
   meta:
     runs-on: ubuntu-latest
     outputs:
@@ -36,8 +35,8 @@ jobs:
       - name: Run check
         uses: plone/code-analysis-action@v2
         with:
-          base_dir: 'backend'
-          check: 'black'
+          base_dir: "backend"
+          check: "black"
 
   flake8:
     runs-on: ubuntu-latest
@@ -48,8 +47,8 @@ jobs:
       - name: Run check
         uses: plone/code-analysis-action@v2
         with:
-          base_dir: 'backend'
-          check: 'flake8'
+          base_dir: "backend"
+          check: "flake8"
 
   isort:
     runs-on: ubuntu-latest
@@ -60,8 +59,8 @@ jobs:
       - name: Run check
         uses: plone/code-analysis-action@v2
         with:
-          base_dir: 'backend'
-          check: 'isort'
+          base_dir: "backend"
+          check: "isort"
 
   zpretty:
     runs-on: ubuntu-latest
@@ -72,8 +71,8 @@ jobs:
       - name: Run check
         uses: plone/code-analysis-action@v2
         with:
-          base_dir: 'backend'
-          check: 'zpretty'
+          base_dir: "backend"
+          check: "zpretty"
 
   tests:
     runs-on: ubuntu-latest
@@ -115,7 +114,6 @@ jobs:
       packages: write
 
     steps:
-
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -127,8 +125,7 @@ jobs:
             ${{ env.IMAGE_NAME_PREFIX }}-${{ env.IMAGE_NAME_SUFFIX }}
           labels: |
             org.label-schema.docker.cmd=docker run -d -p 8080:8080 ${{ env.IMAGE_NAME_PREFIX }}-${{ env.IMAGE_NAME_SUFFIX }}:latest
-          flavor:
-            latest=false
+          flavor: latest=false
           tags: |
             type=ref,event=branch
             type=sha
