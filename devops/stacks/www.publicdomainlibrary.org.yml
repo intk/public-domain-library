@@ -1,5 +1,5 @@
 ---
-version: '3.8'
+version: "3.8"
 
 services:
   traefik:
@@ -84,12 +84,12 @@ services:
   varnish:
     image: github.com/intk/public-domain-library-varnish:${STACK_PARAM:-latest}
     command:
-      - '-p'
-      - 'nuke_limit=2000'
-      - '-p'
-      - 'workspace_client=192k'
-      - '-p'
-      - 'workspace_backend=192k'
+      - "-p"
+      - "nuke_limit=2000"
+      - "-p"
+      - "workspace_client=192k"
+      - "-p"
+      - "workspace_backend=192k"
     depends_on:
       - traefik
       - frontend
@@ -117,7 +117,7 @@ services:
         - traefik.http.routers.rt-varnish-public.middlewares=gzip
 
   frontend:
-    image: github.com/intk/public-domain-library-frontend:${STACK_PARAM:-latest}
+    image: intkbv/public-domain-library-frontend:latest
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
       RAZZLE_API_PATH: https://www.publicdomainlibrary.org
@@ -143,7 +143,7 @@ services:
         - traefik.http.routers.rt-frontend.service=svc-frontend
 
   backend:
-    image: github.com/intk/public-domain-library-backend:${STACK_PARAM:-latest}
+    image: intkbv/public-domain-library-backend:latest
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-becaWXwDJzhX}' port='${DB_PORT:-5432}'"
     depends_on:
