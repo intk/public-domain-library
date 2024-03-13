@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-25 17:12+0000\n"
+"POT-Creation-Date: 2024-03-13 13:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,3 +13,27 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+
+#: public_domain_library/profiles.zcml:22
+msgid "Initial content for our website."
+msgstr ""
+
+#: public_domain_library/profiles.zcml:13
+msgid "Policy package to install our site"
+msgstr ""
+
+#: public_domain_library/profiles.zcml:30
+msgid "Uninstall public-domain-library setup."
+msgstr ""
+
+#: public_domain_library/profiles.zcml:22
+msgid "public-domain-library: Initial content"
+msgstr ""
+
+#: public_domain_library/profiles.zcml:13
+msgid "public-domain-library: Install"
+msgstr ""
+
+#: public_domain_library/profiles.zcml:30
+msgid "public-domain-library: Uninstall"
+msgstr ""
