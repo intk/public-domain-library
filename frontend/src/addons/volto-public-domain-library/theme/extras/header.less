@@ -1,6 +1,6 @@
 body {
   .breadcrumbs {
-    margin-top: 60px !important;
+    margin-top: 65px !important;
   }
   .ui.segment.content-area {
     margin-top: 10px !important;
@@ -17,7 +17,7 @@ body {
 }
 
 #header-wrapper{
-  padding: 0%;
+  padding: 0;
   z-index: 9 !important;
   max-width: 100vw;
   min-height: 65px !important;
@@ -30,7 +30,7 @@ body {
   flex-wrap: nowrap;
   background-color: #000;
   border-bottom: 1px solid #000;
-  min-width: 65px;
+  min-height: 65px;
 }
 
 // #logo-written {
@@ -40,11 +40,13 @@ body {
 // }
 
 #navigation {
+  display: flex;
+  align-items: center;
   .hamburger-wrapper {
     .hamburger::after,
     .hamburger::before,
     .hamburger-inner::after {
-      background-color: #fff;
+      background-color: #c3c3c3;
     }
 
     .is-active .hamburger::after,
