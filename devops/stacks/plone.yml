@@ -1,0 +1,51 @@
+version: "3.3"
+
+services:
+  frontend:
+    image: intkbv/public-domain-library-frontend:latest
+    environment:
+      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
+    depends_on:
+      - backend
+    networks:
+      - nw-data
+    ports:
+      - 3000:3000
+    deploy:
+      replicas: 2
+
+  backend:
+    image: intkbv/public-domain-library-backend:latest
+    environment:
+      SITE: Plone
+      ZEO_ADDRESS: zeo:8100
+    # volumes:
+    #   - site-data:/data
+    networks:
+      - nw-data
+    ports:
+      - 8080:8080
+    deploy:
+      replicas: 2
+    depends_on:
+      - zeo
+
+  zeo:
+    image: plone/plone-zeo:latest
+    # ports:
+    # - 8100:8100
+    volumes:
+      - /var/local/public-domain-library/data:/data
+    networks:
+      - nw-data
+
+volumes:
+  site-data:
+    driver_opts:
+      type: none
+      device: /srv/public-domain-library/data
+      o: bind
+
+networks:
+  nw-data:
+    driver: overlay

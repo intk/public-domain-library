@@ -1,0 +1,11 @@
+---
+users:
+  "plone":
+    name: "Plone installation"
+    email: "rane@intk.com"
+    public_keys: ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCknMLAooejg7hcA2bRXPxQEBt7td2qJWsTysUe7k3zIZnp/bfv6AmcFeo1DezvHrxjCrfJNmxxkbpQ+BBRHGpm9wfsIz55/ySELswnKT15PX8j0JaPR4BW4xP2rHXyv3LiqqBwX2EqiD0GRLSF0S1s71BqcB6a7sGgWYBXK+bqGA0/J9EEBNKlQaoqt79sxgjnZG1rOgm9dQCWBZ+eiliKJwAM64mxm4F21eR6VdmBeud4KHxkDJfkQTc6iJIBPvdX2OIvaiBEBqmSNYNKXjbWDHTEwm+6QDOcP9Psa+GSNZZJCIKih0awY7MIutiAgOsaD3S3B0FwyrzSPdvuSsOL www.publicdomainlibrary.org"]
+    state: present
+    shell: "/bin/bash"
+    groups:
+      - "docker"
+      - "plone"

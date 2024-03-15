@@ -1,0 +1,3 @@
+---
+hostname: "public-domain-library"
+fqdn: "{{ hostname }}.localhost"

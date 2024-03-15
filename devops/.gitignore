@@ -1,10 +1,13 @@
 .docker
-.env
-.env_gha
+.env_prod
+.vagrant
+.vagrant_private_key
 bin
-etc/keys/*_prod_deploy_rsa
 include
+inventory/prod.yml
+host_vars/intk-prod.yml
 lib
 lib64
 pyvenv.cfg
-roles
+.public-domain-library.pem
+.www.public-domain-library.org.pem
