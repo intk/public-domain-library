@@ -142,7 +142,11 @@ const Header = (props) => {
                 {/* <p className="logo-written" id="logo-written">
                   Public Domain Library
                 </p> */}
-                <Logo />
+                <Logo
+                  style={{
+                    height: '75px',
+                  }}
+                />
               </UniversalLink>
             </div>
             <Navigation

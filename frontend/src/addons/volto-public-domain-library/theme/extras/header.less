@@ -1,6 +1,6 @@
 body {
   .breadcrumbs {
-    margin-top: 65px !important;
+    margin-top: 72px !important;
   }
   .ui.segment.content-area {
     margin-top: 10px !important;
@@ -20,7 +20,7 @@ body {
   padding: 0;
   z-index: 9 !important;
   max-width: 100vw;
-  min-height: 65px !important;
+  height: 72px !important;
 }
 
 .logo-nav-wrapper{
@@ -30,7 +30,7 @@ body {
   flex-wrap: nowrap;
   background-color: #000;
   border-bottom: 1px solid #000;
-  min-height: 65px;
+  height: 72px;
 }
 
 // #logo-written {
@@ -46,7 +46,7 @@ body {
     .hamburger::after,
     .hamburger::before,
     .hamburger-inner::after {
-      background-color: #c3c3c3;
+      background-color: #fff;
     }
 
     .is-active .hamburger::after,
@@ -57,17 +57,34 @@ body {
   }
 
   .ui.secondary.pointing.menu{
-    padding: 0;
+    min-height: unset;
+    font-size: 36px;
     a {
-      color: #c3c3c3;
+      padding: 0;
+      border: 0;
+      color: #fff;
+      margin-right: 3rem;
     }
     a:hover {
-      color: darken(#c3c3c3, 20%);
+      color: darken(#fff, 50%);
     }
     a.active {
       border-bottom-color: transparent;
-      color: darken(#c3c3c3, 20%);
+      color: darken(#fff, 50%);
     }
+  }
+}
+
+.mobile-menu .mobile-menu-nav .ui.pointing.menu {
+  a {
+    color: #000 !important;
+  }
+  a:hover {
+    color: darken(#000, 20%) !important;
+  }
+  a.active {
+    border-bottom-color: transparent;
+    color: darken(#000, 20%) !important;
   }
 }
 
