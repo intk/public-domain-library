@@ -1,0 +1,442 @@
+.header-wrapper{
+  .navigation,
+  .tools {
+    .ui.secondary.pointing.menu {
+      margin: 0%;
+      .item {
+        @media only screen and (min-width: @largestTabletScreen) {
+          padding: 22px 0 16px;
+          margin: 0 22px 0 22px;
+          border: 0;
+        }
+      }
+    }
+  }
+
+  #navigation .ui.pointing.secondary.stackable a.item{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  div.ui.pointing.secondary.stackable {
+    font-size: 17px;
+    letter-spacing: 0.1em;
+    align-items: center;
+    max-height: 60px;
+
+    .divider.text {
+      padding-right: 9px;
+    }
+  }
+
+  #navigation .ui.menu .item,
+  #dropdownItemA {
+    color: @black !important;
+
+    :hover {
+      color: @primary-color !important;
+      background: @white !important;
+    }
+  }
+
+   .ui.pointing.secondary.stackable.computer.large.screen.widescreen.only.menu{
+    .menu.transition{
+      display: inline-table;
+    }
+  }
+
+  .ui.menu{
+    font-family: 'UniversCn', Arial, sans-serif;
+    margin-top: 0;
+    #dropdownItemA {
+      font-family: 'UniversLight', 'Helvetica Neue', Helvetica, sans-serif;
+    }
+    svg {
+      padding: 0 6px 0 2px
+    }
+  }
+
+  .ui.menu .ui.dropdown .menu>.active.item {
+    background: @white !important;
+    font-weight: normal !important;
+    border: none;
+  }
+  .ui.secondary.menu .dropdown.item>.menu{
+    margin: 0em;
+    left: -25px;
+    padding: 22px 0px 18px;
+
+  }
+  #dropdownItemA {
+    padding: 6px 29px 6px 18px !important;
+  }
+
+
+  //Styling of the Hamburger Menu icon
+  .hamburger {
+    padding: 0% !important;
+  }
+
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    width: 23px !important;
+    height: 2px !important;
+    background-color: @grey-darkest !important;
+  }
+
+  .hamburger-wrapper.mobile {
+    height: 100%;
+    padding-top: 10px !important;
+  }
+
+  span.hamburger-box {
+    height: 45px;
+    width: 50px;
+  }
+
+  .hamburger-inner::before {
+    top: -6px !important;
+  }
+
+  .hamburger-inner::after {
+    bottom: -6px !important;
+  }
+
+  .hamburger.hamburger--spin.is-active {
+    .hamburger-inner::before {
+      top: 0px !important;
+    }
+
+    .hamburger-inner::after {
+      bottom: 0px !important;
+    }
+  }
+  .hamburger-wrapper.mobile {
+    position: relative;
+    z-index: 5;
+    padding-top: 0;
+  }
+  //end of styling of the Hamburger Menu icon
+
+
+
+  // MOBILE MENU STYLING
+  #navigation .mobile-menu{
+    z-index: -1 !important;
+    height: auto !important;
+    position: absolute !important;
+  }
+  .mobile-menu.mobile-menu-enter-done,
+  .mobile-menu.mobile-menu-enter-active {
+    top: 60px;
+    padding-top: 0px !important;
+    display: table;
+  }
+
+  #navigation .mobile-menu-nav{
+    height: auto !important;
+    position: relative !important;
+    border-bottom: 0px !important;
+    border-left: 0px !important;
+  }
+
+
+  .mobile-menu-nav .ui.pointing.secondary.stackable.menu {
+    flex-direction: column;
+    text-align: left !important;
+    width: 100%;
+    align-items: flex-end !important;
+    height: auto !important;
+    position: relative !important;
+    display: inline-table;
+    overflow: visible;
+
+    .item.simple,
+    .tools-search-wrapper,
+    .languageselector {
+      align-self: flex-start;
+      justify-content: flex-start !important;
+      background-color: @white !important;
+    }
+
+    .search-tool {
+      width: 100%;
+      border-bottom: 0.5px solid @grey !important;
+      display: flex;
+      order: -5;
+      justify-content: flex-start;
+      padding-bottom: 0px;
+    }
+
+    .tools-search-wrapper {
+      width: 100%;
+      padding-bottom: 0px;
+
+      .search {
+        align-self: flex-start;
+        padding-bottom: 0px;
+      }
+
+      .language-selector-wrapper,
+      .ui.form {
+        border-left: none;
+        align-self: flex-start;
+      }
+
+      .ui.form {
+        .field.searchbox>button {
+          margin-left: 0px;
+
+          svg {
+            padding-bottom: 0% !important;
+          }
+        }
+      }
+    }
+  }
+  .mobile-menu-nav a.item.simple {
+    padding-left: 22px !important;
+    padding-right: 15px !important;
+  }
+  .mobile-menu-nav {
+    display: flex !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    border: 1px solid @grey;
+    font-family: 'UniversCn', Arial, sans-serif !important;
+    letter-spacing: 0.1em;
+
+    .item.simple {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
+    div {
+      padding-bottom: 5px;
+      font-size: 17px !important;
+
+      .title {
+        font-family: 'UniversCn', Arial, sans-serif !important;
+      }
+
+
+      .content {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        margin-left: 15px;
+        font-family: 'UniversLight', Arial, sans-serif !important;
+      }
+    }
+  }
+
+
+  // ***************
+  // Accordion items at the mobile menu
+  .accordion.ui.item.simple {
+    flex-direction: column;
+    align-content: flex-start !important;
+    border: none;
+    padding-left: 22px !important;
+    align-items: flex-start !important;
+
+    .active.title,
+    .active.content {
+      align-self: flex-start;
+    }
+
+    .title {
+      padding-top: 0px !important;
+      padding-bottom: 0px;
+    }
+
+    .active.title {
+      padding-bottom: 10px !important;
+    }
+  }
+
+  .mobile-menu-nav .item.simple {
+    margin-left: 0 !important;
+  }
+
+  #navigation .mobile-menu-nav .ui.pointing.secondary {
+    .active.title {
+      color: @primary-color !important;
+    }
+
+    .ui.segment {
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      align-self: flex-start;
+      padding: 0%;
+      margin: 0%;
+      border-top: 1px solid @grey;
+
+      .ui.pointing.secondary {
+        padding: 0% !important;
+      }
+
+      .accordionbreadcrumblist {
+        padding-left: 0%;
+        width: auto !important;
+
+        a.accordion.item.simple {
+          padding-left: 18px !important;
+        }
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0% !important;
+      }
+
+      li a {
+        font-family: "UniversLight" !important;
+        font-size: 17px !important;
+        text-transform: none;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+      }
+
+      .title {
+        color: @grey-darkest !important;
+      }
+    }
+  }
+
+
+  //language selector at the mobile menu
+  .MuiPaper.languageselector {
+    align-self: flex-start;
+    border: 0px !important;
+    padding-top: 22px;
+    padding-bottom: 17px;
+
+
+    .MuiPaper-root {
+      border: 0px !important;
+      box-shadow: none;
+      text-transform: uppercase;
+      padding-left: 22px;
+
+      .MuiAccordionDetails-root {
+        padding-left: 35px;
+        font-family: 'UniversLight';
+        a{
+          color: @black !important;
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+  .MuiAccordionDetails-root {
+    display: flex;
+    flex-direction: column;
+  }
+  .MuiButtonBase-root {
+    min-height: 10px !important;
+    align-self: flex-start;
+    padding-top: 5px;
+    padding-left: 0% !important;
+  }
+  .MuiAccordionSummary-content {
+    margin: 0% !important;
+    color: @grey-darkest;
+  }
+  .MuiCollapse-root,
+  .MuiCollapse-wrapper,
+  .MuiCollapse-wrapperInner,
+  .MuiAccordion-region {
+    padding-bottom: 0% !important;
+  }
+  //End of Accordion items at the mobile menu
+
+  }
+
+
+  .has-mobile-menu-open #header-wrapper {
+    .hamburger-wrapper.mobile {
+      position: static !important;
+    }
+
+    #navigation .mobile-menu {
+      position: static !important;
+    }
+
+    #navigation .mobile-menu-nav {
+      position: static !important;
+    }
+
+    .mobile-menu-nav .ui.pointing.secondary.stackable.menu {
+      position: static !important;
+    }
+
+    .logo-nav-wrapper {
+      display: block;
+    }
+
+    .hamburger-wrapper.mobile {
+      width: 50px;
+      position: absolute !important;
+      right: 0%;
+      top: 0%;
+    }
+    .logo {
+      background-color: @white;
+      width: 50%;
+      position: relative;
+      z-index: 99;
+    }
+
+  }
+
+  // The mobile menu disappears when the screen is wide
+  @media only screen and (min-width: @computerBreakpoint) {
+    .mobile-menu {
+      display: none !important;
+    }
+    .has-mobile-menu-open #header-wrapper .logo-nav-wrapper {
+      display: flex !important;
+    }
+    .logo{
+      width: auto !important;
+    }
+  }
+
+  &.has-toolbar-menu-open,
+  &.has-mobile-menu-open {
+
+    // The body scroll locker when the toolbar or the mobile menu are active in mobile.
+    @media only screen and (max-width: @largestMobileScreen) {
+      overflow:auto !important;
+    }
+  }
+
+
+
+  // .mobile-menu-enter {
+  //   transform: translate(0%, -100%);
+  // }
+
+  // .mobile-menu-enter.mobile-menu-enter-active {
+  // }
+
+  // .mobile-menu-enter-done {
+  //   transform: translate(0%, 0%);
+  //   transition: transform 0.5s ease-in-out;
+  // }
+
+  // .mobile-menu-exit {
+  //   transform: translate(0%, 0%);
+  //   transition: transform 0.8s ease-in-out;
+  //   // transition-delay: 2s;
+  // }
+
+  // .mobile-menu-exit.mobile-menu-exit-active {
+  //   transform: translate(0%, -100%);
+  //   transition: transform 0.8s ease-in-out;
+  // }
+
+

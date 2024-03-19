@@ -7,12 +7,25 @@ body {
     padding-top: 0%;
   }
 
-  .ui.basic.segment.header-wrapper .logo {
+  .ui.basic.segment.header-wrapper .logo,
+  .ui.basic.segment.header-wrapper .logo a {
     display: flex;
     align-items: center;
-    img {
-      filter: invert(100%);
-    }
+  }
+}
+
+#menu-logo-svg {
+  height: 40px;
+  width: calc(40px * 6.29);
+
+  @media only screen and (min-width: 768px) {
+    height: 60px;
+    width: calc(60px * 6.29);
+  }
+
+  @media only screen and (min-width: 1145px) {
+    height: 72px;
+    width: calc(72px * 6.29);
   }
 }
 
@@ -33,32 +46,24 @@ body {
   height: 72px;
 }
 
-// #logo-written {
-//   font-size: 30px;
-//   padding: 11px 0 6px 25px ;
-//   color: #5f9953;
-// }
-
 #navigation {
   display: flex;
   align-items: center;
   .hamburger-wrapper {
     .hamburger::after,
     .hamburger::before,
-    .hamburger-inner::after {
+    .hamburger-inner::after,
+    .hamburger-inner::before {
       background-color: #fff;
-    }
-
-    .is-active .hamburger::after,
-    .is-active .hamburger::before,
-    .is-active .hamburger-inner::after {
-      background-color: #000;
     }
   }
 
   .ui.secondary.pointing.menu{
     min-height: unset;
-    font-size: 36px;
+    // TODO: Change Font
+    font-size: 38px;
+    line-height: 47.7px;
+    letter-spacing: -0.5px;
     .item {
       text-transform: capitalize;
     }
@@ -66,29 +71,21 @@ body {
       padding: 0;
       border: 0;
       color: #fff;
-      margin-right: 3rem;
+      // TODO: chnage to 1.5rem after language selector is added
+      margin-right: 2rem;
     }
     a:hover {
-      color: darken(#fff, 50%);
+      color: darken(#fff, 55%);
     }
     a.active {
       border-bottom-color: transparent;
-      color: darken(#fff, 50%);
+      color: darken(#fff, 55%);
     }
   }
 }
 
-.mobile-menu .mobile-menu-nav .ui.pointing.menu {
-  a {
-    color: #000 !important;
-  }
-  a:hover {
-    color: darken(#000, 20%) !important;
-  }
-  a.active {
-    border-bottom-color: transparent;
-    color: darken(#000, 20%) !important;
-  }
+.mobile-menu {
+  background-color: #000;
 }
 
 // Here is for the hiding action

@@ -138,13 +138,14 @@ const Header = (props) => {
                 target="_self"
                 title={props.intl.formatMessage(messages.site)}
                 key="homelinklogo"
+                style={{ height: '72px' }}
               >
                 {/* <p className="logo-written" id="logo-written">
                   Public Domain Library
                 </p> */}
                 <Logo
                   style={{
-                    height: '75px',
+                    id: 'menu-logo-svg',
                   }}
                 />
               </UniversalLink>
