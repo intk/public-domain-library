@@ -4,7 +4,7 @@
     .ui.secondary.pointing.menu {
       margin: 0%;
       .item {
-        @media only screen and (min-width: @largestTabletScreen) {
+        @media only screen and (min-width: 768px) {
           padding: 22px 0 16px;
           margin: 0 22px 0 22px;
           border: 0;
@@ -31,15 +31,17 @@
 
   #navigation .ui.menu .item,
   #dropdownItemA {
-    color: @black !important;
+    color: #fff !important;
 
     :hover {
-      color: @primary-color !important;
-      background: @white !important;
+      color: #fff !important;
+      background: #000 !important;
     }
   }
 
    .ui.pointing.secondary.stackable.computer.large.screen.widescreen.only.menu{
+    display: flex;
+    align-items: center;
     .menu.transition{
       display: inline-table;
     }
@@ -57,14 +59,14 @@
   }
 
   .ui.menu .ui.dropdown .menu>.active.item {
-    background: @white !important;
+    background: #000 !important;
     font-weight: normal !important;
     border: none;
   }
   .ui.secondary.menu .dropdown.item>.menu{
-    margin: 0em;
+    margin: 0;
     left: -25px;
-    padding: 22px 0px 18px;
+    padding: 22px 0 18px;
 
   }
   #dropdownItemA {
@@ -74,7 +76,7 @@
 
   //Styling of the Hamburger Menu icon
   .hamburger {
-    padding: 0% !important;
+    padding: 0 !important;
   }
 
   .hamburger-inner,
@@ -82,7 +84,7 @@
   .hamburger-inner::after {
     width: 23px !important;
     height: 2px !important;
-    background-color: @grey-darkest !important;
+    background-color: #000 !important;
   }
 
   .hamburger-wrapper.mobile {
@@ -105,11 +107,11 @@
 
   .hamburger.hamburger--spin.is-active {
     .hamburger-inner::before {
-      top: 0px !important;
+      top: 0 !important;
     }
 
     .hamburger-inner::after {
-      bottom: 0px !important;
+      bottom: 0 !important;
     }
   }
   .hamburger-wrapper.mobile {
@@ -137,8 +139,8 @@
   #navigation .mobile-menu-nav{
     height: auto !important;
     position: relative !important;
-    border-bottom: 0px !important;
-    border-left: 0px !important;
+    border-bottom: 0 !important;
+    border-left: 0 !important;
   }
 
 
@@ -157,25 +159,25 @@
     .languageselector {
       align-self: flex-start;
       justify-content: flex-start !important;
-      background-color: @white !important;
+      background-color: #000 !important;
     }
 
     .search-tool {
       width: 100%;
-      border-bottom: 0.5px solid @grey !important;
+      border-bottom: 0.5px solid #000 !important;
       display: flex;
       order: -5;
       justify-content: flex-start;
-      padding-bottom: 0px;
+      padding-bottom: 0;
     }
 
     .tools-search-wrapper {
       width: 100%;
-      padding-bottom: 0px;
+      padding-bottom: 0;
 
       .search {
         align-self: flex-start;
-        padding-bottom: 0px;
+        padding-bottom: 0;
       }
 
       .language-selector-wrapper,
@@ -186,10 +188,10 @@
 
       .ui.form {
         .field.searchbox>button {
-          margin-left: 0px;
+          margin-left: 0;
 
           svg {
-            padding-bottom: 0% !important;
+            padding-bottom: 0 !important;
           }
         }
       }
@@ -205,7 +207,7 @@
     flex-direction: column !important;
     align-items: flex-start !important;
     justify-content: flex-start !important;
-    border: 1px solid @grey;
+    border: 1px solid #000;
     font-family: 'UniversCn', Arial, sans-serif !important;
     letter-spacing: 0.1em;
 
@@ -261,8 +263,9 @@
   }
 
   #navigation .mobile-menu-nav .ui.pointing.secondary {
+    color: #fff !important;
     .active.title {
-      color: @primary-color !important;
+      color: #fff !important;
     }
 
     .ui.segment {
@@ -272,7 +275,7 @@
       align-self: flex-start;
       padding: 0%;
       margin: 0%;
-      border-top: 1px solid @grey;
+      border-top: 1px solid #000;
 
       .ui.pointing.secondary {
         padding: 0% !important;
@@ -301,7 +304,7 @@
       }
 
       .title {
-        color: @grey-darkest !important;
+        color: #fff !important;
       }
     }
   }
@@ -325,7 +328,7 @@
         padding-left: 35px;
         font-family: 'UniversLight';
         a{
-          color: @black !important;
+          color: #fff !important;
           padding-top: 15px;
         }
       }
@@ -343,7 +346,7 @@
   }
   .MuiAccordionSummary-content {
     margin: 0% !important;
-    color: @grey-darkest;
+    color: #fff;
   }
   .MuiCollapse-root,
   .MuiCollapse-wrapper,
@@ -384,7 +387,6 @@
       top: 0%;
     }
     .logo {
-      background-color: @white;
       width: 50%;
       position: relative;
       z-index: 99;
@@ -393,7 +395,7 @@
   }
 
   // The mobile menu disappears when the screen is wide
-  @media only screen and (min-width: @computerBreakpoint) {
+  @media only screen and (min-width: 1145px) {
     .mobile-menu {
       display: none !important;
     }
@@ -409,7 +411,7 @@
   &.has-mobile-menu-open {
 
     // The body scroll locker when the toolbar or the mobile menu are active in mobile.
-    @media only screen and (max-width: @largestMobileScreen) {
+    @media only screen and (max-width: 767px) {
       overflow:auto !important;
     }
   }

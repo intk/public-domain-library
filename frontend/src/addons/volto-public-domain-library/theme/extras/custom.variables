@@ -4,16 +4,6 @@
 
 @bodyFontSmoothing: antialiased;
 
-/*-------------------
-       Fonts
---------------------*/
-@fontName: "GeneralSans";
-@secondaryFontName: "Antonio";
-@googleFontSizes: '400';
-@googleSecondaryFontSizes: '700';
-@headingsFont: @secondaryFontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@googleFontRequest: '@{secondaryFontName}:@{googleSecondaryFontSizes}';
-
 @normal: 400;
 @medium: 400;
 @bold: 700;
@@ -110,58 +100,67 @@
 
 
 /*-------------------
-       Links
+    Header
 --------------------*/
-@linkColor: @primaryColor;
-@linkUnderline: none;
-@linkHoverColor: @primaryColor;
-@linkBorderBottomSize: 1px;
-@linkHoverBorderBottomSize: 0px;
-@linkBorderBottom: @linkBorderBottomSize solid @lightgray;
-@linkHoverBorderBottom: @linkHoverBorderBottomSize solid @lightgray;
-@linkHoverUnderline: underline;
+@headerBackgroundColor: #000;
+@headerPaddingTop: 0px;
+@headerPaddingBottom: 0px;
+@headerPaddingLeft: 0px;
+@headerPaddingRight: 0px;
+@headerMarginBottom: 0px;
+@headerMarginBottomMobile: 0px;
+@displayBreadcrumps: none;
 
 /*-------------------
-      Blockquote
+    Logo
 --------------------*/
-@blockquoteColor: @darkgray;
-@blockquoteMargin: 0 auto;
-@blockquoteFontWeight: @normal;
-@blockquoteFontSize: 30px;
-@blockquoteWidth: auto;
-@blockquoteBackground: none;
-@blockquoteLineHeight: 45px;
-@blockquoteBorderLeft: 2px solid @lightgray;
-@blockquotePaddingLeft: 20px;
-@blockquotePaddingRight: 20px;
-@blockquotePaddingTop: 0px;
-@blockquotePaddingBottom: 5px;
-@blockquoteMarginBottom: 28px;
-@blockquoteFloat: none;
-@blockquoteLetterSpacing: 0.05em;
+@logoWidth: 389px;
+@logoWidthMobile: 288px;
 
 /*-------------------
-      Lead image
+    Logo nav
 --------------------*/
-@fullWidthImgRight: 0;
-@fullWidthImgLeft: 50%;
-@fullWidthImgTransform: translateX(-50%);
-@fullWidthImgWidth: 80vw;
-@fullWidthImgMarginLeft: 0px;
-@fullWidthImgMarginRight: 0px;
-@fullWidthImgMaxWidth: 960px;
-
-@editFullWidthImgRight: 0;
-@editFullWidthImgLeft: 0;
-@editFullWidthImgWidth: 100vw;
-@editFullWidthImgMarginLeft: 0px;
-@editFullWidthImgMarginRight: 0px;
-@editFullWidthImgMaxWidth: 960px;
+@logoNavWidth: 100%;
+@logoNavFlexGrow: 1;
+@logoNavMarginBottom: 15px;
 
 /*-------------------
-      Carousel
+    Title
 --------------------*/
-@slideOverlayOpacity: 0;
-@sliderArrowBottom: 15px;
-@sliderArrowLeft: 15px;
-@sliderHeightMobile: 450px;
+@titleNavDisplay: flex;
+@titleNavFlexGrow: 1;
+@titleNavFlexWrap: wrap;
+@titleNavWidth: 100%;
+@titleNavMarginLeft: 0px;
+@titleNavMarginRight: 0px;
+
+@titleNavPaddingTop: 60px;
+@titleNavPaddingTopMobile: 100px;
+@titleNavTextAlign: center;
+@titleNavTextAlignMobile: center;
+
+@titleNavH1FontSize: 60px;
+@titleNavH1FontWeight: @normal;
+@titleNavH1LetterSpacing: -0.02em;
+@titleNavH1TextAlign: center;
+@titleNavH1MarginBottom: 9px;
+@titleNavH1PaddingBottom: 0px;
+@titleNavH1MarginTop: 5px;
+@titleNavH1BorderBottom: 0px solid transparent;
+@titleNavH1Width: 100%;
+@titleNavH1LineHeight: 1.17;
+@titleNavH1BeforeDisplay: none;
+
+@titleNavH1FontSizeMobile: 40px;
+
+/*-------------------
+    Description
+--------------------*/
+@descriptionNavFontWeight: @normal;
+@descriptionNavFontSize: 20px;
+@descriptionNavColor: @gray;
+@descriptionNavMarginBottom: 9px;
+@descriptionNavMarginTop: 9px;
+@descriptionNavWidth: 100%;
+@descriptionNavTextAlign: center;
+@descriptionNavTextAlignMobile: center;
