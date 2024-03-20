@@ -6,7 +6,7 @@ export function LogoSVG(props) {
       xlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      viewBox="135 70 1690 230.1"
+      viewBox="135 55 1690 230.1"
       // style="enable-background:new 55 60 1820 240.1;"
       xmlSpace="preserve"
       {...props}
