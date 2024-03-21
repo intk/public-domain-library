@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { compose } from 'redux';
 import { Menu } from 'semantic-ui-react';
-import LanguageSelectorMenu from '../LanguageSelector/LanguageSelectorMenu';
+// import LanguageSelectorMenu from '../LanguageSelector/LanguageSelectorMenu';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -170,7 +170,7 @@ class Navigation extends Component {
       <nav className="navigation" id="navigation" ref={this.container}>
         <div className="hamburger-wrapper">
           <button
-            className={cx('hamburger hamburger--spin', {
+            className={cx('hamburger', {
               'is-active': this.state.isMobileMenuOpen,
             })}
             aria-label={
@@ -211,7 +211,7 @@ class Navigation extends Component {
             <div className="mobile-menu-nav">
               <Menu stackable pointing secondary>
                 <NavItems items={this.props.items} lang={this.props.lang} />
-                <LanguageSelectorMenu />
+                {/* <LanguageSelectorMenu /> */}
                 {/* <div className="menu-search-wrapper">
                   <SearchWidget />
                 </div>

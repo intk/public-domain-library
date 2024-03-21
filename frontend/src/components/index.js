@@ -8,7 +8,3 @@
  *   Footer,
  * };
  */
-
-import AccordionLanguageSelector from './AccordionMenu/AccordionLanguageSelector';
-
-export { AccordionLanguageSelector };

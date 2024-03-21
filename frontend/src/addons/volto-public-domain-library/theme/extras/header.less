@@ -448,13 +448,10 @@ body.has-toolbar-collapsed {
   .hamburger-wrapper {
     display: flex;
     align-items: center;
-    padding: 15px 0;
+    padding: 0;
     margin-left: 10px;
     width: 28px;
-
-    .hamburger {
-      width: 28px;
-    }
+    height: 50px;
 
     .hamburger::after,
     .hamburger::before,
@@ -463,7 +460,15 @@ body.has-toolbar-collapsed {
       background-color: #fff;
       border-radius: 0;
       height: 3px;
-      margin: 0;
+      margin: 1px 0;
+    }
+
+    .hamburger::before {
+      top: 18px;
+    }
+
+    .hamburger::after {
+      top: 2px;
     }
   }
 

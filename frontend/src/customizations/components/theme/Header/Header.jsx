@@ -5,7 +5,7 @@
  */
 
 import {
-  LanguageSelector,
+  // LanguageSelector,
   Logo,
   Navigation,
   UniversalLink,
@@ -120,9 +120,9 @@ class Header extends Component {
                 {headertranslations['authors'][this.props.lang]}
               </NavLink>
             </Menu.Item>
-            <Menu.Item className="item-language-selector">
+            {/* <Menu.Item className="item-language-selector">
               <LanguageSelector />
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item className="item-hamburger no-padding-right no-padding-left">
               <Navigation pathname={this.props.pathname} />
             </Menu.Item>
