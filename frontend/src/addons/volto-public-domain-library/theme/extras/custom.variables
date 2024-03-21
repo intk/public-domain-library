@@ -1,8 +1,3 @@
-/*******************************
-      INTK Theme Variables
-*******************************/
-
-@bodyFontSmoothing: antialiased;
 
 @normal: 400;
 @medium: 400;
@@ -11,7 +6,8 @@
 /*-------------------
       Site Colors
 --------------------*/
-@black: #000000;
+@black: #000;
+@white: #fff;
 @gray: #434242;
 @darkgray: #434242;
 @lightgray: #cccccc;
@@ -19,33 +15,23 @@
 /*-------------------
       Base Sizes
 --------------------*/
-@emSize: 16px;
-@fontSize: 16px;
-@uiHeaderSize: 1.28571429em;
 
 /*-------------------
      Breakpoints
 --------------------*/
 @mobileBreakpoint: 320px;
-@tabletBreakpoin: 768px;
-@computerBreakpoint: 992px;
-@largeMonitorBreakpoint: 1200px;
-@widescreenMonitorBreakpoint: 1920px;
+@tabletBreakpoint: 481px;
+@computerBreakpoint: 769px;
+@desktopBreakpoint: 1025px;
+@largestMobileScreen: (@tabletBreakpoint - 1px);
+@largestTabletScreen: (@computerBreakpoint - 1px);
+@largestComputerScreen: (@desktopBreakpoint - 1px);
 
 /*-------------------
     Derived Values
 --------------------*/
-@headerTopMargin: 60px;
+@headerTopMargin: 72px;
 @headerTopMarginMobile: 50px;
-@headerBottomMargin: 20px;
-@headerMargin: @headerTopMargin 0em @headerBottomMargin;
-@headingsMarginMobile: @headerTopMarginMobile 0em @headerBottomMargin;
-
-@largestMobileScreen: (@tabletBreakpoint - 1px);
-@largestTabletScreen: (@computerBreakpoint - 1px);
-@largestSmallMonitor: (@largeMonitorBreakpoint - 1px);
-@largestLargeMonitor: (@widescreenMonitorBreakpoint - 1px);
-
 
 /*-------------------
       Body text
@@ -58,19 +44,6 @@
 @textSizeMobile: 16px;
 @textLineHeightMobile: 1.625;
 @containerMaxSize: 707px;
-
-/*-------------------
-      Paragraph
---------------------*/
-@paragraphMargin: 0em 0em 1em;
-
-
-
-/*-------------------
-    Brand Colors
---------------------*/
-@primaryColor: @black;
-@secondaryColor: @gray;
 
 /*-------------------
         Page
