@@ -474,6 +474,13 @@ body.has-toolbar-collapsed {
   margin-top: -12px;
   margin-left: -24px;
 
+  @media only screen and (max-width: 529px) {
+    width: 37px;
+    height: 30px;
+    margin-left: -21.5px;
+    margin-top: 10.5px;
+  }
+
   @media only screen and (min-width: @desktopBreakpoint) {
     margin-top: 0;
     margin-left: -20px;
@@ -483,6 +490,11 @@ body.has-toolbar-collapsed {
 #menu-logo-link {
   height: 50px;
   width: calc(50px * 6); // 432px
+
+  @media only screen and (max-width: 529px) {
+    width: auto;
+    height: auto;
+  }
 
   @media only screen and (min-width: @desktopBreakpoint) {
     height: 72px;

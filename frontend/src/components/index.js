@@ -8,3 +8,6 @@
  *   Footer,
  * };
  */
+
+export { LogoSVG } from './theme/Logo/LogoSVG';
+export { SmallLogoSVG } from './theme/SmallLogo/SmallLogoSVG';
