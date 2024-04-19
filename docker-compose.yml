@@ -97,7 +97,8 @@ services:
           cpus: '0.5'
           memory: '1500M'
       restart_policy:
-        condition: always
+        condition: on-failure
+        max_attempts: 3
     networks:
       - library
 
