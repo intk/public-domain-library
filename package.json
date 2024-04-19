@@ -1,0 +1,15 @@
+{
+  "name": "public-domain-library",
+  "version": "1.0.0",
+  "description": "Public Domain Library Site",
+  "main": "server/app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/intk/public-domain-library"
+  },
+  "author": "falkodev",
+  "scripts": {
+    "prod": "docker-compose kill && NODE_ENV=production docker-compose -p library --compatibility up -d --build",
+    "dev": "docker-compose kill && NODE_ENV=development docker-compose up -d && docker logs pdl-server -f"
+  }
+}

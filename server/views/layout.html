@@ -1,0 +1,45 @@
+{# Automatically extends the right outer layout and also handles AJAX siutations #}
+{% extends data.outerLayout %}
+
+{% set title = data.piece.title or data.page.title %}
+{% block title %}
+  {{ title }}
+  {% if not title %}
+    {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
+  {% endif %}
+{% endblock %}
+
+{% block beforeMain %}
+<div class="pdl-wrapper">
+  <header class="pdl-header">
+    <nav class="pdl-nav">
+      {# {% for page in data.home._children %}
+        {% if page.header %}
+            <a href="{{ page._url }}" style="text-decoration: none" class="fs-3 text-dark">{{ page.title }}</a>
+        {% endif %}
+      {% endfor %} #}
+
+      {% for item in data.global.primaryNav %}
+          {% set path = item._page[0]._url %}
+          <a href="{{ path }}" style="text-decoration: none" class="fs-3 text-dark">{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+  <main class="pdl-main">
+{% endblock %}
+
+{% block main %}
+  {#
+    Usually, your page templates in the @apostrophecms/pages module will override
+    this block. It is safe to assume this is where your page-specific content
+    should go.
+  #}
+{% endblock %}
+
+{% block afterMain %}
+  </main>
+  {# <footer class="pdl-footer">
+    <h3>Footer</h3>
+  </footer> #}
+</div>{# Close .pdl-wrapper #}
+{% endblock %}

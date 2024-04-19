@@ -1,0 +1,106 @@
+version: '3.7'
+
+services:
+  pdl-db:
+    container_name: pdl-db
+    build: db
+    init: true
+    ports:
+      - 27018:27017
+    volumes:
+      - ./db/data/db:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: library
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD:
+      MONGO_INITDB_USER_USERNAME: app-admin
+      MONGO_INITDB_USER_PASSWORD:
+    logging:
+      options:
+        max-file: '5'
+        max-size: '5m'
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: '4000M'
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+    networks:
+      - library
+
+
+  pdl-server:
+    container_name: pdl-server
+    build: server
+    init: true
+    volumes:
+      - ./server/app.js:/app/app.js
+      - ./server/config:/app/config
+      - ./server/locales:/app/locales
+      - ./server/modules:/app/modules
+      - ./server/public:/app/public
+      - ./server/package.json:/app/package.json
+    ports:
+      - 3000:3000
+    depends_on:
+      - pdl-db
+    environment:
+      APOS_DEV:
+      NODE_ENV: ${NODE_ENV:-production}
+      APOS_MONGODB_URI:
+      PORT:
+      # APOS_BASE_URL: https://publicdomainlibrary.com
+      APOS_CLUSTER_PROCESSES: 2
+      WAIT_HOSTS: pdl-db:27017
+    logging:
+      options:
+        max-file: '5'
+        max-size: '5m'
+    healthcheck:
+      test: node healthcheck
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: '4000M'
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+    networks:
+      - library
+
+  pdl-reverse-proxy:
+    container_name: pdl-reverse-proxy
+    image: nginx:alpine
+    volumes:
+      - ./server/public:/usr/share/nginx/backend:ro
+      - ./nginx/local.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/logs:/etc/nginx/logs:rw
+    depends_on:
+      - pdl-server
+    ports:
+      - 80:80
+      - 443:443
+    healthcheck:
+      test: curl -f http://localhost:90/nginx-health || exit 1
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: '1500M'
+      restart_policy:
+        condition: always
+    networks:
+      - library
+
+networks:
+  library:
+    name: library

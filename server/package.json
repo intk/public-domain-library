@@ -1,0 +1,58 @@
+{
+  "name": "@public-domain-library/server",
+  "version": "1.0.0",
+  "description": "Public Domain Library Server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "NODE_ENV=development nodemon --quiet",
+    "build": "NODE_ENV=production node app @apostrophecms/asset:build",
+    "serve": "NODE_ENV=production node app",
+    "migrate": "node app @apostrophecms/migration:migrate",
+    "test": "eslint .",
+    "lint": "eslint . --fix"
+  },
+  "nodemonConfig": {
+    "delay": 100,
+    "verbose": false,
+    "watch": [
+      "./app.js",
+      "./modules/**/*",
+      "./lib/**/*.js",
+      "./views/**/*.html",
+      "./node_modules/@apostrophecms/**/*",
+      "./node_modules/@apostrophecms-pro/**/*",
+      "./node_modules/apostrophe/modules/@apostrophecms/**/*"
+    ],
+    "ignoreRoot": [
+      ".git"
+    ],
+    "ignore": [
+      "**/ui/apos/",
+      "**/ui/src/",
+      "**ui/public/",
+      "locales/*.json",
+      "public/uploads/",
+      "public/apos-frontend/*.js",
+      "data/"
+    ],
+    "ext": "json, js, html, scss, vue"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apostrophecms/a3-boilerplate"
+  },
+  "author": "Apostrophe Technologies, Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "apostrophe": "^4.0.0",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "nodemon": "^2.0.7",
+    "vue": "^3.4.21"
+  }
+}

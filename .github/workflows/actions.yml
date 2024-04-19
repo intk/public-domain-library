@@ -19,16 +19,12 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Deploy to Server
+      - name: Deploy to server
         uses: easingthemes/ssh-deploy@main
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ vars.REMOTE_HOST }}
           REMOTE_USER: ${{ vars.REMOTE_USER }}
           EXCLUDE: "/dist/, /node_modules/"
-          SCRIPT_BEFORE: |
-            whoami
-            ls -al
-          SCRIPT_AFTER: |
-            whoami
-            ls -al
+      - name: Run app
+        run: npm run prod

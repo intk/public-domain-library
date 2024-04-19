@@ -1,3 +1,17 @@
+package-lock.json
+/locales
+npm-debug.log
+/data
+server/public/uploads
+server/public/apos-minified
+server/public/modules
+/data/temp/uploadfs
+server/apos-build
+server/public/apos-frontend
+server/modules/asset/ui/public/site.js
+server/public/css/master-*.less
+.env
+
 # Logs
 logs
 *.log
