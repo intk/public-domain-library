@@ -1,4 +1,4 @@
-version: '3.7'
+# version: '3.7'
 
 services:
   pdl-db:
@@ -53,7 +53,7 @@ services:
       NODE_ENV: ${NODE_ENV:-production}
       APOS_MONGODB_URI:
       PORT:
-      # APOS_BASE_URL: https://publicdomainlibrary.com
+      APOS_BASE_URL:
       APOS_CLUSTER_PROCESSES: 2
       WAIT_HOSTS: pdl-db:27017
     logging:

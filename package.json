@@ -9,7 +9,7 @@
   },
   "author": "falkodev",
   "scripts": {
-    "prod": "docker compose kill && NODE_ENV=production docker compose -p library --compatibility up -d --build",
+    "prod": "docker stop pdl-reverse-proxy pdl-server pdl-db && NODE_ENV=production docker compose -p library --compatibility up -d --build",
     "dev": "docker compose kill && NODE_ENV=development docker compose up -d && docker logs pdl-server -f"
   }
 }
