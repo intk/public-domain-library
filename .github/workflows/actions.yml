@@ -26,5 +26,5 @@ jobs:
           REMOTE_HOST: ${{ vars.REMOTE_HOST }}
           REMOTE_USER: ${{ vars.REMOTE_USER }}
           EXCLUDE: "/dist/, /node_modules/"
-      - name: Run app
-        run: npm run prod
+          SCRIPT_AFTER: |
+            npm run prod
