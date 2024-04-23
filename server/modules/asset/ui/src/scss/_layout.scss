@@ -1,6 +1,5 @@
 @import './_settings';
 
-// Use flex to keep the footer at the bottom.
 body,
 [data-apos-refreshable],
 .pdl-wrapper {
@@ -36,22 +35,6 @@ main,
   align-items: center;
   justify-content: space-between;
   font-size: 38px;
-}
-
-.pdl-footer {
-  padding: 40px 0;
-}
-
-.pdl-footer__links {
-  padding-left: 0px;
-  list-style: none;
-  text-align: center;
-
-  li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  li:last-child { margin-right: 0; }
 }
 
 .pdl-header__title {
@@ -155,11 +138,106 @@ main,
   }
 }
 
+.pdl-footer {
+  background-color: black;
+  color: white;
+
+  > * {
+    padding: 25px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      padding: 35px;
+    }
+  }
+
+  a {
+    color: white;
+  }
+
+  .pdl-footer__nav {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 25px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      gap: 65px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      gap: 25px;
+      flex-direction: row;
+    }
+  }
+
+  .pdl-nav--footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+
+    .pdl-nav__item {
+      font-size: 18px;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        font-size: 26px;
+      }
+    }
+  }
+
+  .pdl-footer__info {
+    padding-top: 0;
+
+    .pdl-footer__motto {
+      font-size: 45px;
+    }
+
+    .pdl-footer__sentence img {
+      margin-left: 15px;
+      width: 40px;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'sm')) {
+      padding-top: 35px;
+
+      .pdl-footer__motto {
+        font-size: 90px;
+      }
+
+      .pdl-footer__sentence img {
+        margin-left: 20px;
+        width: 75px;
+      }
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      padding-top: 35px;
+
+      .pdl-footer__motto {
+        font-size: 132px;
+      }
+
+      .pdl-footer__sentence img {
+        margin-left: 25px;
+        width: 100px;
+      }
+    }
+  }
+
+  .pdl-footer__legal {
+    margin-top: 35px;
+    display: flex;
+    gap: 25px;
+    font-size: 13px;
+  }
+}
+
+
 .pdl-nav__item {
   color: white !important;
   cursor: pointer;
 
-  &:hover {
+  &:hover, &:focus {
     text-decoration: none;
   }
 }

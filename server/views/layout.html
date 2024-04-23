@@ -9,7 +9,7 @@
   {% endif %}
 {% endblock %}
 
-{# {% import "locale-switcher:index.html" as localeSwitcher with context %} #}
+{% import "locale-switcher:index.html" as localeSwitcher with context %}
 
 {% block beforeMain %}
 <div class="pdl-wrapper">
@@ -45,15 +45,15 @@
       </clipPath>
       </defs>
       </svg>
-      {# {% for item in data.global.primaryNav %}
+      {# {% for item in data.global.headerNav %}
           {% set path = item._page[0]._url %}
           <a href="{{ path }}" style="text-decoration: none" class="fs-3 text-dark">{{ item.label }}</a>
       {% endfor %} #}
       <a href="#" class="pdl-nav__item">Books</a>
       <a href="#" class="pdl-nav__item">Authors</a>
-      {# <span class="pdl-nav__item">
+      <span class="pdl-nav__item">
         {{ localeSwitcher.display() }}
-      </span> #}
+      </span>
     </nav>
 
     <nav class="pdl-nav pdl-nav--mobile" data-open-side-nav>
@@ -75,15 +75,15 @@
       </clipPath>
       </defs>
       </svg>
-      {# {% for item in data.global.primaryNav %}
+      {# {% for item in data.global.headerNav %}
           {% set path = item._page[0]._url %}
           <a href="{{ path }}" style="text-decoration: none" class="fs-3 text-dark">{{ item.label }}</a>
       {% endfor %} #}
       <a href="#" class="pdl-nav__item">Books</a>
       <a href="#" class="pdl-nav__item">Authors</a>
-      {# <span class="pdl-nav__item">
+      <span class="pdl-nav__item">
         {{ localeSwitcher.display() }}
-      </span> #}
+      </span>
     </div>
   </header>
   <main class="pdl-main">
@@ -93,8 +93,52 @@
 
 {% block afterMain %}
   </main>
-  {# <footer class="pdl-footer">
-    <h3>Footer</h3>
-  </footer> #}
+  <footer class="pdl-footer">
+
+    <div class="pdl-footer__nav">
+      <nav class="pdl-nav pdl-nav--footer">
+        {# {% for item in data.global.footerNav %}
+            {% set path = item._page[0]._url %}
+            <a href="{{ path }}" style="text-decoration: none" class="fs-3 text-dark">{{ item.label }}</a>
+        {% endfor %} #}
+        <a href="#" class="pdl-nav__item">Books</a>
+        <a href="#" class="pdl-nav__item">Authors</a>
+        <a href="#" class="pdl-nav__item">About</a>
+        <a href="#" class="pdl-nav__item">Contact</a>
+        <a href="#" class="pdl-nav__item">Colophon</a>
+      </nav>
+      <div class="pdl-footer__social">
+        <a href="#">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="72" height="72" rx="4" fill="black"/>
+          <rect x="18.5499" y="17.0957" width="34.9002" height="37.8086" rx="6" fill="white"/>
+          <rect x="28.0499" y="27.7168" width="16" height="16" rx="8" fill="black"/>
+          <rect x="44.2393" y="21.7188" width="4.36253" height="4.36253" rx="2.18127" fill="black"/>
+          </svg>
+        </a>
+        <a href="#">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="72" height="72" rx="4" fill="black"/>
+          <rect x="18.5499" y="17.0957" width="34.9002" height="37.8086" rx="6" fill="white"/>
+          <rect x="28.0499" y="27.7168" width="16" height="16" rx="8" fill="black"/>
+          <rect x="44.2393" y="21.7188" width="4.36253" height="4.36253" rx="2.18127" fill="black"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="pdl-footer__info">
+      <div class="pdl-footer__sentence">
+        <span class="pdl-footer__motto">Celebrating</span>
+        <img src="{{ apos.asset.url('/modules/asset/footer-icon.png') }}" alt="Human Creativity" class="pdl-footer__icon">
+        <div class="pdl-footer__motto">Human Creativity</div>
+      </div>
+      <div class="pdl-footer__legal">
+        <a href="#" class="pdl-footer__legal-link">Privacy policy</a>
+        <a href="#" class="pdl-footer__legal-link">Terms of Use</a>
+      </div>
+    </div>
+
+  </footer>
 </div>{# Close .pdl-wrapper #}
 {% endblock %}
