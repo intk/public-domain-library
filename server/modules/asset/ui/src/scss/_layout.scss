@@ -1,3 +1,5 @@
+@import './_settings';
+
 // Use flex to keep the footer at the bottom.
 body,
 [data-apos-refreshable],
@@ -52,13 +54,23 @@ main,
   li:last-child { margin-right: 0; }
 }
 
-.pdl-header__logo {
-  width: 45px;
-  height: 45px;
-  fill: currentColor;
+.pdl-header__title {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+
+  span {
+    display: none;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      display: block;
+    }
+  }
 
   &:hover {
-    fill: #FF7626;
+    .pdl-header__logo {
+      fill: #FF7626;
+    }
 
     .pdl-header__logo--bottom {
       fill: white;
@@ -66,24 +78,81 @@ main,
   }
 }
 
-.pdl-header__title {
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
+.pdl-header__logo {
+  width: 45px;
+  height: 45px;
+  fill: currentColor;
 }
 
 .pdl-header__login {
-
   &:visited {
     color: white;
   }
 }
 
 .pdl-nav {
+  display: none;
   margin-right: 25px;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  &--mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      display: none;
+    }
+
+    i {
+      width: 36px;
+      height: 3px;
+      background: white;
+    }
+  }
+}
+
+.pdl-sidenav {
   display: flex;
-  align-items: center;
-  gap: 25px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: black;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    display: none;
+  }
+
+  .pdl-nav__item, a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+
+  &--close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
 }
 
 .pdl-nav__item {
