@@ -43,6 +43,7 @@ services:
       - ./server/locales:/app/locales
       - ./server/modules:/app/modules
       - ./server/public:/app/public
+      - ./server/views:/app/views
       - ./server/package.json:/app/package.json
     ports:
       - 3000:3000

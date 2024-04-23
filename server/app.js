@@ -19,5 +19,6 @@ require('apostrophe')({
     },
     asset: {},
     'default-page': {},
+    'locale-switcher': {},
   },
 })

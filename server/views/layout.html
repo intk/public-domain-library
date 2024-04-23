@@ -9,32 +9,59 @@
   {% endif %}
 {% endblock %}
 
+{# {% import "locale-switcher:index.html" as localeSwitcher with context %} #}
+
 {% block beforeMain %}
 <div class="pdl-wrapper">
   <header class="pdl-header">
-    <nav class="pdl-nav">
-      {# {% for page in data.home._children %}
-        {% if page.header %}
-            <a href="{{ page._url }}" style="text-decoration: none" class="fs-3 text-dark">{{ page.title }}</a>
-        {% endif %}
-      {% endfor %} #}
+    <div class="pdl-header__title">
+      <svg class="pdl-header__logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 1000 871.1" xml:space="preserve">
+        <g>
+          <g>
+            <path class="pdl-header__logo--bottom" d="M603.6,571.9c-41.9,0-79.3,19.6-103.6,50.1c-24.3-30.5-61.7-50.1-103.6-50.1H166.7v57.9h229.7
+              c41.2,0,74.7,33.5,74.7,74.7h57.9c0-41.2,33.5-74.7,74.7-74.7h229.7v-57.9H603.6z"/>
+            <g>
+              <rect x="243.1" y="347.3" width="70.1" height="43.4"/>
+              <rect x="478.2" y="166.6" width="43.4" height="69.9"/>
+              <path d="M521.7,349.2l0-77.7h-43.4l0,77.6c-31.8-50.7-78.3-82.8-130.1-82.8v43.4c40.5,0,76.7,28.6,100.6,73.3
+                c-28.4-22.4-63.1-35.7-100.6-35.7v43.4c71,0,128.8,65.1,130,145.5v2.5h0.1h43.3h0.1c0-81.6,58.4-148,130.2-148v-43.4
+                c-37.6,0-72.3,13.4-100.8,35.9c23.9-44.8,60.2-73.4,100.8-73.4v-43.4C600.1,266.3,553.5,298.5,521.7,349.2z"/>
+              <rect x="687" y="347.3" width="70.1" height="43.4"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <span>Public Domain Library</span>
+    </div>
 
-      {% for item in data.global.primaryNav %}
+    <nav class="pdl-nav">
+      <svg class="pdl-nav__item" width="23" height="32" viewBox="0 0 23 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_1630_2013)">
+      <circle cx="9.95967" cy="13.9597" r="8.45967" stroke="white" stroke-width="3"/>
+      <line x1="15.6581" y1="20.0272" x2="22.0607" y2="26.4299" stroke="white" stroke-width="3"/>
+      </g>
+      <defs>
+      <clipPath id="clip0_1630_2013">
+      <rect width="23" height="32" fill="white"/>
+      </clipPath>
+      </defs>
+      </svg>
+      {# {% for item in data.global.primaryNav %}
           {% set path = item._page[0]._url %}
           <a href="{{ path }}" style="text-decoration: none" class="fs-3 text-dark">{{ item.label }}</a>
-      {% endfor %}
+      {% endfor %} #}
+      <a href="#" class="pdl-nav__item">Books</a>
+      <a href="#" class="pdl-nav__item">Authors</a>
+      {# <span class="pdl-nav__item">
+        {{ localeSwitcher.display() }}
+      </span> #}
     </nav>
   </header>
   <main class="pdl-main">
 {% endblock %}
 
-{% block main %}
-  {#
-    Usually, your page templates in the @apostrophecms/pages module will override
-    this block. It is safe to assume this is where your page-specific content
-    should go.
-  #}
-{% endblock %}
+{% block main %}{% endblock %}
 
 {% block afterMain %}
   </main>

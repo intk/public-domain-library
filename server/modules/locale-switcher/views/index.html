@@ -1,0 +1,19 @@
+{% macro display() %}
+  {% set locales = apos.i18n.locales() %}
+    <section class="pdl-locale-switcher">
+    <button class="pdl-locale-switcher__button" data-locale-switcher>
+      {{ data.locale }}
+    </button>
+    <ul class="pdl-locale-switcher__list" data-locale-list>
+      {% for locale in locales %}
+        {% if locale.name !== data.locale %}
+          <li class="pdl-locale-switcher__item">
+            <a href="{{ locale.prefix }}">
+              {{ locale.name }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+{% endmacro %}

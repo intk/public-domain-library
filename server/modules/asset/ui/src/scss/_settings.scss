@@ -3,3 +3,9 @@ $color-purple-light: #8264f1;
 $color-pink: #fe5599;
 $color-green: #0c8;
 $color-gold: #f7b500;
+
+$breakpoints: (
+  xs: 360px,
+  sm: 768px,
+  md: 1025px,
+);

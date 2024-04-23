@@ -30,6 +30,14 @@ module.exports = {
           }
         }
       },
+    },
+    group: {
+      basics: {
+        label: 'Basics',
+        fields: [
+          'primaryNav',
+        ],
+      },
     }
   }
 }
