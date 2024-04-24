@@ -187,10 +187,27 @@ main,
 
   .pdl-footer__social {
     display: flex;
+    gap: 20px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      gap: 0;
+    }
+
     a {
-      width: 72px;
-      height: 72px;
       text-align: center;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        width: 72px;
+        height: 72px;
+      }
+    }
+
+    img {
+      height: 22px;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        height: 36px;
+      }
     }
   }
 
@@ -206,7 +223,7 @@ main,
       width: 40px;
     }
 
-    @media screen and (min-width: map-get($breakpoints, 'sm')) {
+    @media (min-width: map-get($breakpoints, 'sm')) {
       padding-top: 35px;
 
       .pdl-footer__motto {
@@ -219,7 +236,7 @@ main,
       }
     }
 
-    @media screen and (min-width: map-get($breakpoints, 'md')) {
+    @media (min-width: map-get($breakpoints, 'md')) {
       padding-top: 35px;
 
       .pdl-footer__motto {
