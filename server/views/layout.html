@@ -108,22 +108,12 @@
         <a href="#" class="pdl-nav__item">Colophon</a>
       </nav>
       <div class="pdl-footer__social">
-        <a href="#">
-          <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="72" height="72" rx="4" fill="black"/>
-          <rect x="18.5499" y="17.0957" width="34.9002" height="37.8086" rx="6" fill="white"/>
-          <rect x="28.0499" y="27.7168" width="16" height="16" rx="8" fill="black"/>
-          <rect x="44.2393" y="21.7188" width="4.36253" height="4.36253" rx="2.18127" fill="black"/>
-          </svg>
-        </a>
-        <a href="#">
-          <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="72" height="72" rx="4" fill="black"/>
-          <rect x="18.5499" y="17.0957" width="34.9002" height="37.8086" rx="6" fill="white"/>
-          <rect x="28.0499" y="27.7168" width="16" height="16" rx="8" fill="black"/>
-          <rect x="44.2393" y="21.7188" width="4.36253" height="4.36253" rx="2.18127" fill="black"/>
-          </svg>
-        </a>
+        {% for item in data.global.social %}
+          {% set icon = apos.attachment.first(item) %}
+          <a class="pdl-footer__social-link" target="_blank" href="{{ item.url }}" style="text-decoration: none">
+            <img src="{{ apos.attachment.url(icon) }}" alt="icon-{{ icon.name }}" loading="lazy" />
+          </a>
+        {% endfor %}
       </div>
     </div>
 

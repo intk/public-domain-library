@@ -6,8 +6,6 @@ module.exports = {
         type: 'array',
         titleField: 'label',
         help: 'Add, remove, and reorder navigation items.',
-        inline: true,
-        draggable: true,
         fields: {
           add: {
             label: {
@@ -35,8 +33,6 @@ module.exports = {
         type: 'array',
         titleField: 'label',
         help: 'Add, remove, and reorder navigation items.',
-        inline: true,
-        draggable: true,
         fields: {
           add: {
             label: {
@@ -59,12 +55,40 @@ module.exports = {
           }
         }
       },
+      social: {
+        label: 'Social links',
+        type: 'array',
+        titleField: 'url',
+        help: 'Displayed in the footer',
+        fields: {
+          add: {
+            url: {
+              label: 'URL',
+              type: 'url',
+              required: true
+            },
+            'social-link-icon': {
+              label: 'Icon',
+              type: 'area',
+              options: {
+                widgets: {
+                  icon: {
+                    background: 'black'
+                  }
+                },
+                max: 1
+              },
+              required: true,
+            },
+          }
+        }
+      },
     },
     group: {
-      basics: {
-        label: 'Basics',
+      links: {
+        label: 'Links',
         fields: [
-          'headerNav', 'footerNav'
+          'headerNav', 'footerNav', 'social'
         ],
       },
     }
