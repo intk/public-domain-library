@@ -21,6 +21,7 @@
    5.2 [Docker](#5-2)<br>
    5.3 [MongoDB](#5-3)<br>
 6. [Default user](#6)<br>
+7. [SSL certificate](#7)<br>
 
 <a id="1"></a>
 
@@ -390,5 +391,20 @@ the `root` password when it is asked and you have access to the mongo shell.
 ## 6 Default user [&#x2B06;](#contents)
 
 By default, no user is created in ApostropheCMS. To create one, when docker images are up, run `docker exec -it pdl-server sh` then inside the container, run `node app @apostrophecms/user:add admin admin`. A prompt will ask for the password, enter one and exit. Go to `http://localhost:3000/login and enter `admin` as user and the freshly created password to log in.
+
+<a id="7"></a>
+## 7 SSL certificate [&#x2B06;](#contents)
+
+If there is no previous certificate:
+- log in with SSH on the production server
+- disable port 443 in nginx/local.conf (only port 80 is necessary)
+- restart nginx (docker-compose up -d)
+- run `docker-compose run --rm  pdl-certbot certonly --webroot --webroot-path /var/www/certbot/ --agree-tos --renew-by-default -d publicdomainlibrary.org -d www.publicdomainlibrary.org -m EMAIL_ADDRESS@TO_CONFIGURE` with an email address to be alerted when the SSL certificate is about to expire
+- once generated, the SSL certificate will be saved in the `certbot` folder on the server
+- enable port 443 in nginx/local.conf and start again nginx
+
+### For renewal
+- `docker-compose run --rm pdl-certbot renew`
+- `docker restart pdl-reverse-proxy`
 
 
