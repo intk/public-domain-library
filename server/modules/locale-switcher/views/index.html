@@ -3,6 +3,26 @@
     <section class="pdl-locale-switcher">
     <button class="pdl-locale-switcher__button" data-locale-switcher>
       {{ data.locale }}
+      <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1630_5362)" filter="url(#filter0_d_1630_5362)">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1748 8.67261L12.5076 9.84517L13.8404 8.67261L19.2319 4L21.0151 5.9079L12.5076 13.281L4 5.9079L5.78318 4L11.1748 8.67261Z" fill="white"/>
+        </g>
+        <defs>
+          <filter id="filter0_d_1630_5362" x="0" y="0" width="25" height="26" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1630_5362"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1630_5362" result="shape"/>
+          </filter>
+          <clipPath id="clip0_1630_5362">
+            <rect width="17" height="18" fill="white" transform="translate(4)"/>
+          </clipPath>
+        </defs>
+      </svg>
     </button>
     <ul class="pdl-locale-switcher__list" data-locale-list>
       {% for locale in locales %}

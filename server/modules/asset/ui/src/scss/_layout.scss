@@ -114,7 +114,7 @@ main,
   background-color: black;
   overflow-x: hidden;
   padding-top: 60px;
-  transition: 0.5s;
+  transition: 0.2s;
 
   @media (min-width: map-get($breakpoints, 'md')) {
     display: none;
@@ -133,7 +133,7 @@ main,
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 36px;
+    font-size: 42px !important;
     margin-left: 50px;
   }
 }

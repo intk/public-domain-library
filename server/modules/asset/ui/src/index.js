@@ -5,9 +5,8 @@ export default () => {
     const sideNav = document.querySelector('[data-side-nav]')
 
     setTimeout(() => {
-      const adminBar = document.querySelector('#apos-admin-bar')
-      if (adminBar) {
-        sideNav.style.top = `${adminBar.clientHeight}px`
+      if (window.apos?.scene === 'apos') {
+        sideNav.style.top = `${apos.modules['@apostrophecms/admin-bar'].height}px`
       }
     }, 0)
 
