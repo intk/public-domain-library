@@ -367,7 +367,7 @@ enables authentication.
 
 The Docker image can run scripts at the first initialization.<br>
 For example, the script `db/scripts/init/01.add-user.sh` is copied into the image through the Dockerfile in the
-folder `db`. It creates a user specifically for the `app` database. That is why the `.env` file is important, and
+folder `db`. It creates a user specifically for the `library` database. That is why the `.env` file is important, and
 MONGO_INITDB_ROOT_USERNAME and MONGO_INITDB_USER_USERNAME should not be changed.
 
 ```Dockerfile

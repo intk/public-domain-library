@@ -11,7 +11,6 @@ module.exports = {
         slug: '/',
         parkedId: 'home',
         type: '@apostrophecms/home-page',
-        title: 'Home',
       },
     ],
   },
