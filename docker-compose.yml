@@ -78,6 +78,9 @@ services:
     container_name: pdl-reverse-proxy
     image: nginx:alpine
     volumes:
+      - ./logs:/etc/nginx/logs:rw
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/letsencrypt/:ro
       - ./server/public:/usr/share/nginx/backend:ro
       - ./nginx/local.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/logs:/etc/nginx/logs:rw
@@ -100,6 +103,15 @@ services:
       restart_policy:
         condition: on-failure
         max_attempts: 3
+    networks:
+      - library
+
+  pdl-certbot:
+    image: certbot/certbot:latest
+    container_name: pdl-certbot
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
     networks:
       - library
 
