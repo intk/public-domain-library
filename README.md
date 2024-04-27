@@ -406,5 +406,3 @@ If there is no previous certificate:
 ### For renewal
 - `docker-compose run --rm pdl-certbot renew`
 - `docker restart pdl-reverse-proxy`
-
-
