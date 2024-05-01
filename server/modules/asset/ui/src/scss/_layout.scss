@@ -19,6 +19,11 @@ body {
   font-family: 'TASAOrbiter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+a, a:visited, a:hover, a:active, a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
 .pdl-header,
 main,
 .pdl-footer {
@@ -49,22 +54,12 @@ main,
       display: block;
     }
   }
-
-  &:hover {
-    .pdl-header__logo {
-      fill: #FF7626;
-    }
-
-    .pdl-header__logo--bottom {
-      fill: white;
-    }
-  }
 }
 
 .pdl-header__logo {
   width: 45px;
   height: 45px;
-  fill: currentColor;
+  margin-right: 15px;
 }
 
 .pdl-header__login {
@@ -96,6 +91,16 @@ main,
       width: 36px;
       height: 3px;
       background: white;
+    }
+  }
+
+  .pdl-nav__item {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+
+    &:hover {
+      color: #7B7A78;
     }
   }
 }
@@ -255,16 +260,6 @@ main,
     display: flex;
     gap: 25px;
     font-size: 13px;
-  }
-}
-
-
-.pdl-nav__item {
-  color: white !important;
-  cursor: pointer;
-
-  &:hover, &:focus {
-    text-decoration: none;
   }
 }
 
