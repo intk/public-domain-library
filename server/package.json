@@ -45,6 +45,7 @@
   "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
+    "@lottiefiles/dotlottie-web": "^0.20.0",
     "apostrophe": "^4.0.0",
     "normalize.css": "^8.0.1"
   },
