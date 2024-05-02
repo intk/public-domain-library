@@ -223,9 +223,8 @@ main,
       font-size: 45px;
     }
 
-    .pdl-footer__sentence img {
-      margin-left: 15px;
-      width: 40px;
+        .pdl-footer__sentence .pdl-footer__logo {
+          height: 35px;
     }
 
     @media (min-width: map-get($breakpoints, 'sm')) {
@@ -235,9 +234,8 @@ main,
         font-size: 90px;
       }
 
-      .pdl-footer__sentence img {
-        margin-left: 20px;
-        width: 75px;
+            .pdl-footer__sentence .pdl-footer__logo {
+              height: 65px;
       }
     }
 
@@ -248,9 +246,8 @@ main,
         font-size: 132px;
       }
 
-      .pdl-footer__sentence img {
-        margin-left: 25px;
-        width: 100px;
+            .pdl-footer__sentence .pdl-footer__logo {
+              height: 100px;
       }
     }
   }
