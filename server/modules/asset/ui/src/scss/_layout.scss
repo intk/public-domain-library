@@ -33,7 +33,7 @@ main,
 }
 
 .pdl-header {
-  height: 72px;
+  height: 50px;
   background-color: black;
   color: white;
   display: flex;
@@ -57,9 +57,15 @@ main,
 }
 
 .pdl-header__logo {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   margin-right: 15px;
+
+  &--mobile {
+    position: absolute;
+    top: 8px;
+    left: 25px;
+  }
 }
 
 .pdl-header__login {
@@ -88,7 +94,7 @@ main,
     }
 
     i {
-      width: 36px;
+      width: 27px;
       height: 3px;
       background: white;
     }
@@ -100,6 +106,8 @@ main,
     transition: 0.3s;
 
     &:hover {
+      cursor: pointer;
+      fill: #7B7A78;
       color: #7B7A78;
     }
   }
@@ -111,7 +119,7 @@ main,
   align-items: flex-start;
   justify-content: start;
   height: 100%;
-  width: 0;
+  width: 100%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -119,11 +127,8 @@ main,
   background-color: black;
   overflow-x: hidden;
   padding-top: 60px;
-  transition: 0.2s;
-
-  @media (min-width: map-get($breakpoints, 'md')) {
-    display: none;
-  }
+  transition: 0.3s;
+  transform: translateY(-100%);
 
   .pdl-nav__item, a {
     padding: 8px 8px 8px 32px;
@@ -131,15 +136,58 @@ main,
     font-size: 25px;
     color: white;
     display: block;
-    transition: 0.3s;
+    transition: 0.5s;
   }
 
-  &--close {
+  &__close {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 42px !important;
     margin-left: 50px;
+
+    @keyframes topDown {
+      0% {
+        transform: translateY(-37px)
+      }
+
+      100% {
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes bottomUp {
+      0% {
+        transform: translateY(0)
+      }
+
+      100% {
+        transform: translateY(-37px)
+      }
+    }
+
+    &--display {
+      animation: topDown 0.3s;
+    }
+
+    &--hide {
+      animation: bottomUp 0.3s;
+    }
+
+    i {
+      background: white;
+      width: 3px;
+      height: 28px;
+      display: block;
+      transform: rotate(45deg);
+      position: absolute;
+      right: 11px;
+      top: 11px;
+
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
   }
 }
 
@@ -223,8 +271,8 @@ main,
       font-size: 45px;
     }
 
-        .pdl-footer__sentence .pdl-footer__logo {
-          height: 35px;
+    .pdl-footer__sentence .pdl-footer__logo {
+      height: 35px;
     }
 
     @media (min-width: map-get($breakpoints, 'sm')) {
@@ -234,8 +282,8 @@ main,
         font-size: 90px;
       }
 
-            .pdl-footer__sentence .pdl-footer__logo {
-              height: 65px;
+      .pdl-footer__sentence .pdl-footer__logo {
+        height: 65px;
       }
     }
 
@@ -246,8 +294,8 @@ main,
         font-size: 132px;
       }
 
-            .pdl-footer__sentence .pdl-footer__logo {
-              height: 100px;
+      .pdl-footer__sentence .pdl-footer__logo {
+        height: 100px;
       }
     }
   }

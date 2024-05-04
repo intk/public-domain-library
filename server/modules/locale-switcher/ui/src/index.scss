@@ -1,13 +1,47 @@
 @import '~/modules/asset/ui/src/index';
 
 .pdl-locale-switcher {
-  @keyframes rotateMenu {
+  overflow: hidden;
+
+  @keyframes displayMenu {
     0% {
       transform: rotateX(-90deg)
     }
 
     100% {
       transform: rotateX(0deg)
+    }
+  }
+
+  @keyframes hoverMenuIn {
+    0% {
+      transform: translateY(0)
+    }
+
+    100% {
+      transform: translateY(25px)
+    }
+  }
+
+  @keyframes hoverMenuOut {
+    0% {
+      transform: translateY(25px)
+    }
+
+    100% {
+      transform: translateY(0)
+    }
+  }
+
+  &--hover-in {
+    svg {
+      animation: hoverMenuIn 200ms ease;
+    }
+  }
+
+  &--hover-out {
+    svg {
+      animation: hoverMenuOut 200ms ease;
     }
   }
 
@@ -18,35 +52,31 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
-    width: 74px;
-    height: 42px;
+    width: 54px;
+    height: 31px;
     border-radius: 4px;
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 25px;
-    background: white;
-    color: black;
+    font-size: 16px;
+    background: transparent;
+    color: white;
+    border-color: white;
 
     svg {
-      display: none;
-    }
-
-    @media (min-width: map-get($breakpoints, 'md')) {
-      background: transparent;
-      color: white;
-      font-size: 21px;
-      border-color: white;
-
-      svg {
         display: block;
         margin-top: 5px;
       }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      width: 74px;
+      height: 42px;
+      font-size: 21px;
     }
 
   }
 
   &__list {
-    display: flex;
+    display: none;
     list-style: none;
     flex-direction: column;
     position: absolute;
@@ -56,12 +86,8 @@
     margin-top: -2px;
     box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.4);
 
-    @media (min-width: map-get($breakpoints, 'md')) {
-      display: none;
-    }
-
     &--animate {
-      animation: rotateMenu 200ms ease;
+      animation: displayMenu 200ms ease;
       transform-origin: top center;
     }
   }

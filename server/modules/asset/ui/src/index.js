@@ -18,6 +18,13 @@ export default () => {
       headerDotLottie.play()
     })
 
+    new DotLottie({
+      autoplay: true,
+      loop: true,
+      canvas: document.querySelector('.pdl-header__logo--mobile'),
+      data: headerJsonData
+    })
+
     const footerTitle = document.querySelector('.pdl-footer__sentence')
     const footerLottieFile = await fetch(apos.util.assetUrl('/modules/asset/logo-footer-animation.json'))
     const footerJsonData = await footerLottieFile.json()
@@ -46,13 +53,17 @@ export default () => {
 
     if (openSideNavButton) {
       openSideNavButton.addEventListener('click', () => {
-        sideNav.style.width = '250px'
+        sideNav.style.transform = 'translateY(0)';
+        closeSideNavButton.classList.add('pdl-side-nav__close--display')
+        closeSideNavButton.classList.remove('pdl-side-nav__close--hide')
       })
     }
 
     if (closeSideNavButton) {
-        closeSideNavButton.addEventListener('click', () => {
-        sideNav.style.width = '0'
+      closeSideNavButton.addEventListener('click', () => {
+        sideNav.style.transform = 'translateY(-100%)';
+        closeSideNavButton.classList.add('pdl-side-nav__close--hide')
+        closeSideNavButton.classList.remove('pdl-side-nav__close--display')
       })
     }
   })
