@@ -100,10 +100,9 @@
     border: 1px solid #808080;
     border-bottom: none;
     text-transform: uppercase;
-    font-size: 21px;
     background: black;
-    width: 72px;
-    height: 42px;
+    width: 52px;
+    height: 27px;
     transition: 0.5s;
 
     &:hover {
@@ -121,6 +120,9 @@
     }
 
     @media (min-width: map-get($breakpoints, 'md')) {
+      width: 72px;
+      height: 42px;
+
       &:last-child {
         border-bottom: none;
         border-bottom-left-radius: 0;
@@ -132,6 +134,11 @@
       text-decoration: none;
       color: white;
       padding: 0;
+      font-size: 16px;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        font-size: 21px;
+      }
     }
   }
 }

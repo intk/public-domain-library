@@ -131,12 +131,38 @@ main,
   transform: translateY(-100%);
 
   .pdl-nav__item, a {
-    padding: 8px 8px 8px 32px;
+    padding: 12px 8px 12px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 28px;
     color: white;
     display: block;
     transition: 0.5s;
+  }
+
+  .pdl-nav__item {
+    border-bottom: 2px solid #333333;
+    width: 100%;
+
+    &:first-child,
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &--search {
+      position: absolute;
+      top: 350px;
+      justify-content: space-between;
+      display: flex;
+      width: 87%;
+      border-bottom: none;
+      color: #7B7A78;
+    }
+
+    &--locale-switcher {
+      position: absolute;
+      right: calc(-100% + 65px);
+      top: 60px;
+    }
   }
 
   &__close {
