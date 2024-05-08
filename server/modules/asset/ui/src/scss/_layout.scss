@@ -62,9 +62,14 @@ main,
   margin-right: 15px;
 
   &--mobile {
+    display: block;
     position: absolute;
     top: 8px;
     left: 25px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      display: none;
+    }
   }
 }
 
@@ -130,6 +135,10 @@ main,
   transition: 0.3s;
   transform: translateY(-100%);
 
+  @media (min-width: map-get($breakpoints, 'sm')) {
+    width: 340px;
+  }
+
   .pdl-nav__item, a {
     padding: 12px 8px 12px 32px;
     text-decoration: none;
@@ -149,11 +158,10 @@ main,
     }
 
     &--search {
-      position: absolute;
-      top: 350px;
       justify-content: space-between;
       display: flex;
-      width: 87%;
+      width: calc(100% - 50px);
+      padding-top: 8px;
       border-bottom: none;
       color: #7B7A78;
     }

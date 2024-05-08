@@ -54,6 +54,16 @@
         <i></i>
         <i></i>
       </a>
+
+      {# {% for item in data.global.headerNav %}
+          {% set path = item._page[0]._url %}
+          <a href="{{ path }}" style="text-decoration: none" class="fs-3 text-dark">{{ item.label }}</a>
+      {% endfor %} #}
+      <a href="#" class="pdl-nav__item">Books</a>
+      <a href="#" class="pdl-nav__item">Authors</a>
+      <a href="#" class="pdl-nav__item">About</a>
+      <a href="#" class="pdl-nav__item">Contact</a>
+      <a href="#" class="pdl-nav__item">Colophon</a>
       <a href="#" class="pdl-nav__item pdl-nav__item--search">
         Search
         <svg width="23" height="32" viewBox="0 0 23 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,16 +78,6 @@
         </defs>
         </svg>
       </a>
-
-      {# {% for item in data.global.headerNav %}
-          {% set path = item._page[0]._url %}
-          <a href="{{ path }}" style="text-decoration: none" class="fs-3 text-dark">{{ item.label }}</a>
-      {% endfor %} #}
-      <a href="#" class="pdl-nav__item">Books</a>
-      <a href="#" class="pdl-nav__item">Authors</a>
-      <a href="#" class="pdl-nav__item">About</a>
-      <a href="#" class="pdl-nav__item">Contact</a>
-      <a href="#" class="pdl-nav__item">Colophon</a>
       <span class="pdl-nav__item pdl-nav__item--locale-switcher">
         {{ localeSwitcher.display() }}
       </span>
