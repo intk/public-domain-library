@@ -24,9 +24,9 @@ module.exports = {
       },
     },
   },
-  helpers(self) {
+  helpers (self) {
     return {
-      locales() {
+      locales () {
         return Object.entries(self.locales).map(([key, locale]) => ({
           ...locale,
           name: key,

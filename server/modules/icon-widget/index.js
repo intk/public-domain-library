@@ -13,8 +13,8 @@ module.exports = {
         label: 'apostrophe:image',
         max: 1,
         required: true,
-        withType: '@apostrophecms/image'
-      }
-    }
+        withType: '@apostrophecms/image',
+      },
+    },
   },
-};
+}

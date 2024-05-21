@@ -10,7 +10,7 @@ module.exports = {
           add: {
             label: {
               label: 'Nav item label',
-              type: 'string'
+              type: 'string',
             },
             _page: {
               label: 'Page to link',
@@ -21,12 +21,12 @@ module.exports = {
               builders: {
                 project: {
                   title: 1,
-                  _url: 1
-                }
+                  _url: 1,
+                },
               },
             },
-          }
-        }
+          },
+        },
       },
       footerNav: {
         label: 'Footer navigation links',
@@ -37,7 +37,7 @@ module.exports = {
           add: {
             label: {
               label: 'Nav item label',
-              type: 'string'
+              type: 'string',
             },
             _page: {
               label: 'Page to link',
@@ -48,12 +48,12 @@ module.exports = {
               builders: {
                 project: {
                   title: 1,
-                  _url: 1
-                }
+                  _url: 1,
+                },
               },
             },
-          }
-        }
+          },
+        },
       },
       social: {
         label: 'Social links',
@@ -65,7 +65,7 @@ module.exports = {
             url: {
               label: 'URL',
               type: 'url',
-              required: true
+              required: true,
             },
             'social-link-icon': {
               label: 'Icon',
@@ -73,24 +73,24 @@ module.exports = {
               options: {
                 widgets: {
                   icon: {
-                    background: 'black'
-                  }
+                    background: 'black',
+                  },
                 },
-                max: 1
+                max: 1,
               },
               required: true,
             },
-          }
-        }
+          },
+        },
       },
     },
     group: {
       links: {
         label: 'Links',
         fields: [
-          'headerNav', 'footerNav', 'social'
+          'headerNav', 'footerNav', 'social',
         ],
       },
-    }
-  }
+    },
+  },
 }

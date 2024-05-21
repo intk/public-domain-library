@@ -2,12 +2,13 @@ const http = require('http')
 
 const options = {
   host: 'localhost',
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 3000,
   timeout: 2000,
 }
 
 const request = http.request(options, res => {
   console.log(`STATUS: ${res.statusCode}`)
+  // eslint-disable-next-line eqeqeq
   if (res.statusCode == 200) {
     process.exit(0)
   } else {
@@ -15,7 +16,7 @@ const request = http.request(options, res => {
   }
 })
 
-request.on('error', function() {
+request.on('error', function () {
   console.log('ERROR')
   process.exit(1)
 })

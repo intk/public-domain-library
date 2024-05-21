@@ -9,7 +9,7 @@ export default () => {
       autoplay: true,
       loop: true,
       canvas: document.querySelector('.pdl-header__logo'),
-      data: headerJsonData
+      data: headerJsonData,
     })
     headerTitle.addEventListener('mouseenter', () => {
       headerDotLottie.stop()
@@ -18,11 +18,12 @@ export default () => {
       headerDotLottie.play()
     })
 
+    // eslint-disable-next-line no-new
     new DotLottie({
       autoplay: true,
       loop: true,
       canvas: document.querySelector('.pdl-header__logo--mobile'),
-      data: headerJsonData
+      data: headerJsonData,
     })
 
     const footerTitle = document.querySelector('.pdl-footer__sentence')
@@ -32,7 +33,7 @@ export default () => {
       autoplay: true,
       loop: true,
       canvas: document.querySelector('.pdl-footer__logo'),
-      data: footerJsonData
+      data: footerJsonData,
     })
     footerTitle.addEventListener('mouseenter', () => {
       footerDotLottie.stop()
@@ -53,7 +54,7 @@ export default () => {
 
     if (openSideNavButton) {
       openSideNavButton.addEventListener('click', () => {
-        sideNav.style.transform = 'translateY(0)';
+        sideNav.style.transform = 'translateY(0)'
         closeSideNavButton.classList.add('pdl-side-nav__close--display')
         closeSideNavButton.classList.remove('pdl-side-nav__close--hide')
       })
@@ -61,7 +62,7 @@ export default () => {
 
     if (closeSideNavButton) {
       closeSideNavButton.addEventListener('click', () => {
-        sideNav.style.transform = 'translateY(-100%)';
+        sideNav.style.transform = 'translateY(-100%)'
         closeSideNavButton.classList.add('pdl-side-nav__close--hide')
         closeSideNavButton.classList.remove('pdl-side-nav__close--display')
       })
