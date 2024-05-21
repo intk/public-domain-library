@@ -1,0 +1,89 @@
+.pdl-author {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: left;
+  gap: 30px;
+  height: calc(100vh - 70px);
+
+  & > * {
+    width: 50%;
+  }
+
+  h1 {
+    font-size: 76px;
+    font-weight: 500;
+    text-align: left;
+    margin: 0;
+  }
+
+  .pdl-author__image {
+    display: block;
+    width: 100%;
+    max-height: calc(100vh - 70px);
+    mix-blend-mode: multiply;
+    filter: grayscale(1);
+    object-fit: cover;
+  }
+
+  .pdl-author__container {
+    padding: 10px;
+  }
+
+  .pdl-author__biography {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .pdl-author__copyright-term {
+    color: white;
+    font-size: 70px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+}
+
+.pdl-author__books {
+  padding: 20px;
+  font-size: 30px;
+  font-weight: 500;
+
+  h2 {
+    font-size: 50px;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .pdl-author__books-list {
+    padding-top: 20px;
+    display: flex;
+    gap: 25px;
+  }
+
+  .pdl-author__book-author {
+    font-size: 20px;
+  }
+
+  .pdl-author__book-img {
+    box-shadow: -5px 9px 6px 3px rgba(94, 94, 94, 0.33);
+    margin-bottom: 10px;
+    position: relative;
+    top: 0;
+    transition: 0.3s;
+  }
+
+  .pdl-author__book-link {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      .pdl-author__book-img {
+        box-shadow: -3px 23px 23px 3px rgba(94, 94, 94, 0.4);
+        top: -30px;
+      }
+    }
+  }
+}

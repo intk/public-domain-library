@@ -21,5 +21,9 @@ require('apostrophe')({
     'default-page': {},
     'icon-widget': {},
     'locale-switcher': {},
+    author: {},
+    'author-page': {},
+    book: {},
+    'book-page': {},
   },
 })

@@ -1,0 +1,11 @@
+{% extends "@apostrophecms/page:layout.html" %}
+
+{% block main %}
+  <div class="pdl-authors">
+    <h1>{{ data.page.title }}</h1>
+
+    {% for author in data.pieces %}
+      <h2><a href="{{ author._url }}">{{ author.title }}</a></h2>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "@apostrophecms/page:layout.html" %}
+
+{% block main %}
+  <div class="pdl-books">
+    <h1>{{ data.page.title }}</h1>
+
+    {% for book in data.pieces %}
+      <h2><a href="{{ book._url }}">{{ book.title }}</a></h2>
+    {% endfor %}
+  </div>
+{% endblock %}

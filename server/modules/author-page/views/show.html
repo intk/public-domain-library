@@ -1,0 +1,35 @@
+{% extends "@apostrophecms/page:layout.html" %}
+
+{% set srcset = apos.image.srcset(data.piece.image) %}
+
+{% block main %}
+  <div class="pdl-author" style="background-color: {{ data.piece.color }}">
+    {% area data.piece, 'imageArea' %}
+
+    <div class="pdl-author__description">
+      <div class="pdl-author__container" >
+        <h1>{{ data.piece.title }}</h1>
+        <div class="pdl-author__copyright-term">{{ data.piece.copyrightTerm }}</div>
+
+        {% area data.piece, 'biographyRTE' %}
+      </div>
+    </div>
+  </div>
+
+  {% if data.piece._books.length %}
+    <div class="pdl-author__books">
+      <h2>{{ __t("pdl:Books from the author") }}</h2>
+      <div class="pdl-author__books-list">
+        {% for book in data.piece._books %}
+          <div class="pdl-author__book">
+            <a class="pdl-author__book-link" href="{{ book._url }}">
+              <img class="pdl-author__book-img" src="{{ apos.attachment.url(book.image) }}" alt="image {{ book.title }}" />
+              <div class="pdl-author__book-author">{{ book._author[0].title }}</div>
+              <div class="pdl-author__book-title">{{ book.title }}</div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

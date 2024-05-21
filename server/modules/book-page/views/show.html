@@ -1,0 +1,32 @@
+{% extends "@apostrophecms/page:layout.html" %}
+
+{% block main %}
+  <div class="pdl-book">
+    {% area data.piece, 'imageArea' %}
+
+    <div class="pdl-book__description" style="background-color: {{ data.piece.color }}">
+      <div class="pdl-book__container">
+        {% area data.piece, 'excerptRTE' %}
+        <a class="pdl-book__link">{{ __t('pdl:Start reading now') }}</a>
+      </div>
+    </div>
+  </div>
+
+  <h1>{{ data.piece.title }}</h1>
+  {% if data.piece._author.length %}
+    <div class="pdl-book__books">
+      {# <h2>{{ __t("pdl:Books from the author") }}</h2>
+      <div class="pdl-book__books-list">
+        {% for book in data.piece._books %}
+          <div class="pdl-book__book">
+            <a class="pdl-book__book-link" href="{{ book._url }}">
+              <img class="pdl-book__book-img" src="{{ apos.attachment.url(book.image) }}" alt="image {{ book.title }}" />
+              <div class="pdl-book__book-author">{{ book._author[0].title }}</div>
+              <div class="pdl-book__book-title">{{ book.title }}</div>
+            </a>
+          </div>
+        {% endfor %}
+      </div> #}
+    </div>
+  {% endif %}
+{% endblock %}
