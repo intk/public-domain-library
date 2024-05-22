@@ -1,3 +1,5 @@
+const { localizeNewDocuments } = require('../common')
+
 module.exports = {
   extend: '@apostrophecms/page-type',
   options: {
@@ -51,5 +53,15 @@ module.exports = {
         ],
       },
     },
+  },
+
+  handlers (self) {
+    return {
+      afterInsert: {
+        async localizeNewAuthor (req, doc) {
+          await localizeNewDocuments(self, req, doc)
+        },
+      },
+    }
   },
 }

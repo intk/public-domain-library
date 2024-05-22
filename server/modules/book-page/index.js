@@ -63,7 +63,7 @@ module.exports = {
     }
   },
 
-  async init (self) {
+  init (self) {
     self.apos.migration.add('localize-book-pages-slugs', async () => {
       await self.ensureLocalizedPages()
     })

@@ -21,22 +21,21 @@
 
     <nav class="pdl-nav">
       <svg class="pdl-nav__item pdl-nav__item--search" width="23" height="32" viewBox="0 0 23 32" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_1630_2013)">
-      <circle cx="9.95967" cy="13.9597" r="8.45967" stroke="currentColor" fill="black" stroke-width="3"/>
-      <line x1="15.6581" y1="20.0272" x2="22.0607" y2="26.4299" stroke="currentColor" stroke-width="3"/>
-      </g>
-      <defs>
-      <clipPath id="clip0_1630_2013">
-      <rect width="23" height="32" fill="currentColor"/>
-      </clipPath>
-      </defs>
+        <g clip-path="url(#clip0_1630_2013)">
+          <circle cx="9.95967" cy="13.9597" r="8.45967" stroke="currentColor" fill="black" stroke-width="3"/>
+          <line x1="15.6581" y1="20.0272" x2="22.0607" y2="26.4299" stroke="currentColor" stroke-width="3"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_1630_2013">
+            <rect width="23" height="32" fill="currentColor"/>
+          </clipPath>
+        </defs>
       </svg>
-      {# {% for item in data.global.headerNav %}
-          {% set path = item._page[0]._url %}
-          <a href="{{ path }}" style="text-decoration: none" class="fs-3 text-dark">{{ item.label }}</a>
-      {% endfor %} #}
-      <a href="#" class="pdl-nav__item">Books</a>
-      <a href="#" class="pdl-nav__item">Authors</a>
+
+      {% for item in data.global.headerNav %}
+          <a href="{{ item._page[0]._url }}" class="pdl-nav__item">{{ item._page[0].title }}</a>
+      {% endfor %}
+
       <span class="pdl-nav__item">
         {{ localeSwitcher.display() }}
       </span>
@@ -55,15 +54,9 @@
         <i></i>
       </a>
 
-      {# {% for item in data.global.headerNav %}
-          {% set path = item._page[0]._url %}
-          <a href="{{ path }}" style="text-decoration: none" class="fs-3 text-dark">{{ item.label }}</a>
-      {% endfor %} #}
-      <a href="#" class="pdl-nav__item">Books</a>
-      <a href="#" class="pdl-nav__item">Authors</a>
-      <a href="#" class="pdl-nav__item">About</a>
-      <a href="#" class="pdl-nav__item">Contact</a>
-      <a href="#" class="pdl-nav__item">Colophon</a>
+      {% for item in data.global.footerNav %}
+        <a href="{{ item._page[0]._url }}" class="pdl-nav__item">{{ item._page[0].title }}</a>
+      {% endfor %}
       <a href="#" class="pdl-nav__item pdl-nav__item--search">
         Search
         <svg width="23" height="32" viewBox="0 0 23 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,15 +87,9 @@
 
     <div class="pdl-footer__nav">
       <nav class="pdl-nav pdl-nav--footer">
-        {# {% for item in data.global.footerNav %}
-            {% set path = item._page[0]._url %}
-            <a href="{{ path }}" style="text-decoration: none" class="fs-3 text-dark">{{ item.label }}</a>
-        {% endfor %} #}
-        <a href="#" class="pdl-nav__item">Books</a>
-        <a href="#" class="pdl-nav__item">Authors</a>
-        <a href="#" class="pdl-nav__item">About</a>
-        <a href="#" class="pdl-nav__item">Contact</a>
-        <a href="#" class="pdl-nav__item">Colophon</a>
+        {% for item in data.global.footerNav %}
+          <a href="{{ item._page[0]._url }}" class="pdl-nav__item">{{ item._page[0].title }}</a>
+        {% endfor %}
       </nav>
       <div class="pdl-footer__social">
         {% for item in data.global.social %}
@@ -121,8 +108,9 @@
         <div class="pdl-footer__motto">Human Creativity</div>
       </div>
       <div class="pdl-footer__legal">
-        <a href="#" class="pdl-footer__legal-link">Privacy Policy</a>
-        <a href="#" class="pdl-footer__legal-link">Terms and Conditions</a>
+        {% for item in data.global.footerLegal %}
+          <a href="{{ item._page[0]._url }}" class="pdl-footer__legal-link">{{ item._page[0].title }}</a>
+        {% endfor %}
       </div>
     </div>
 
