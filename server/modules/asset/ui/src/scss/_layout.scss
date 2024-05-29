@@ -33,7 +33,7 @@ main,
 }
 
 .pdl-header {
-  height: 50px;
+  height: 72px;
   background-color: black;
   color: white;
   display: flex;
@@ -46,6 +46,12 @@ main,
   display: flex;
   align-items: center;
   margin-left: 25px;
+
+  &:hover {
+    cursor: pointer;
+    fill: #7B7A78;
+    color: #7B7A78;
+  }
 
   span {
     display: none;

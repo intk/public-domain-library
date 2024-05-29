@@ -94,7 +94,6 @@
       <div class="pdl-footer__social">
         {% for item in data.global.social %}
           {% set icon = apos.attachment.first(item) %}
-          {{ apos.log('item', item) }}
           <a class="pdl-footer__social-link" target="_blank" href="{{ item.url }}">
             <img src="{{ apos.attachment.url(icon) }}" alt="icon-{{ icon.name }}" loading="lazy" />
           </a>
