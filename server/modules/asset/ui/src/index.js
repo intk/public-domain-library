@@ -21,7 +21,7 @@ export default () => {
     // eslint-disable-next-line no-new
     new DotLottie({
       autoplay: true,
-      loop: true,
+      loop: false,
       canvas: document.querySelector('.pdl-header__logo--mobile'),
       data: headerJsonData,
     })
@@ -31,7 +31,7 @@ export default () => {
     const footerJsonData = await footerLottieFile.json()
     const footerDotLottie = new DotLottie({
       autoplay: true,
-      loop: true,
+      loop: false,
       canvas: document.querySelector('.pdl-footer__logo'),
       data: footerJsonData,
     })
