@@ -33,13 +33,14 @@ main,
 }
 
 .pdl-header {
-  height: 72px;
+  height: 67px;
   background-color: black;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 38px;
+  padding-bottom: 5px;
 }
 
 .pdl-header__title {
@@ -55,6 +56,7 @@ main,
 
   span {
     display: none;
+    font-size: 42px;
 
     @media (min-width: map-get($breakpoints, 'md')) {
       display: block;
@@ -63,9 +65,10 @@ main,
 }
 
 .pdl-header__logo {
-  width: 40px;
-  height: 40px;
-  margin-right: 15px;
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  margin-bottom: 3px;
 
   &--mobile {
     display: block;
@@ -239,7 +242,7 @@ main,
     padding: 25px;
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      padding: 35px;
+      padding: 32px;
     }
   }
 
@@ -268,7 +271,8 @@ main,
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 15px;
+    gap: 6px;
+    margin-top: 1px;
 
     .pdl-nav__item {
       font-size: 18px;
@@ -282,6 +286,7 @@ main,
   .pdl-footer__social {
     display: flex;
     gap: 20px;
+    padding-top: 16px;
 
     @media (min-width: map-get($breakpoints, 'md')) {
       gap: 0;
@@ -312,6 +317,10 @@ main,
       font-size: 45px;
     }
 
+    .pdl-footer__sentence {
+      margin-top: 1px;
+    }
+
     .pdl-footer__sentence .pdl-footer__logo {
       height: 35px;
     }
@@ -329,20 +338,24 @@ main,
     }
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      padding-top: 35px;
+      padding-top: 170px;
 
       .pdl-footer__motto {
-        font-size: 132px;
+        font-size: 150px;
+        font-weight: 500;
+        line-height: 128px;
       }
 
       .pdl-footer__sentence .pdl-footer__logo {
-        height: 100px;
+        height: 103px;
+        position: relative;
+        left: -17px;
       }
     }
   }
 
   .pdl-footer__legal {
-    margin-top: 35px;
+    margin-top: 26px;
     display: flex;
     gap: 25px;
     font-size: 13px;
