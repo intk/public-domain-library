@@ -2,46 +2,53 @@ import { DotLottie } from '@lottiefiles/dotlottie-web'
 
 export default () => {
   apos.util.onReady(async () => {
+    /********************************/
+    /* start header logo animation */
+    /*******************************/
     const headerTitle = document.querySelector('.pdl-header__title')
     const headerLottieFile = await fetch(apos.util.assetUrl('/modules/asset/logo-header-animation.json'))
     const headerJsonData = await headerLottieFile.json()
     const headerDotLottie = new DotLottie({
-      autoplay: true,
+      autoplay: false,
       loop: true,
       canvas: document.querySelector('.pdl-header__logo'),
       data: headerJsonData,
     })
     headerTitle.addEventListener('mouseenter', () => {
-      headerDotLottie.stop()
-    })
-    headerTitle.addEventListener('mouseleave', () => {
       headerDotLottie.play()
     })
-
-    // eslint-disable-next-line no-new
-    new DotLottie({
-      autoplay: true,
-      loop: false,
-      canvas: document.querySelector('.pdl-header__logo--mobile'),
-      data: headerJsonData,
+    headerTitle.addEventListener('mouseleave', () => {
+      headerDotLottie.stop()
     })
+    /********************************/
+    /*  end header logo animation  */
+    /*******************************/
 
+    /********************************/
+    /* start footer logo animation */
+    /*******************************/
     const footerTitle = document.querySelector('.pdl-footer__sentence')
     const footerLottieFile = await fetch(apos.util.assetUrl('/modules/asset/logo-footer-animation.json'))
     const footerJsonData = await footerLottieFile.json()
     const footerDotLottie = new DotLottie({
-      autoplay: true,
-      loop: false,
+      autoplay: false,
+      loop: true,
       canvas: document.querySelector('.pdl-footer__logo'),
       data: footerJsonData,
     })
     footerTitle.addEventListener('mouseenter', () => {
-      footerDotLottie.stop()
-    })
-    footerTitle.addEventListener('mouseleave', () => {
       footerDotLottie.play()
     })
+    footerTitle.addEventListener('mouseleave', () => {
+      footerDotLottie.stop()
+    })
+    /********************************/
+    /*  end footer logo animation  */
+    /*******************************/
 
+    /***********************/
+    /*  start mobile nav  */
+    /**********************/
     const openSideNavButton = document.querySelector('[data-open-side-nav]')
     const closeSideNavButton = document.querySelector('[data-close-side-nav]')
     const sideNav = document.querySelector('[data-side-nav]')
@@ -67,5 +74,8 @@ export default () => {
         closeSideNavButton.classList.remove('pdl-side-nav__close--display')
       })
     }
+    /***********************/
+    /*   end mobile nav   */
+    /**********************/
   })
 }

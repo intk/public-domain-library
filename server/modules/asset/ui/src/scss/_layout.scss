@@ -33,18 +33,21 @@ main,
 }
 
 .pdl-header {
-  height: 67px;
+  height: 50px;
   background-color: black;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 38px;
-  padding-bottom: 5px;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    height: 72px;
+  }
 }
 
 .pdl-header__title {
-  display: flex;
+  display: none;
   align-items: center;
   margin-left: 25px;
 
@@ -62,6 +65,19 @@ main,
       display: block;
     }
   }
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    display: flex;
+  }
+}
+
+.pdl-header__title--mobile {
+  display: block;
+  margin-left: 12px;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    display: none;
+  }
 }
 
 .pdl-header__logo {
@@ -72,9 +88,9 @@ main,
 
   &--mobile {
     display: block;
-    position: absolute;
-    top: 8px;
-    left: 25px;
+    width: 55px;
+    height: auto;
+    margin: 0;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
       display: none;
@@ -90,12 +106,13 @@ main,
 
 .pdl-nav {
   display: none;
-  margin-right: 25px;
+  margin-right: 24px;
 
   @media (min-width: map-get($breakpoints, 'md')) {
     display: flex;
     align-items: center;
     gap: 25px;
+    margin-right: 25px;
   }
 
   &--mobile {
@@ -108,7 +125,7 @@ main,
     }
 
     i {
-      width: 27px;
+      width: 28px;
       height: 3px;
       background: white;
     }
