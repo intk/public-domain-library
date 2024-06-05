@@ -71,17 +71,17 @@
       </span>
     </nav>
 
-    <nav class="pdl-nav pdl-nav--mobile" data-open-mobile-nav>
+    <nav class="pdl-nav pdl-nav--mobile pdl-mobile-nav__burger" data-open-mobile-nav>
       <i></i>
       <i></i>
       <i></i>
     </nav>
 
+    <a href="javascript:void(0)" class="pdl-mobile-nav__close" data-close-mobile-nav>
+      <i></i>
+      <i></i>
+    </a>
     <div class="pdl-mobile-nav" data-mobile-nav>
-      <a href="javascript:void(0)" class="pdl-mobile-nav__close" data-close-mobile-nav>
-        <i></i>
-        <i></i>
-      </a>
 
       {% for item in data.global.footerNav %}
         <a href="{{ item._page[0]._url }}" class="pdl-nav__item">{{ item._page[0].title }}</a>

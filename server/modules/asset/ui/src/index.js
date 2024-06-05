@@ -62,6 +62,12 @@ export default () => {
     if (openMobileNavButton) {
       openMobileNavButton.addEventListener('click', () => {
         mobileNav.classList.add('pdl-mobile-nav--open')
+
+        // hide hamburger icon
+        openMobileNavButton.classList.add('pdl-mobile-nav__burger--hide')
+        openMobileNavButton.classList.remove('pdl-mobile-nav__burger--display')
+
+        // display cross icon
         closeMobileNavButton.classList.add('pdl-mobile-nav__close--display')
         closeMobileNavButton.classList.remove('pdl-mobile-nav__close--hide')
       })
@@ -70,6 +76,12 @@ export default () => {
     if (closeMobileNavButton) {
       closeMobileNavButton.addEventListener('click', () => {
         mobileNav.classList.remove('pdl-mobile-nav--open')
+
+        // display hamburger icon
+        openMobileNavButton.classList.remove('pdl-mobile-nav__burger--hide')
+        openMobileNavButton.classList.add('pdl-mobile-nav__burger--display')
+
+        // hide cross icon
         closeMobileNavButton.classList.add('pdl-mobile-nav__close--hide')
         closeMobileNavButton.classList.remove('pdl-mobile-nav__close--display')
       })

@@ -119,6 +119,7 @@ main,
     display: flex;
     flex-direction: column;
     gap: 5px;
+    cursor: pointer;
 
     @media (min-width: map-get($breakpoints, 'md')) {
       display: none;
@@ -153,14 +154,22 @@ main,
   width: 100%;
   position: fixed;
   z-index: 1;
-  top: 0;
+  top: 50px;
   right: 0;
   background-color: black;
   overflow-x: hidden;
-  padding-top: 60px;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.2s, opacity 0.2s linear;
+
+  &__burger--hide {
+    animation: topDownBurger 0.2s;
+    transform: translateY(40px)
+  }
+  &__burger--display {
+    animation: bottomUpBurger 0.2s;
+    transform: translateY(0)
+  }
 
   &--open {
     visibility: visible;
@@ -172,7 +181,7 @@ main,
   }
 
   .pdl-nav__item, a {
-    padding: 12px 8px 12px 32px;
+    padding: 18px 8px 18px 22px;
     text-decoration: none;
     font-size: 28px;
     color: white;
@@ -184,7 +193,6 @@ main,
     border-bottom: 2px solid #333333;
     width: 100%;
 
-    &:first-child,
     &:last-child {
       border-bottom: none;
     }
@@ -193,7 +201,7 @@ main,
       justify-content: space-between;
       display: flex;
       width: calc(100% - 50px);
-      padding-top: 8px;
+      padding-top: 18px;
       border-bottom: none;
       color: #7B7A78;
     }
@@ -201,44 +209,26 @@ main,
     &--locale-switcher {
       position: absolute;
       right: calc(-100% + 65px);
-      top: 60px;
+      top: 0;
     }
   }
 
   &__close {
     position: absolute;
-    top: 0;
+    top: -37px;
     right: 25px;
     font-size: 42px !important;
     margin-left: 50px;
-
-    @keyframes topDown {
-      0% {
-        transform: translateY(-37px)
-      }
-
-      100% {
-        transform: translateY(0)
-      }
-    }
-
-    @keyframes bottomUp {
-      0% {
-        transform: translateY(0)
-      }
-
-      100% {
-        transform: translateY(-37px)
-      }
-    }
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
 
     &--display {
-      // animation: topDown 0.3s;
-      display: flex;
+      animation: topDownCross 0.2s;
+      transform: translateY(37px)
     }
 
     &--hide {
-      // animation: bottomUp 0.3s;
       display: none;
     }
 
@@ -399,4 +389,34 @@ main,
 
 .apos-input-array-inline .apos-input-array-inline-item-controls--remove {
   display: none !important;
+}
+
+@keyframes topDownBurger {
+  0% {
+    transform: translateY(0)
+  }
+
+  100% {
+    transform: translateY(40px)
+  }
+}
+
+@keyframes topDownCross {
+  0% {
+    transform: translateY(-37px)
+  }
+
+  100% {
+    transform: translateY(37px)
+  }
+}
+
+@keyframes bottomUpBurger {
+  0% {
+    transform: translateY(40px)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
 }
