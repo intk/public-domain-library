@@ -40,7 +40,7 @@ export default () => {
       footerDotLottie.play()
     })
     footerTitle.addEventListener('mouseleave', () => {
-      footerDotLottie.stop()
+      footerDotLottie.pause()
     })
     /********************************/
     /*  end footer logo animation  */
@@ -49,29 +49,29 @@ export default () => {
     /***********************/
     /*  start mobile nav  */
     /**********************/
-    const openSideNavButton = document.querySelector('[data-open-side-nav]')
-    const closeSideNavButton = document.querySelector('[data-close-side-nav]')
-    const sideNav = document.querySelector('[data-side-nav]')
+    const openMobileNavButton = document.querySelector('[data-open-mobile-nav]')
+    const closeMobileNavButton = document.querySelector('[data-close-mobile-nav]')
+    const mobileNav = document.querySelector('[data-mobile-nav]')
 
     setTimeout(() => {
       if (window.apos?.scene === 'apos') {
-        sideNav.style.top = `${apos.modules['@apostrophecms/admin-bar'].height}px`
+        mobileNav.style.top = `${apos.modules['@apostrophecms/admin-bar'].height}px`
       }
     }, 0)
 
-    if (openSideNavButton) {
-      openSideNavButton.addEventListener('click', () => {
-        sideNav.style.transform = 'translateY(0)'
-        closeSideNavButton.classList.add('pdl-side-nav__close--display')
-        closeSideNavButton.classList.remove('pdl-side-nav__close--hide')
+    if (openMobileNavButton) {
+      openMobileNavButton.addEventListener('click', () => {
+        mobileNav.classList.add('pdl-mobile-nav--open')
+        closeMobileNavButton.classList.add('pdl-mobile-nav__close--display')
+        closeMobileNavButton.classList.remove('pdl-mobile-nav__close--hide')
       })
     }
 
-    if (closeSideNavButton) {
-      closeSideNavButton.addEventListener('click', () => {
-        sideNav.style.transform = 'translateY(-100%)'
-        closeSideNavButton.classList.add('pdl-side-nav__close--hide')
-        closeSideNavButton.classList.remove('pdl-side-nav__close--display')
+    if (closeMobileNavButton) {
+      closeMobileNavButton.addEventListener('click', () => {
+        mobileNav.classList.remove('pdl-mobile-nav--open')
+        closeMobileNavButton.classList.add('pdl-mobile-nav__close--hide')
+        closeMobileNavButton.classList.remove('pdl-mobile-nav__close--display')
       })
     }
     /***********************/

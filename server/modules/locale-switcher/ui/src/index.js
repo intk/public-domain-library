@@ -23,6 +23,7 @@ export default () => {
           localeSwitcher.classList.remove('pdl-locale-switcher--hover-in')
           localeSwitcher.classList.add('pdl-locale-switcher--hover-out')
         })
+
         document.addEventListener('click', (event) => {
           if (!event.target.closest('[data-locale-switcher]') && localeList.classList.contains('pdl-locale-switcher__list--animate')) {
             localeList.style.display = 'none'
