@@ -53,20 +53,20 @@ First, you need to have docker and docker-compose installed and launched on your
 - in this `.env` file, create a password for `MONGO_INITDB_ROOT_PASSWORD` and another one
   for `MONGO_INITDB_USER_PASSWORD` (choose whatever you want but do not use `@` or `:` because it will mess the DB connection up otherwise) - do not modify `MONGO_INITDB_ROOT_USERNAME` and `MONGO_INITDB_USER_USERNAME`
 - still in this `.env` file, adjust APOS_MONGODB_URI the connection URI with the password added for `MONGO_INITDB_USER_USERNAME`
-- run `npm run dev` or `docker-compose up`
+- run `npm run dev` or `docker compose up`
 
 <a id="3-1"></a>
 
 ### 3.1 First time process [&#x2B06;](#contents)
 
-The first time you run `docker-compose up`, all Docker images will be downloaded and built.
+The first time you run `docker compose up`, all Docker images will be downloaded and built.
 
 There is a dependency between the containers `pdl-server` and `pdl-db`: the DB needs to be started to
 enable the server to start (otherwise, Apostrophe does not have access to Mongo and is stuck). However, on the first
 run, some time is spent to create database users. Apostrophe tries to connect to Mongo during a certain period of time,
 but on the first run, this timeout expires before Mongo is ready to accept connections. So, read the logs and wait for
 the user `app-admin` to be created. When it is done, the DB is ready. You can now kill the docker containers by
-hitting `Ctrl + c` in your terminal or run `docker-compose stop` in another one. And run again `docker-compose up`. This time, the DB will start quickly, enabling the server to start correctly.
+hitting `Ctrl + c` in your terminal. And run again `docker compose up`. This time, the DB will start quickly, enabling the server to start correctly.
 
 <a id="3-2"></a>
 
@@ -80,11 +80,9 @@ Run simply `npm run dev` to start on development mode. The CMS part is accessibl
 
 Run:
 
-- `docker-compose ps` for running instances
-- `docker-compose stop` or `docker-compose kill` for stopping the containers
-- `docker-compose build` to rebuild images
-- `docker-compose exec container-name sh` to log into a container (i.e: `docker-compose exec pdl-server sh` to log
-  into the server container)
+- `docker ps` for running instances
+- `docker stop container-name` or `docker kill` for stopping the containers
+- `docker exec -it container-name sh` to log into a container
 
 Mongo outputs a lot of logs, and while this can be necessary to read them sometimes, most of the time it is too much
 useless information. Displaying its logs is possible though through `docker logs pdl-db -f`.
@@ -351,7 +349,7 @@ const { exampleLabel } = apos.register.labels
 Docker containers have a `healthcheck` command to ensure they are running correctly. It is an ongoing process, checking
 if the container replies on a regular basis.
 
-You can check if a container is healthy by typing `docker-compose ps`
+You can check if a container is healthy by typing `docker ps`
 
 <a id="5-3"></a>
 
@@ -384,7 +382,7 @@ Outside of the Docker network, the port exposed is 27018 (in order not to mess w
 machine). Therefore, you can connect to GUI tools such as MongoDB Compass or Robo3T through `mongodb://localhost:27018`
 and indicate in the authentication settings the `root` credentials.
 
-To log into the container, you can run `docker-compose exec pdl-db bash` and then `mongo -u root`. Insert
+To log into the container, you can run `docker exec -it pdl-db bash` and then `mongo -u root`. Insert
 the `root` password when it is asked and you have access to the mongo shell.
 
 <a id="6"></a>
@@ -398,11 +396,11 @@ By default, no user is created in ApostropheCMS. To create one, when docker imag
 If there is no previous certificate:
 - log in with SSH on the production server
 - disable port 443 in nginx/local.conf (only port 80 is necessary)
-- restart nginx (docker-compose up -d)
-- run `docker-compose run --rm  pdl-certbot certonly --webroot --webroot-path /var/www/certbot/ --agree-tos --renew-by-default -d publicdomainlibrary.org -d www.publicdomainlibrary.org -m EMAIL_ADDRESS@TO_CONFIGURE` with an email address to be alerted when the SSL certificate is about to expire
+- restart nginx (docker compose up -d)
+- run `docker compose run --rm  pdl-certbot certonly --webroot --webroot-path /var/www/certbot/ --agree-tos --renew-by-default -d publicdomainlibrary.org -d www.publicdomainlibrary.org -m EMAIL_ADDRESS@TO_CONFIGURE` with an email address to be alerted when the SSL certificate is about to expire
 - once generated, the SSL certificate will be saved in the `certbot` folder on the server
 - enable port 443 in nginx/local.conf and start again nginx
 
 ### For renewal
-- `docker-compose run --rm pdl-certbot renew`
+- `docker compose run --rm pdl-certbot renew`
 - `docker restart pdl-reverse-proxy`
