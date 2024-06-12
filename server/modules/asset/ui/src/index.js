@@ -27,15 +27,28 @@ export default () => {
     /********************************/
     /* start footer logo animation */
     /*******************************/
+    const footerLogo = document.querySelector('.pdl-footer__logo')
     const footerTitle = document.querySelector('.pdl-footer__sentence')
     const footerLottieFile = await fetch(apos.util.assetUrl('/modules/asset/logo-footer-animation.json'))
     const footerJsonData = await footerLottieFile.json()
     const footerDotLottie = new DotLottie({
       autoplay: false,
       loop: true,
-      canvas: document.querySelector('.pdl-footer__logo'),
+      canvas: footerLogo,
       data: footerJsonData,
     })
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          footerDotLottie.play()
+        } else {
+          footerDotLottie.pause()
+        }
+      })
+    })
+    observer.observe(footerLogo)
+
     footerTitle.addEventListener('mouseenter', () => {
       footerDotLottie.play()
     })
