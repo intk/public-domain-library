@@ -28,7 +28,6 @@ export default () => {
     /* start footer logo animation */
     /*******************************/
     const footerLogo = document.querySelector('.pdl-footer__logo')
-    const footerTitle = document.querySelector('.pdl-footer__sentence')
     const footerLottieFile = await fetch(apos.util.assetUrl('/modules/asset/logo-footer-animation.json'))
     const footerJsonData = await footerLottieFile.json()
     const footerDotLottie = new DotLottie({
@@ -48,13 +47,6 @@ export default () => {
       })
     })
     observer.observe(footerLogo)
-
-    footerTitle.addEventListener('mouseenter', () => {
-      footerDotLottie.play()
-    })
-    footerTitle.addEventListener('mouseleave', () => {
-      footerDotLottie.pause()
-    })
     /********************************/
     /*  end footer logo animation  */
     /*******************************/
