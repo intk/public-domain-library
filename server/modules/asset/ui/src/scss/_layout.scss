@@ -327,9 +327,11 @@ main,
       }
     }
 
-    svg {
+    img {
       height: 42px;
       width: 42px;
+      transition: 0.3s;
+      cursor: pointer;
 
       @media (min-width: map-get($breakpoints, 'md')) {
         height: inherit;
@@ -337,9 +339,7 @@ main,
       }
 
       &:hover {
-        .white {
-          fill: #7B7A78;
-        }
+        opacity: 0.3;
       }
     }
   }
