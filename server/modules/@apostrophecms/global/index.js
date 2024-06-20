@@ -70,40 +70,12 @@ module.exports = {
           },
         },
       },
-      social: {
-        label: 'Social links',
-        type: 'array',
-        titleField: 'url',
-        help: 'Displayed in the footer',
-        fields: {
-          add: {
-            url: {
-              label: 'URL',
-              type: 'url',
-              required: true,
-            },
-            'social-link-icon': {
-              label: 'Icon',
-              type: 'area',
-              options: {
-                widgets: {
-                  icon: {
-                    background: 'black',
-                  },
-                },
-                max: 1,
-              },
-              required: true,
-            },
-          },
-        },
-      },
     },
     group: {
       links: {
         label: 'Links',
         fields: [
-          'headerNav', 'footerNav', 'footerLegal', 'social',
+          'headerNav', 'footerNav', 'footerLegal',
         ],
       },
     },

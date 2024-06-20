@@ -327,16 +327,19 @@ main,
       }
     }
 
-    img {
+    svg {
       height: 42px;
+      width: 42px;
 
       @media (min-width: map-get($breakpoints, 'md')) {
         height: inherit;
+        width: inherit;
       }
 
       &:hover {
-        filter: invert(1);
-        background-color: black;
+        .white {
+          fill: #7B7A78;
+        }
       }
     }
   }
@@ -390,6 +393,12 @@ main,
     display: flex;
     gap: 25px;
     font-size: 13px;
+
+    &-link:hover {
+      cursor: pointer;
+      fill: #7B7A78;
+      color: #7B7A78;
+    }
   }
 }
 
