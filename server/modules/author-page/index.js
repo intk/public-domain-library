@@ -3,6 +3,7 @@ module.exports = {
 
   options: {
     label: 'pdl:Author Page',
+    perPage: 600,
   },
 
   methods (self) {
