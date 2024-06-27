@@ -1,11 +1,51 @@
 {% extends "@apostrophecms/page:layout.html" %}
 
 {% block main %}
-  <div class="pdl-authors">
-    <h1>{{ data.page.title }}</h1>
+<div class="pdl-authors">
+  <div class="pdl-authors__wrapper">
+    <header class="column-half">
+      <h1>{{ data.page.title }}</h1>
+    </header>
 
-    {% for author in data.pieces %}
-      <h2><a href="{{ author._url }}">{{ author.title }}</a></h2>
+    {% for letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}
+      {% set hasAuthors = false %}
+      {% for author in data.pieces %}
+        {% if author.title[0] | upper == letter %}
+          {% set hasAuthors = true %}
+        {% endif %}
+      {% endfor %}
+
+      {% if hasAuthors %}
+      <section class="pdl-authors__section">
+        <div class="column-half text-content">
+          <div id="desc{{ letter }}" class="large-text">{{ letter }}</div>
+        </div>
+        <div class="column-half text-content">
+          {% for author in data.pieces %}
+            {% if author.title[0] | upper == letter %}
+              <a href="{{ author._url }}">{{ author.title }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
     {% endfor %}
+
   </div>
+
+  <nav class="pdl-authors__letters">
+    {% for letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}
+      {% set hasAuthors = false %}
+      {% for author in data.pieces %}
+        {% if author.title[0] | upper == letter %}
+          {% set hasAuthors = true %}
+        {% endif %}
+      {% endfor %}
+
+      {% if hasAuthors %}
+      <div class="text-item pdl-authors__letter pdl-authors__letter--{{ letter }}">{{ letter }}</div>
+      {% endif %}
+    {% endfor %}
+  </nav>
+</div>
 {% endblock %}

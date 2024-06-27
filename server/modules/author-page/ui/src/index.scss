@@ -87,3 +87,164 @@
     }
   }
 }
+
+.pdl-authors {
+  align-items: center;
+  display: flex;
+  padding: 0 32px 32px;
+  flex-direction: column;
+  width: calc(100% - 64px);
+
+  h1 {
+    text-align: left;
+    font-size: 9.4rem;
+    font-weight: 500;
+    margin: 50px 0 47px;
+  }
+
+  &__wrapper {
+    align-self: stretch;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    @media (max-width: 991px) {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+
+  &__section {
+    gap: 20px;
+    display: flex;
+    border-top: 1px solid #000;
+    padding: 34px 0 32px;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+  }
+
+  &__letters {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 4px;
+    background-color: #000;
+    font-size: 18px;
+    color: #878787;
+    font-weight: 500;
+    padding: 16px 0;
+    width: 100%;
+  }
+
+  &__letter {
+    cursor: pointer;
+  }
+}
+
+.column-half {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 50%;
+  margin-left: 0;
+}
+@media (max-width: 991px) {
+  .column-half {
+    width: 100%;
+  }
+}
+.large-text {
+  color: #000;
+  font: 500 110px/91% TASA Orbiter Display, -apple-system, Roboto, Helvetica, sans-serif;
+}
+@media (max-width: 991px) {
+  .large-text {
+    max-width: 100%;
+    margin-top: 32px;
+    font-size: 40px;
+  }
+}
+.text-content {
+  color: #000;
+  font: 500 26px/32px TASA Orbiter Display, -apple-system, Roboto, Helvetica, sans-serif;
+}
+@media (max-width: 991px) {
+  .text-content {
+    max-width: 100%;
+    margin-top: 32px;
+  }
+}
+// .letter-container {
+//   align-self: start;
+//   display: flex;
+//   gap: 20px;
+//   font-size: 18px;
+//   color: #878787;
+//   font-weight: 500;
+//   white-space: nowrap;
+//   letter-spacing: -0.18px;
+//   justify-content: space-between;
+//   margin: 140px 0 0 32px;
+// }
+// @media (max-width: 991px) {
+//   .letter-container {
+//     flex-wrap: wrap;
+//     margin-top: 40px;
+//     white-space: initial;
+//   }
+// }
+.letter {
+  color: #fff;
+  font-family: TASA Orbiter Display, -apple-system, Roboto, Helvetica, sans-serif;
+}
+.author-section {
+  justify-content: space-between;
+  border-top: 1px solid #000;
+  margin-top: -209px;
+  width: 1376px;
+  max-width: 100%;
+  padding: 32px 0;
+}
+@media (max-width: 991px) {
+  .author-section {
+    margin-top: -200px;
+  }
+}
+.single-author-section {
+  justify-content: space-between;
+  border-top: 1px solid #000;
+  width: 1376px;
+  max-width: 100%;
+  padding: 32px 0;
+}
+.author-list {
+  gap: 20px;
+  display: flex;
+}
+@media (max-width: 991px) {
+  .author-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+}
+
+
+.text-item {
+  font-family: TASA Orbiter Display, -apple-system, Roboto, Helvetica, sans-serif;
+}
+.highlight {
+  color: var(--White, #fff);
+}
+@media (max-width: 991px) {
+  .container {
+    padding: 0 20px;
+  }
+}
