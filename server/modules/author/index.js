@@ -4,6 +4,9 @@ module.exports = {
   extend: '@apostrophecms/piece-type',
   options: {
     label: 'pdl:Author',
+    sort: {
+      title: 1,
+    },
   },
   fields: {
     add: {
