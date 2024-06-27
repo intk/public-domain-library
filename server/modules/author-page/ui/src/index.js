@@ -1,3 +1,6 @@
 export default () => {
-  document.querySelector('.pdl-authors__letter--A').classList.add('highlight')
+  const author = document.querySelector('.pdl-authors__letter--A')
+  if (author) {
+    author.classList.add('highlight')
+  }
 }
