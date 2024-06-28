@@ -3,9 +3,7 @@
 {% block main %}
 <div class="pdl-authors">
   <div class="pdl-authors__wrapper">
-    <header class="column-half">
-      <h1>{{ data.page.title }}</h1>
-    </header>
+    <h1>{{ data.page.title }}</h1>
 
     {% for letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}
       {% set hasAuthors = false %}
@@ -17,13 +15,13 @@
 
       {% if hasAuthors %}
       <section class="pdl-authors__section">
-        <div class="column-half text-content">
-          <div id="desc{{ letter }}" class="large-text">{{ letter }}</div>
+        <div class="pdl-authors__column">
+          <div id="desc{{ letter }}" class="pdl-authors__large-letter">{{ letter }}</div>
         </div>
-        <div class="column-half text-content">
+        <div class="pdl-authors__column pdl-authors__links">
           {% for author in data.pieces %}
             {% if author.title[0] | upper == letter %}
-              <a href="{{ author._url }}">{{ author.title }}</a>
+              <a class="pdl-authors__link" href="{{ author._url }}">{{ author.title }}</a>
             {% endif %}
           {% endfor %}
         </div>
@@ -43,7 +41,7 @@
       {% endfor %}
 
       {% if hasAuthors %}
-      <div class="text-item pdl-authors__letter pdl-authors__letter--{{ letter }}">{{ letter }}</div>
+      <div class="pdl-authors__letter pdl-authors__letter--{{ letter }}">{{ letter }}</div>
       {% endif %}
     {% endfor %}
   </nav>

@@ -4,7 +4,7 @@ module.exports = {
   extend: '@apostrophecms/piece-type',
   options: {
     label: 'pdl:Author',
-    perPage: 20,
+    perPage: 17,
     sort: {
       title: 1,
     },
