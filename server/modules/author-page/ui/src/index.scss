@@ -181,7 +181,7 @@
 
   &__nav-letters {
     position: sticky;
-    bottom: -11px;
+    bottom: 0;
     border: 1px solid rgba(0, 0, 0, 1);
     border-radius: 4px;
     background-color: #000;
@@ -192,7 +192,6 @@
     overflow: hidden;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
-      bottom: 0;
       font-size: 18px;
     }
   }
