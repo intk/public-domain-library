@@ -1,7 +1,7 @@
 module.exports = {
   async localizeNewDocuments (self, req, doc) {
     if (!req.pendingLocalization) {
-      const locales = self.apos.i18n?.options?.locales || {}
+      const locales = self.apos?.i18n?.options?.locales || {}
       for (const locale of Object.keys(locales)) {
         if (locale !== doc.aposLocale.split(':')[0]) {
           const manager = self.apos.doc.getManager(doc.type)

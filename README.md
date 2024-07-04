@@ -382,7 +382,7 @@ Outside of the Docker network, the port exposed is 27018 (in order not to mess w
 machine). Therefore, you can connect to GUI tools such as MongoDB Compass or Robo3T through `mongodb://localhost:27018`
 and indicate in the authentication settings the `root` credentials.
 
-To log into the container, you can run `docker exec -it pdl-db bash` and then `mongo -u root`. Insert
+To log into the container, you can run `docker exec -it pdl-db bash` and then `mongosh -u root`. Insert
 the `root` password when it is asked and you have access to the mongo shell.
 
 <a id="6"></a>

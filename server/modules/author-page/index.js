@@ -66,7 +66,7 @@ module.exports = {
     }
   },
 
-  async init (self) {
+  init (self) {
     self.apos.migration.add('localize-author-pages-slugs', async () => {
       await self.ensureLocalizedPages()
     })

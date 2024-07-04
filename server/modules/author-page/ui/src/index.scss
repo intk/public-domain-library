@@ -178,18 +178,38 @@
 
   &__letters {
     position: sticky;
-    bottom: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    bottom: -11px;
     border: 1px solid rgba(0, 0, 0, 1);
     border-radius: 4px;
     background-color: #000;
-    font-size: 18px;
+    font-size: 14px;
     color: #878787;
     font-weight: 500;
-    padding: 16px 0;
     width: 100%;
+    overflow: hidden;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      bottom: 0;
+      font-size: 18px;
+    }
+  }
+
+  &__letters-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 16px 32px;
+    overflow-x: scroll;
+    width: calc(100% - 64px);;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      gap: auto;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 16px 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
   }
 
   &__letter {
@@ -197,7 +217,7 @@
   }
 
   .highlight {
-    color: var(--White, #fff);
+    color: #fff;
   }
 }
 
