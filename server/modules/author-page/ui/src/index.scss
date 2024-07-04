@@ -147,11 +147,14 @@
     }
   }
 
-  &__large-letter {
+  &__letter {
     color: #000;
     font-size: 59px;
     font-weight: 430;
     line-height: 91%;
+    padding-top: 90px;
+    margin-top: -90px;
+
 
     @media (min-width: map-get($breakpoints, 'md')) {
       font-size: 110px;
@@ -176,7 +179,7 @@
     }
   }
 
-  &__letters {
+  &__nav-letters {
     position: sticky;
     bottom: -11px;
     border: 1px solid rgba(0, 0, 0, 1);
@@ -194,7 +197,7 @@
     }
   }
 
-  &__letters-container {
+  &__nav-letters-container {
     display: flex;
     flex-wrap: nowrap;
     gap: 20px;
@@ -212,8 +215,12 @@
     }
   }
 
-  &__letter {
+  &__nav-letter {
     cursor: pointer;
+
+    &:hover {
+      color: #fff;
+    }
   }
 
   .highlight {

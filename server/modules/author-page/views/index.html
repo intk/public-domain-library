@@ -16,7 +16,7 @@
       {% if hasAuthors %}
       <section class="pdl-authors__section">
         <div class="pdl-authors__column">
-          <div id="{{ letter }}" class="pdl-authors__large-letter">{{ letter }}</div>
+          <div id="{{ letter }}" class="pdl-authors__letter">{{ letter }}</div>
         </div>
         <div class="pdl-authors__column pdl-authors__links">
           {% for author in data.pieces %}
@@ -31,8 +31,8 @@
 
   </div>
 
-  <nav class="pdl-authors__letters">
-    <div class="pdl-authors__letters-container">
+  <nav class="pdl-authors__nav-letters">
+    <div class="pdl-authors__nav-letters-container">
     {% for letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}
       {% set hasAuthors = false %}
       {% for author in data.pieces %}
@@ -42,7 +42,7 @@
       {% endfor %}
 
       {% if hasAuthors %}
-      <a href="#{{ letter }}" class="pdl-authors__letter pdl-authors__letter--{{ letter }}">{{ letter }}</a>
+      <a href="#{{ letter }}" class="pdl-authors__nav-letter pdl-authors__nav-letter--{{ letter }}">{{ letter }}</a>
       {% endif %}
     {% endfor %}
     </div>
