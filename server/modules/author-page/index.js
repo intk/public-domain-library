@@ -4,6 +4,10 @@ module.exports = {
   options: {
     label: 'pdl:Author Page',
     perPage: 600,
+    i18n: {
+      ns: 'pdl',
+      browser: true,
+    },
   },
 
   methods (self) {
