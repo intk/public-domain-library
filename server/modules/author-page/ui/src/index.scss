@@ -191,7 +191,7 @@
     width: 100%;
     overflow: hidden;
 
-    @media (min-width: map-get($breakpoints, 'sm')) {
+    @media (min-width: map-get($breakpoints, 'md')) {
       font-size: 18px;
     }
   }
@@ -205,10 +205,10 @@
     width: calc(100% - 64px);;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
-      gap: auto;
+      gap: 0;
+      padding: 16px 0;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      padding: 16px 0;
       width: 100%;
       overflow-x: hidden;
     }
@@ -218,7 +218,11 @@
     cursor: pointer;
 
     &:hover {
-      color: #fff;
+      color: #878787;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        color: #fff;
+      }
     }
   }
 
