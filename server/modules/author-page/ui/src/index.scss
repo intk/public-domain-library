@@ -15,8 +15,8 @@
   }
 
   h1 {
-    font-size: 76px;
-    font-weight: 500;
+    font-size: 80px;
+    font-weight: 450;
     text-align: left;
     margin: 0;
   }
@@ -32,6 +32,9 @@
 
   .pdl-author__container {
     padding: 10px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
   }
 
   .pdl-author__biography {
@@ -40,11 +43,33 @@
     text-align: left;
   }
 
+  .pdl-author__copyright {
+    display: flex;
+    align-items: center;
+
+    svg {
+      height: 65px;
+    }
+  }
+
   .pdl-author__copyright-term {
     color: white;
-    font-size: 70px;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    font-size: 48px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .pdl-author__copyright-info {
+    width: 16px;
+    height: 16px;
+    background-color: black;
+    color: white;
+    border-radius: 2px;
+    font-size: 14px;
+    top: -12px;
+    right: -2px;
+    text-align: center;
+    position: relative;
   }
 }
 
@@ -228,6 +253,7 @@
 
   .highlight {
     color: #fff;
+    transition: all 0.5s;
   }
 }
 

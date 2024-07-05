@@ -9,7 +9,13 @@
     <div class="pdl-author__description">
       <div class="pdl-author__container" >
         <h1>{{ data.piece.title }}</h1>
-        <div class="pdl-author__copyright-term">{{ data.piece.copyrightTerm }}</div>
+        <div class="pdl-author__copyright">
+          {% include "svg.html" %}
+
+          <div class="pdl-author__copyright-term">{{ data.piece.copyrightTerm }}</div>
+
+          <div class="pdl-author__copyright-info">i</div>
+        </div>
 
         {% area data.piece, 'biographyRTE' %}
       </div>
