@@ -23,13 +23,13 @@
 
         {% area data.piece, 'biographyRTE' %}
 
-      </div>
-      <div class="pdl-author__credit">
-        {% set image = apos.attachment.first(data.piece.imageArea, { group: "images" }) %}
-        {% if image and image._credit %}
-          <div class="pdl-author__credit-title">{{ __t("pdl:Image credits") }}</div>
-          <div class="pdl-author__credit-content">{{ image._credit }}</div>
-        {% endif %}
+        <div class="pdl-author__credit">
+          {% set image = apos.attachment.first(data.piece.imageArea, { group: "images" }) %}
+          {% if image and image._credit %}
+            <div class="pdl-author__credit-title">{{ __t("pdl:Image credits") }}</div>
+            <div class="pdl-author__credit-content">{{ image._credit }}</div>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
