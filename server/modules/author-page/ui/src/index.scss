@@ -60,9 +60,11 @@
   }
 
   .pdl-author__container {
-    padding: 16px 20px 25px;
+    padding: 16px 20px 27px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    height: 100%;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
       padding: 20px;
@@ -157,7 +159,7 @@
     left: 22px;
     padding: 20px;
     font-size: 14px;
-    width: 190px;
+    width: 46vw;
     border-radius: 3px;
     z-index: 3;
 
@@ -184,7 +186,7 @@
     @media (min-width: map-get($breakpoints, 'md')) {
       position: absolute;
       margin-top: 0;
-      bottom: 40px;
+      bottom: 60px;
     }
   }
   .pdl-author__credit-content {
