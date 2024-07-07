@@ -17,8 +17,11 @@
 
   @media (min-width: map-get($breakpoints, 'sm')) {
     flex-direction: row;
+  }
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    flex-direction: row;
     gap: 30px;
-    height: calc(100vh - 70px);
   }
 
   & > * {
@@ -35,7 +38,7 @@
     text-align: left;
     margin: 0;
 
-    @media (min-width: map-get($breakpoints, 'sm')) {
+    @media (min-width: map-get($breakpoints, 'md')) {
       font-size: 80px;
     }
   }
@@ -43,13 +46,16 @@
   .pdl-author__image {
     display: block;
     width: 100%;
-    max-height: 364px;
+    height: 364px;
     mix-blend-mode: multiply;
     filter: grayscale(1);
     object-fit: cover;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
-      max-height: calc(100vh - 70px);
+      height: 510px;
+    }
+    @media (min-width: map-get($breakpoints, 'md')) {
+      height: calc(100vh - 70px);
     }
   }
 
@@ -59,6 +65,10 @@
     flex-direction: column;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
+      padding: 20px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
       padding: 10px;
       padding-right: 40px;
     }
@@ -71,7 +81,7 @@
     position: relative;
     top: -5px;
 
-    @media (min-width: map-get($breakpoints, 'sm')) {
+    @media (min-width: map-get($breakpoints, 'md')) {
       font-size: 30px;
       font-weight: 500;
       margin: 1em 0;
@@ -94,7 +104,7 @@
     svg {
       height: 35px;
 
-      @media (min-width: map-get($breakpoints, 'sm')) {
+      @media (min-width: map-get($breakpoints, 'md')) {
         height: 65px;
       }
     }
@@ -110,7 +120,7 @@
       color: #7F7F7F;
     }
 
-    @media (min-width: map-get($breakpoints, 'sm')) {
+    @media (min-width: map-get($breakpoints, 'md')) {
       font-size: 48px;
     }
   }
@@ -131,7 +141,7 @@
       color: #7F7F7F;
     }
 
-    @media (min-width: map-get($breakpoints, 'sm')) {
+    @media (min-width: map-get($breakpoints, 'md')) {
       top: -12px;
       right: -2px;
     }
@@ -149,12 +159,17 @@
     font-size: 14px;
     width: 190px;
     border-radius: 3px;
+    z-index: 3;
 
     &--visible {
       visibility: visible;
     }
 
     @media (min-width: map-get($breakpoints, 'sm')) {
+      width: 160px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
       left: 28px;
       padding: 32px;
       font-size: 16px;
@@ -166,7 +181,7 @@
     font-size: 14px;
     margin-top: 20px;
 
-    @media (min-width: map-get($breakpoints, 'sm')) {
+    @media (min-width: map-get($breakpoints, 'md')) {
       position: absolute;
       margin-top: 0;
       bottom: 40px;
