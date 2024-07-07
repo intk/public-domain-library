@@ -60,12 +60,12 @@
   }
 
   .pdl-author__container {
-    padding: 16px 20px 25px;
+    padding: 16px 20px 15px;
     display: flex;
     flex-direction: column;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
-      padding: 20px;
+      padding: 20px 20px 15px;
     }
 
     @media (min-width: map-get($breakpoints, 'md')) {
@@ -179,12 +179,14 @@
 
   .pdl-author__credit {
     font-size: 14px;
-    margin-top: 20px;
+    margin-bottom: 27px;
+    padding-left: 20px;
 
     @media (min-width: map-get($breakpoints, 'md')) {
       position: absolute;
-      margin-top: 0;
-      bottom: 40px;
+      margin-bottom: 0;
+      bottom: 36px;
+      padding-left: 10px;
     }
   }
   .pdl-author__credit-content {
