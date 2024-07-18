@@ -21,7 +21,7 @@
 
   @media (min-width: map-get($breakpoints, 'md')) {
     flex-direction: row;
-    gap: 30px;
+    height: 1066px;
   }
 
   & > * {
@@ -39,7 +39,7 @@
     margin: 0;
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      font-size: 80px;
+      font-size: 82.5px;
     }
   }
 
@@ -55,7 +55,7 @@
       height: 510px;
     }
     @media (min-width: map-get($breakpoints, 'md')) {
-      height: calc(100vh - 70px);
+      height: 100%;
     }
   }
 
@@ -71,8 +71,7 @@
     }
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      padding: 10px;
-      padding-right: 40px;
+      padding: 20px 40px;
     }
   }
 
@@ -82,11 +81,11 @@
     margin: 0;
     position: relative;
     top: -5px;
+    letter-spacing: 0;
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      font-size: 30px;
-      font-weight: 500;
-      margin: 1em 0;
+      font-size: 32px;
+      margin: 26px 0;
     }
   }
 
@@ -100,14 +99,14 @@
     display: flex;
     align-items: center;
     position: relative;
-    left: -5px;
-    top: -10px;
+    left: -12px;
+    top: -5px;
 
     svg {
       height: 35px;
 
       @media (min-width: map-get($breakpoints, 'md')) {
-        height: 65px;
+        height: 66px;
       }
     }
   }
@@ -123,7 +122,10 @@
     }
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      font-size: 48px;
+      font-size: 47px;
+      position: relative;
+      left: -5px;
+      top: 3px
     }
   }
 
@@ -144,8 +146,8 @@
     }
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      top: -12px;
-      right: -2px;
+      top: -8px;
+      right: 4px;
     }
   }
 
@@ -186,7 +188,7 @@
     @media (min-width: map-get($breakpoints, 'md')) {
       position: absolute;
       margin-top: 0;
-      bottom: 60px;
+      bottom: 80px;
     }
   }
   .pdl-author__credit-content {
@@ -195,14 +197,15 @@
 }
 
 .pdl-author__books {
-  padding: 20px;
+  padding: 20px 31px;
   font-size: 30px;
   font-weight: 500;
 
   h2 {
-    font-size: 50px;
+    font-size: 64px;
     font-weight: 500;
     text-align: left;
+    margin: 24px 0;
   }
 
   .pdl-author__books-list {
@@ -220,7 +223,7 @@
     margin-bottom: 10px;
     position: relative;
     top: 0;
-    transition: 0.3s;
+    transition: 0.2s;
   }
 
   .pdl-author__book-link {
