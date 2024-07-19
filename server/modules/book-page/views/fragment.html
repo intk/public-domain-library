@@ -5,11 +5,33 @@
     <div class="pdl-book-preview__author">{{ book._author[0].title }}</div>
     <div class="pdl-book-preview__title">{{ book.title }}</div>
     <div class="pdl-book-preview__formats">
-      Start reading
-      {% if book.formats.length %}
-        {% for format in book.formats %}
-          <div class="pdl-book-preview__format">{{ format }}</div>
-        {% endfor %}
+      {% if book.files[0] %}
+        <div class="pdl-book-preview__cta">
+          <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.0944 30.0005H14.3374V29.8886C14.3366 28.899 13.9691 27.9501 13.3156 27.2504C12.662 26.5506 11.7759 26.1571 10.8516 26.1563H0V23.2012H10.8516C11.7974 23.2009 12.7307 23.4311 13.581 23.8744C14.4313 24.3177 15.1762 24.9624 15.7592 25.7597C16.3438 24.995 17.0799 24.379 17.9142 23.9564C18.7485 23.5339 19.6602 23.3152 20.5832 23.3163H31.4318V26.2682H20.5832C19.6586 26.2691 18.7722 26.6625 18.1181 27.3621C17.4641 28.0618 17.096 29.0106 17.0944 30.0005Z" fill="white"/>
+            <g clip-path="url(#clip0_1967_785)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3022 12.112V0H16.9654V12.112L22.3522 7.15586L24.1338 9.17953L15.6338 17L7.13379 9.17953L8.91539 7.15586L14.3022 12.112Z" fill="white"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_1967_785">
+                <rect width="17" height="17" fill="white" transform="translate(7.13379 -0.00195312)"/>
+              </clipPath>
+            </defs>
+          </svg>
+          {{ __t('pdl:Start reading') }} ({{ book.files[0].file.extension | upper }})
+        </div>
+        <div class="pdl-book-preview__other">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="pdl-book-preview__view">{{ __t('pdl:View') }}</div>
+        {# {% if book.files[1] %}
+          <div class="pdl-book-preview__format">{{ book.files[1].file.extension | upper }}</div>
+        {% endif %}
+        {% if book.files[2] %}
+          <div class="pdl-book-preview__format">{{ book.files[2].file.extension | upper }}</div>
+        {% endif %} #}
       {% endif %}
     </div>
   </a>

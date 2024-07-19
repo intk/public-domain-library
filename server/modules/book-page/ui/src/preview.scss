@@ -20,9 +20,9 @@
   .pdl-book-preview__title {
     font-size: 18px;
   }
-  .pdl-book-preview__formats {
-    display: none;
-  }
+  // .pdl-book-preview__formats {
+  //   display: none;
+  // }
 
   .pdl-book__image {
     box-shadow: -5px 9px 6px 3px rgba(94, 94, 94, 0.33);
@@ -32,7 +32,7 @@
     transition: 0.2s;
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      height: 380px;
+      width: 249px;
     }
   }
 
@@ -40,20 +40,103 @@
     color: black;
     text-decoration: none;
 
+    // &:hover {
+    //   .pdl-book__image {
+    //     box-shadow: -3px 23px 23px 3px rgba(94, 94, 94, 0.4);
+    //     top: -30px;
+    //   }
+    //   .pdl-book-preview__author {
+    //     display: none;
+    //   }
+    //   .pdl-book-preview__title {
+    //     display: none;
+    //   }
+    //   .pdl-book-preview__formats {
+    //     display: block;
+    //   }
+    // }
+  }
+
+  .pdl-book-preview__formats {
+    display: flex;
+    gap: 1px;
+  }
+
+  .pdl-book-preview__cta {
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 12px 8px;
+    width: 146px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover svg g {
+      animation: hoverArrow 300ms ease;
+    }
+  }
+
+  @keyframes hoverArrow {
+    0% {
+      transform: translateY(0)
+    }
+
+    50% {
+      transform: translateY(40px)
+    }
+
+    51% {
+      visibility: hidden;
+    }
+
+    52% {
+      transform: translateY(-25px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .pdl-book-preview__other {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background: black;
+    width: 20px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    div {
+      width: 3px;
+      height: 3px;
+      background-color: white;
+    }
+  }
+
+  .pdl-book-preview__view {
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 8px;
+    padding-top: 11px;
+    margin-left: 7px;
+
     &:hover {
-      .pdl-book__image {
-        box-shadow: -3px 23px 23px 3px rgba(94, 94, 94, 0.4);
-        top: -30px;
-      }
-      .pdl-book-preview__author {
-        display: none;
-      }
-      .pdl-book-preview__title {
-        display: none;
-      }
-      .pdl-book-preview__formats {
-        display: block;
-      }
+      background-color: black;
+      color: white;
     }
   }
 }
