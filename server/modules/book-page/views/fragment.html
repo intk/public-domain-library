@@ -1,0 +1,26 @@
+{% fragment preview(book) %}
+<div class="pdl-book-preview">
+  <a class="pdl-book-preview__link" href="{{ book._url }}">
+    {% area book, 'imageArea' %}
+    <div class="pdl-book-preview__author">{{ book._author[0].title }}</div>
+    <div class="pdl-book-preview__title">{{ book.title }}</div>
+    <div class="pdl-book-preview__formats">
+      Start reading
+      {% if book.formats.length %}
+        {% for format in book.formats %}
+          <div class="pdl-book-preview__format">{{ format }}</div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </a>
+</div>
+{% endfragment %}
+
+{% fragment previews(title, books) %}
+<div class="pdl-book-previews__title">{{ __t(title) }}</div>
+<div class="pdl-book-previews">
+  {% for book in books %}
+    {% render preview(book) %}
+  {% endfor %}
+</div>
+{% endfragment %}

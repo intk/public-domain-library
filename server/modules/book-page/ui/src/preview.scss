@@ -1,0 +1,59 @@
+.pdl-book-previews {
+  padding-top: 20px;
+  display: flex;
+  gap: 25px;
+}
+
+.pdl-book-previews__title {
+  font-size: 64px;
+  font-weight: 500;
+  text-align: left;
+  margin: 24px 0;
+}
+
+.pdl-book-preview {
+  .pdl-book-preview__author {
+    font-size: 14px;
+    font-weight: 450;
+    padding-bottom: 5px;
+  }
+  .pdl-book-preview__title {
+    font-size: 18px;
+  }
+  .pdl-book-preview__formats {
+    display: none;
+  }
+
+  .pdl-book__image {
+    box-shadow: -5px 9px 6px 3px rgba(94, 94, 94, 0.33);
+    margin-bottom: 10px;
+    position: relative;
+    top: 0;
+    transition: 0.2s;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      height: 380px;
+    }
+  }
+
+  .pdl-book-preview__link {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      .pdl-book__image {
+        box-shadow: -3px 23px 23px 3px rgba(94, 94, 94, 0.4);
+        top: -30px;
+      }
+      .pdl-book-preview__author {
+        display: none;
+      }
+      .pdl-book-preview__title {
+        display: none;
+      }
+      .pdl-book-preview__formats {
+        display: block;
+      }
+    }
+  }
+}

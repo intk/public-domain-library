@@ -1,4 +1,5 @@
 @import '../../../asset/ui/src/scss/settings';
+@import 'preview';
 
 .pdl-book {
   display: grid;
@@ -122,6 +123,11 @@
       padding: 23px 24px;
       bottom: 30px;
       font-size: 25.5px;
+
+      svg {
+        width: 32px;
+        height: 32px
+      }
     }
   }
 }

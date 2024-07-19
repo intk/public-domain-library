@@ -48,7 +48,6 @@ module.exports = {
             })
           }
 
-          console.log('draftLocalizedPage', require('util').inspect(draftLocalizedPage, { colors: true, depth: 1 }))
           for (const missingPage of missingPages) {
             const req = self.apos.task.getReq({ locale: missingPage })
             const localizedString = req.t('pdl:authors')
