@@ -40,7 +40,10 @@
 {% endfragment %}
 
 {% fragment previews(title, books) %}
-<div class="pdl-book-previews__title">{{ __t(title) }}</div>
+<div class="pdl-book-previews__header">
+  <div class="pdl-book-previews__title">{{ __t(title) }}</div>
+  <a class="pdl-book-previews__view-all" href="/{{ data.locale }}/books">{{ __t('pdl:View all') }}</a>
+</div>
 <div class="pdl-book-previews">
   {% for book in books %}
     {% render preview(book) %}

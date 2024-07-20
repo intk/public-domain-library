@@ -11,7 +11,6 @@ module.exports = {
         type: 'relationship',
         withType: 'author',
         label: 'pdl:Author',
-        ifOnlyOne: true,
         max: 1,
         builders: {
           project: {

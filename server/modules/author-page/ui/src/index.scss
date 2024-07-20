@@ -10,7 +10,6 @@
   flex-direction: column;
   gap: 0;
   height: auto;
-  margin-bottom: 20px;
   font-size: 30px;
   font-weight: 500;
   text-align: left;
@@ -20,6 +19,7 @@
   }
 
   @media (min-width: map-get($breakpoints, 'md')) {
+    margin-bottom: 20px;
     flex-direction: row;
     height: 1066px;
   }
@@ -198,9 +198,13 @@
 }
 
 .pdl-author__books {
-  padding: 20px 31px;
+  padding: 20px;
   font-size: 30px;
   font-weight: 500;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    padding: 20px 31px;
+  }
 }
 
 .pdl-authors {
