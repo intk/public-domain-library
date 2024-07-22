@@ -1,12 +1,12 @@
 {% fragment preview(book) %}
 <div class="pdl-book-preview">
-  <a href="{{ book._url }}">{% area book, 'imageArea' %}</a>
+  {% area book, 'imageArea' %}
   <div class="pdl-book-preview__author">{{ book._author[0].title }}</div>
   <div class="pdl-book-preview__title">{{ book.title }}</div>
   <div class="pdl-book-preview__formats">
     {% if book.files[0] %}
       <div class="pdl-book-preview__format pdl-book-preview__format--first pdl-book-preview__format--visible">
-        <a class="pdl-book-preview__cta" href="{{ book.files[0].file._url }}">
+        <a class="pdl-book-preview__cta cta" href="{{ book.files[0].file._url }}">
           <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.0944 30.0005H14.3374V29.8886C14.3366 28.899 13.9691 27.9501 13.3156 27.2504C12.662 26.5506 11.7759 26.1571 10.8516 26.1563H0V23.2012H10.8516C11.7974 23.2009 12.7307 23.4311 13.581 23.8744C14.4313 24.3177 15.1762 24.9624 15.7592 25.7597C16.3438 24.995 17.0799 24.379 17.9142 23.9564C18.7485 23.5339 19.6602 23.3152 20.5832 23.3163H31.4318V26.2682H20.5832C19.6586 26.2691 18.7722 26.6625 18.1181 27.3621C17.4641 28.0618 17.096 29.0106 17.0944 30.0005Z" fill="white"/>
             <g clip-path="url(#clip0_1967_785)">
@@ -18,7 +18,7 @@
               </clipPath>
             </defs>
           </svg>
-          {{ __t('pdl:Start reading') }} ({{ book.files[0].file.extension | upper }})
+          <span class="cta__phrase">{{ __t('pdl:Start reading') }}<span class="cta__extension">&nbsp;({{ book.files[0].file.extension | upper }})</span></span>
         </a>
         <div class="pdl-book-preview__other" data-book-formats-list>
           <div></div>
@@ -44,9 +44,11 @@
   <div class="pdl-book-previews__title">{{ __t(title) }}</div>
   <a class="pdl-book-previews__view-all" href="/{{ data.locale }}/books">{{ __t('pdl:View all') }}</a>
 </div>
-<div class="pdl-book-previews">
-  {% for book in books %}
-    {% render preview(book) %}
-  {% endfor %}
+<div class="pdl-book-previews__container">
+  <div class="pdl-book-previews">
+    {% for book in books %}
+      {% render preview(book) %}
+    {% endfor %}
+  </div>
 </div>
 {% endfragment %}
