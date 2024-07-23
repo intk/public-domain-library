@@ -5,7 +5,7 @@
   margin-left: 12px;
 
   @media (min-width: map-get($breakpoints, 'md')) {
-    padding-top: 20px;
+    padding-top: 4px;
     margin-left: 15px;
   }
 }
@@ -83,7 +83,7 @@
       top: -10px;
 
       @media (min-width: map-get($breakpoints, 'md')) {
-        top: -30px;
+        top: -18px;
       }
     }
     .pdl-book-preview__author {
@@ -131,7 +131,7 @@
     transition: 0.2s;
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      margin-bottom: 10px;
+      margin-bottom: 0;
     }
   }
 
