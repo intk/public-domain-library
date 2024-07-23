@@ -101,9 +101,10 @@
     display: none;
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      font-size: 14px;
-      font-weight: 450;
+      font-size: 15px;
+      font-weight: 400;
       padding-bottom: 5px;
+      padding-top: 18px;
       display: block;
     }
   }
@@ -111,7 +112,8 @@
     display: none;
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      font-size: 18px;
+      font-size: 19px;
+      font-weight: 400;
       display: block;
     }
   }
