@@ -99,13 +99,14 @@
     display: flex;
     align-items: center;
     position: relative;
-    left: -12px;
+    left: -5px;
     top: -5px;
 
     svg {
       height: 35px;
 
       @media (min-width: map-get($breakpoints, 'md')) {
+        left: -12px;
         height: 66px;
       }
     }
