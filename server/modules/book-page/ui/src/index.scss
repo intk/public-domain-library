@@ -8,25 +8,34 @@
   font-size: 30px;
   font-weight: 500;
   text-align: left;
-  gap: 30px;
 
   @media (min-width: map-get($breakpoints, 'sm')) {
+    gap: 30px;
     grid-template:
     "image description" auto
     "books books" auto / 1fr 1fr;
   }
 
   h1 {
-    font-size: 76px;
-    font-weight: 500;
+    font-size: 35.5px;
+    font-weight: 400;
     text-align: left;
     margin: 0;
+    letter-spacing: 0.01px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      font-size: 76px;
+      font-weight: 500;
+    }
   }
 
   .pdl-book__image {
     position: relative;
     object-fit: contain;
     box-shadow: -5px 9px 6px 3px rgba(94, 94, 94, 0.33);
+    width: 265px;
+    left: 75px;
+    top: 50px;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
       top: 40px;
@@ -98,24 +107,34 @@
   }
 
   .pdl-book__link {
-    display: flex;
+    display: none;
     background-color: black;
     color: white;
     position: relative;
     font-weight: 400;
     text-decoration: none;
     border-radius: 4px;
+    gap: 9px;
+    padding: 12px 12px;
+    font-size: 17.5px;
+    width: fit-content;
+    justify-self: center;
+    margin-top: 113px;
+    margin-bottom: 20px;
+    padding-left: 13px;
+    align-items: center;
+
+    svg {
+      width: 20px;
+      height: 16px
+
+    }
 
     @media (min-width: map-get($breakpoints, 'sm')) {
-      gap: 10px;
+      display: flex;
       padding: 10px 12px;
       bottom: 20px;
-      font-size: 17px;
-
-      svg {
-        width: 20px;
-        height: 16px
-      }
+      gap: 10px;
     }
 
     @media (min-width: map-get($breakpoints, 'md')) {
@@ -128,6 +147,46 @@
         width: 32px;
         height: 32px
       }
+      &:hover svg g {
+        animation: hoverArrow 300ms ease;
+      }
+    }
+  }
+
+  .pdl-book__link--mobile {
+    display: flex;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      display: none;
+    }
+  }
+
+  .pdl-book__info {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    letter-spacing: 0.25px;
+    font-weight: 400;
+
+    &--bottom {
+      border-top: 1px solid #202020;
+    }
+  }
+
+  .pdl-book__author {
+    display: flex;
+    gap: 9px;
+    font-size: 17px;
+    align-items: center;
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+      filter: grayscale(1);
     }
   }
 }
@@ -148,7 +207,7 @@
   }
 
   .pdl-book__book-img {
-    box-shadow: -5px 9px 6px 3px rgba(94, 94, 94, 0.33);
+    box-shadow: -5px 8px 11px 3px rgba(94, 94, 94, 0.33);
     margin-bottom: 10px;
     position: relative;
     top: 0;

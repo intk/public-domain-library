@@ -16,7 +16,7 @@ module.exports = {
           project: {
             title: 1,
             _url: 1,
-            image: 1,
+            imageArea: 1,
           },
         },
       },
