@@ -82,7 +82,7 @@
 
   .pdl-book__excerpt {
     quotes: '\201c' '\201d';
-    font-weight: 500;
+    font-weight: 400;
     text-align: left;
     color: white;
 
@@ -100,9 +100,15 @@
   .pdl-rich-text .pdl-book__excerpt:after {
     content: close-quote;
   }
-  .pdl-rich-text p {
-    @media screen and (min-width: map-get($breakpoints, 'sm')) {
-      margin-block-start: 20px;
+  .pdl-book__description .pdl-rich-text {
+    padding: 10px 20px;
+
+    p {
+    line-height: 30px;
+
+      @media screen and (min-width: map-get($breakpoints, 'sm')) {
+        margin-block-start: 20px;
+      }
     }
   }
 
@@ -164,7 +170,7 @@
   .pdl-book__info {
     background-color: black;
     color: white;
-    padding: 20px;
+    padding: 20px 20px 17px 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -172,6 +178,9 @@
     font-weight: 400;
 
     &--bottom {
+      gap: 12px;
+      padding: 20px 20px 9px 20px;
+      font-size: 13px;
       border-top: 1px solid #202020;
     }
   }
@@ -187,6 +196,38 @@
       height: 24px;
       object-fit: cover;
       filter: grayscale(1);
+    }
+  }
+
+  .pdl-book__formats {
+    display: flex;
+    gap: 4px;
+    font-size: 17px;
+    align-items: center;
+  }
+
+  .pdl-book__format {
+    width: 96px;
+    border: 1px solid white;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+
+    svg {
+      width: 20px;
+      height: 16px
+    }
+  }
+
+  .pdl-book__credits {
+    font-weight: 500;
+    margin-top: 8px;
+
+    p {
+      font-weight: 400;
+      margin-top: 0;
     }
   }
 }

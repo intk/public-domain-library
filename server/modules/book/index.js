@@ -71,10 +71,20 @@ module.exports = {
           },
         },
       },
+      creditsRTE: {
+        label: 'pdl:Credits',
+        type: 'area',
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/rich-text': {},
+          },
+        },
+      },
     },
     group: {
       basics: {
-        fields: ['_author', 'excerptRTE', 'imageArea', 'color', 'files'],
+        fields: ['_author', 'excerptRTE', 'imageArea', 'color', 'files', 'creditsRTE'],
       },
     },
   },

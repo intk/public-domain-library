@@ -3,14 +3,14 @@
 {% block main %}
   <div class="pdl-book">
     {% area data.piece, 'imageArea' %}
-     <a class="pdl-book__link pdl-book__link--mobile">{{ __t('pdl:Start reading now') }}
+     <a class="pdl-book__link pdl-book__link--mobile" href="#formats">{{ __t('pdl:Start reading now') }}
       {% include "svg.html" %}
     </a>
 
     <div class="pdl-book__description" style="background-color: {{ data.piece.color }}">
       <div class="pdl-book__container">
         {% area data.piece, 'excerptRTE' %}
-        <a class="pdl-book__link">{{ __t('pdl:Start reading now') }}
+        <a class="pdl-book__link" href="#formats">{{ __t('pdl:Start reading now') }}
           {% include "svg.html" %}
         </a>
       </div>
@@ -26,10 +26,17 @@
       <h1>{{ data.piece.title }}</h1>
     </div>
 
-    <div class="pdl-book__info pdl-book__info--bottom">
+    <div class="pdl-book__info pdl-book__info--bottom" id="formats">
       {{ __t('pdl:All formats') }}
-      <div class="pdl-book__formats">EPUB EPUB EPUB</div>
-      <div class="pdl-book__credits">{{ __t('pdl:Credits') }}</div>
+      <div class="pdl-book__formats">
+        {% for file in data.piece.files %}
+          <a class="pdl-book__format" href="{{ file.file._url }}">{{ file.file.extension | upper }}{% include "svg.html" %}</a>
+        {% endfor %}
+      </div>
+      <div class="pdl-book__credits">
+        {{ __t('pdl:Credits') }}
+        {% area data.piece, 'creditsRTE' %}
+      </div>
     </div>
   </div>
 
