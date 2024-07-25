@@ -60,6 +60,24 @@ module.exports = {
           }
         }
       },
+
+      async beforeShow (req) {
+        const latestBooks = await self.apos.book.find(req, {}).limit(8).toArray() || []
+
+        let currentPieceAlreadyPresent = false
+        for (const book of latestBooks) {
+          if (book.slug === req.data?.piece?.slug) {
+            latestBooks.splice(latestBooks.indexOf(book), 1)
+            currentPieceAlreadyPresent = true
+          }
+        }
+
+        if (!currentPieceAlreadyPresent) {
+          latestBooks.pop()
+        }
+
+        req.data.latestBooks = latestBooks
+      },
     }
   },
 

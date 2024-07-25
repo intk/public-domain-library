@@ -4,6 +4,7 @@ module.exports = {
   extend: '@apostrophecms/piece-type',
   options: {
     label: 'pdl:Book',
+    alias: 'book',
   },
   fields: {
     add: {
