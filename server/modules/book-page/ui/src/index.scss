@@ -14,6 +14,12 @@
     "books books" auto / 1fr 1fr;
   }
 
+  .apos-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   h1 {
     font-size: 35.5px;
     font-weight: 400;
@@ -32,17 +38,13 @@
     object-fit: contain;
     box-shadow: -5px 9px 6px 3px rgba(94, 94, 94, 0.33);
     width: 265px;
-    left: 75px;
     top: 50px;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
-      top: 40px;
-      left: 59px;
+      top: auto;
     }
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      top: 95px;
-      left: 18.7%;
       width: 447px;
       box-shadow: -12px 11px 16px 3px rgba(94, 94, 94, 0.33);
     }
