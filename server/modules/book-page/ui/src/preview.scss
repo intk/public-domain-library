@@ -16,6 +16,10 @@
   scrollbar-width: none;
   margin-left: -20px;
 
+  @media (min-width: map-get($breakpoints, 'md')) {
+    margin-top: 4px;
+  }
+
   &::-webkit-scrollbar {
     display: none;
   }

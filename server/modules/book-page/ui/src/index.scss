@@ -22,8 +22,8 @@
     letter-spacing: 0.01px;
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      font-size: 76px;
-      font-weight: 500;
+      font-size: 82px;
+      font-weight: 450;
     }
   }
 
@@ -42,9 +42,9 @@
 
     @media (min-width: map-get($breakpoints, 'md')) {
       top: 95px;
-      left: 135px;
+      left: 18.7%;
       width: 447px;
-      box-shadow: -7px 11px 12px 3px rgba(94, 94, 94, 0.33);
+      box-shadow: -12px 11px 16px 3px rgba(94, 94, 94, 0.33);
     }
   }
 
@@ -182,11 +182,26 @@
       gap: 6px;
     }
 
+    @media (min-width: map-get($breakpoints, 'md')) {
+      padding: 100px 65px 157px 65px;
+      gap: 8px;
+    }
+
     &--bottom {
       gap: 12px;
       padding: 20px 20px 9px 20px;
       font-size: 13px;
       border-top: 1px solid #202020;
+
+      @media (min-width: map-get($breakpoints, 'sm')) {
+        border-top: none;
+      }
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        padding: 100px 20px 65px 40px;
+        gap: 18px;
+        font-size: 24px;
+      }
     }
   }
 
@@ -196,11 +211,22 @@
     font-size: 17px;
     align-items: center;
 
+    @media (min-width: map-get($breakpoints, 'md')) {
+      gap: 15px;
+      font-size: 25px;
+    }
+
     img {
       width: 24px;
       height: 24px;
       object-fit: cover;
       filter: grayscale(1);
+      border-radius: 4px;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        width: 42px;
+        height: 42px;
+      }
     }
   }
 
@@ -209,6 +235,11 @@
     gap: 4px;
     font-size: 17px;
     align-items: center;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin-top: 4px;
+      gap: 7px;
+    }
   }
 
   .pdl-book__format {
@@ -224,15 +255,32 @@
       width: 84px;
     }
 
+    @media (min-width: map-get($breakpoints, 'md')) {
+      font-size: 25px;
+      padding: 20px;
+      width: 156px;
+    }
+
     svg {
       width: 20px;
-      height: 16px
+      height: 16px;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 
   .pdl-book__credits {
     font-weight: 500;
     margin-top: 8px;
+    font-size: 13px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      padding-right: 100px;
+    }
+
 
     p {
       font-weight: 400;
@@ -243,10 +291,10 @@
 
 .pdl-legal-notice {
   padding: 20px;
-  padding-bottom: 14px;
+  padding-bottom: 18px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 
   @media (min-width: map-get($breakpoints, 'sm')) {
     flex-direction: row;
@@ -256,10 +304,19 @@
     }
   }
 
+  @media (min-width: map-get($breakpoints, 'md')) {
+    padding: 32px;
+  }
+
   &__title {
     font-size: 18px;
     font-weight: 500;
     text-align: left;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      font-size: 25.5px;
+      font-weight: 450;
+    }
   }
 
   &__content {
@@ -270,6 +327,11 @@
     @media (min-width: map-get($breakpoints, 'sm')) {
       padding-left: 20px;
     }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      font-size: 18px;
+      padding-left: 60px;
+    }
   }
 }
 
@@ -277,6 +339,10 @@
   padding: 20px;
   font-size: 30px;
   font-weight: 500;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    padding: 6px 32px;
+  }
 
   h2 {
     font-size: 50px;
