@@ -48,6 +48,7 @@
   font-weight: 400;
   height: fit-content;
   color: #A8A8A8 !important;
+  transition: all 0.3s;
 
   @media (min-width: map-get($breakpoints, 'md')) {
     border: 1px solid black;
@@ -69,6 +70,7 @@
   width: 142px;
   margin: 0 10px;
   position: relative;
+  transition: all 0.3s;
 
   @media (min-width: map-get($breakpoints, 'md')) {
     width: 245px;
@@ -125,7 +127,7 @@
 
   .pdl-book__image {
     box-shadow: -5px 9px 8px 3px rgba(94, 94, 94, 0.33);
-    margin-bottom: -2px;
+    margin-bottom: 1px;
     position: relative;
     top: 0;
     transition: 0.2s;
@@ -240,6 +242,7 @@
     font-size: 18px;
     display: none;
     min-height: 22px;
+    transition: all 0.3s;
 
     &--visible {
       display: block;

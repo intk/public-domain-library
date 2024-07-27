@@ -383,6 +383,16 @@
     margin-left: 20px;
     margin-bottom: 20px;
     text-align: left;
+    font-weight: 450;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      font-size: 158px;
+      font-weight: 500;
+      margin-top: 50px;
+      margin-left: 32px;
+      margin-bottom: 48px;
+      letter-spacing: -4px;
+    }
   }
 
   .pdl-books__container {
@@ -390,19 +400,73 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    row-gap: 69px;
+    row-gap: 65px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      row-gap: 67px;
+    }
+    @media (min-width: map-get($breakpoints, 'md')) {
+      row-gap: 22px;
+    }
 
     .pdl-book-preview {
       width: 175px;
 
+      @media (min-width: map-get($breakpoints, 'sm')) {
+        width: 227px;
+      }
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        width: 318px;
+
+        &:hover {
+          .pdl-book__image {
+            top: -33px;
+          }
+        }
+      }
+
+      .pdl-book__image {
+        @media (min-width: map-get($breakpoints, 'sm')) {
+          margin-bottom: 5px;
+        }
+      }
+
       .pdl-book-preview__view {
         top: 101px;
         left: 48px;
+
+        @media (min-width: map-get($breakpoints, 'sm')) {
+          top: 141px;
+          left: 75px;
+        }
+
+        @media (min-width: map-get($breakpoints, 'md')) {
+          top: auto;
+          left: auto;
+          padding: 12px;
+          padding-top: 14px;
+          font-size: 18px;
+        }
       }
 
       .pdl-book-preview__cta {
-        font-size: 17.5px;
+        font-size: 17px;
         width: 150px;
+
+        @media (min-width: map-get($breakpoints, 'sm')) {
+          width: 202px;
+          padding: 10px 14px;
+
+          .cta__extension {
+            display: inline;
+          }
+        }
+
+        @media (min-width: map-get($breakpoints, 'md')) {
+          width: 179px;
+          padding: 16px 14px;
+        }
 
         svg {
           width: 16px;
@@ -412,10 +476,28 @@
 
       .pdl-book-preview__other {
         width: 22px;
+
+        @media (min-width: map-get($breakpoints, 'md')) {
+          width: 36px;
+        }
       }
 
       .pdl-book-preview__format--second, .pdl-book-preview__format--third {
         width: 159px;
+
+        @media (min-width: map-get($breakpoints, 'sm')) {
+          width: 211px;
+        }
+
+        @media (min-width: map-get($breakpoints, 'md')) {
+          width: 217px;
+          padding-left: 20px;
+          font-size: 17px;
+
+          &:hover {
+            width: 215px;
+          }
+        }
       }
     }
   }

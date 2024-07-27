@@ -1,5 +1,6 @@
 {% extends "@apostrophecms/page:layout.html" %}
 {% import 'fragment.html' as fragment %}
+{% import '@apostrophecms/pager:macros.html' as pager with context %}
 
 {% block main %}
   <div class="pdl-books">
@@ -11,4 +12,10 @@
     {% endfor %}
     </div>
   </div>
+
+{{ pager.render({
+  page: data.currentPage,
+  total: data.totalPages,
+  class: 'pdl-book__pager'
+}, data.url) }}
 {% endblock %}

@@ -3,6 +3,7 @@ module.exports = {
 
   options: {
     label: 'pdl:Book Page',
+    perPage: 12,
   },
 
   methods (self) {
