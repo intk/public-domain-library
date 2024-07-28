@@ -1,0 +1,31 @@
+.pdl-pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  margin-top: 53px;
+  gap: 17px;
+  font-size: 18px;
+
+  .pdl-pager-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+  }
+
+  .pdl-pager-items__item {
+    width: 36px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 10.5px 1px;
+    font-size: 15px;
+    text-align: center;
+    color: #878787;
+
+    &:hover, &.is-active {
+      border: 1px solid black;
+      color: black;
+    }
+  }
+}
