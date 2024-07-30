@@ -58,7 +58,7 @@ module.exports = {
   handlers (self) {
     return {
       afterInsert: {
-        async localizeNewAuthor (req, doc) {
+        async localizeNewPage (req, doc) {
           await localizeNewDocuments(self, req, doc)
         },
       },

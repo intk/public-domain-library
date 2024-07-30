@@ -86,20 +86,23 @@
       {% for item in data.global.footerNav %}
         <a href="{{ item._page[0]._url }}" class="pdl-nav__item">{{ item._page[0].title }}</a>
       {% endfor %}
-      <a href="#" class="pdl-nav__item pdl-nav__item--search">
-        Search
-        <svg width="23" height="32" viewBox="0 0 23 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_1630_2013)">
-        <circle cx="9.95967" cy="13.9597" r="8.45967" stroke="white" stroke-width="3"/>
-        <line x1="15.6581" y1="20.0272" x2="22.0607" y2="26.4299" stroke="white" stroke-width="3"/>
-        </g>
-        <defs>
-        <clipPath id="clip0_1630_2013">
-        <rect width="23" height="32" fill="white"/>
-        </clipPath>
-        </defs>
-        </svg>
-      </a>
+      <form class="pdl-nav__form" action="/search">
+        <input type="text" name="q" class="pdl-nav__item pdl-nav__item--search" placeholder="{{ __t('pdl:Search') }}" />
+        <label>
+          <input type="submit" class="pdl-nav__submit" />
+          <svg width="23" height="32" viewBox="0 0 23 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1630_2013)">
+              <circle cx="9.95967" cy="13.9597" r="8.45967" stroke="white" stroke-width="3"/>
+              <line x1="15.6581" y1="20.0272" x2="22.0607" y2="26.4299" stroke="white" stroke-width="3"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_1630_2013">
+                <rect width="23" height="32" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </label>
+      </form>
       <span class="pdl-nav__item pdl-nav__item--locale-switcher">
         {{ localeSwitcher.display() }}
       </span>

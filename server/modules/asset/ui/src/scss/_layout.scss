@@ -162,6 +162,17 @@ main,
       color: #7B7A78;
     }
   }
+
+}
+
+.pdl-nav__submit {
+  display: none;
+}
+
+.pdl-nav__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pdl-mobile-nav {
@@ -221,8 +232,13 @@ main,
       display: flex;
       width: calc(100% - 50px);
       padding-top: 18px;
-      border-bottom: none;
       color: #7B7A78;
+      background-color: black;
+      border: none;
+
+      &:focus{
+        outline: none;
+      }
     }
 
     &--locale-switcher {

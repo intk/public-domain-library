@@ -1,0 +1,36 @@
+{% extends "@apostrophecms/page:layout.html" %}
+{% import 'book-page:fragment.html' as fragment %}
+{% import '@apostrophecms/pager:macros.html' as pager with context %}
+
+{% block title %}{{ data.page.title }}{% endblock %}
+
+{% block main %}
+  <div class="pdl-books">
+  <h1>{{ __t('pdl:You searched for') }} "{{ data.query.q }}"</h1>
+
+  <div class="pdl-books__container">
+      {% for doc in data.docs %}
+        {% render fragment.preview(doc) %}
+      {% endfor %}
+      </div>
+    </div>
+
+  {% if data.totalPages > 1 %}
+    <div class="pdl-pager">
+      <a {% if data.currentPage > 1 %} href="{{ data.url | build({ page: data.currentPage - 1 }) }}" {% endif %} class="pdl-book__pager-prev">
+        {{ __t('pdl:Prev') }}
+      </a>
+
+      {{ pager.render({
+        page: data.currentPage,
+        total: data.totalPages,
+        class: 'pdl-pager-items'
+      }, data.url) }}
+
+      <a {% if data.currentPage < data.totalPages %} href="{{ data.url | build({ page: data.currentPage + 1 }) }}" {% endif %} class="pdl-book__pager-next">
+        {{ __t('pdl:Next') }}
+      </a>
+    </div>
+  {% endif %}
+{% endblock %}
+

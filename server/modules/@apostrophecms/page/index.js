@@ -12,6 +12,12 @@ module.exports = {
         parkedId: 'home',
         type: '@apostrophecms/home-page',
       },
+      {
+        slug: '/search',
+        parkedId: 'search',
+        title: 'Search',
+        type: '@apostrophecms/search',
+      },
     ],
   },
 }
