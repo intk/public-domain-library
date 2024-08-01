@@ -94,5 +94,19 @@ export default () => {
     /***********************/
     /*   end mobile nav   */
     /**********************/
+
+    /***************************/
+    /*  start desktop search  */
+    /**************************/
+    const searchIcon = document.querySelector('[data-search-icon]')
+    const searchInput = document.querySelector('[data-search-input]')
+    searchIcon.addEventListener('click', () => {
+      searchIcon.classList.toggle('pdl-nav__item--open')
+      searchInput.focus()
+      searchInput.classList.toggle('pdl-nav__input--open')
+    })
+    /************************/
+    /*  end desktop search  */
+    /************************/
   })
 }

@@ -50,17 +50,23 @@
     </a>
 
     <nav class="pdl-nav">
-      <svg class="pdl-nav__item pdl-nav__item--search" width="23" height="32" viewBox="0 0 23 32" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_1630_2013)">
-          <circle cx="9.95967" cy="13.9597" r="8.45967" stroke="currentColor" fill="black" stroke-width="3"/>
-          <line x1="15.6581" y1="20.0272" x2="22.0607" y2="26.4299" stroke="currentColor" stroke-width="3"/>
-        </g>
-        <defs>
-          <clipPath id="clip0_1630_2013">
-            <rect width="23" height="32" fill="currentColor"/>
-          </clipPath>
-        </defs>
-      </svg>
+      <div class="pdl-search">
+        <svg class="pdl-nav__item pdl-nav__item--search" data-search-icon width="23" height="32" viewBox="0 0 23 32" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_1630_2013)">
+            <circle cx="9.95967" cy="13.9597" r="8.45967" stroke="currentColor" fill="black" stroke-width="3"/>
+            <line x1="15.6581" y1="20.0272" x2="22.0607" y2="26.4299" stroke="currentColor" stroke-width="3"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_1630_2013">
+              <rect width="23" height="32" fill="currentColor"/>
+            </clipPath>
+          </defs>
+        </svg>
+        <form class="pdl-nav__form" action="/search">
+          <input type="text" name="q" class="pdl-nav__item--search-input" data-search-input placeholder="{{ __t('pdl:Search') }}" />
+          <input type="submit" class="pdl-nav__submit" />
+        </form>
+      </div>
 
       {% for item in data.global.headerNav %}
           <a href="{{ item._page[0]._url }}" class="pdl-nav__item">{{ item._page[0].title }}</a>

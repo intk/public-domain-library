@@ -161,8 +161,51 @@ main,
       fill: #7B7A78;
       color: #7B7A78;
     }
+
+    &--search {
+      @media (min-width: map-get($breakpoints, 'md')) {
+        width: 32px;
+      }
+
+      g {
+        pointer-events: none;
+      }
+    }
+
+    &--search-input {
+      justify-content: space-between;
+      display: flex;
+      width: 0;
+      color: #7B7A78;
+      background-color: black;
+      border: none;
+      font-size: 26px;
+
+      &:focus {
+        outline: none;
+        transition: all 0.5s;
+        width: 160px;
+
+        @media (min-width: 1160px) {
+          width: 248px;
+        }
+      }
+    }
   }
 
+  .pdl-nav__input--open {
+    width: 160px;
+
+    @media (min-width: 1160px) {
+      width: 248px;
+    }
+  }
+
+  .pdl-search {
+    position: relative;
+    display: flex;
+    gap: 4px;
+  }
 }
 
 .pdl-nav__submit {
@@ -173,6 +216,14 @@ main,
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+}
+
+.pdl-nav__item--search + .pdl-nav__form {
+  display: none;
+}
+.pdl-nav__item--open + .pdl-nav__form {
+  display: flex;
 }
 
 .pdl-mobile-nav {
@@ -280,6 +331,14 @@ main,
       &:last-child {
         transform: rotate(-45deg);
       }
+    }
+  }
+
+  .pdl-nav__form {
+    svg {
+      position: relative;
+      top: 2px;
+      right: 20px;
     }
   }
 }

@@ -402,6 +402,7 @@
     align-items: center;
     justify-content: center;
     row-gap: 65px;
+    margin-bottom: 40px;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
       row-gap: 67px;
