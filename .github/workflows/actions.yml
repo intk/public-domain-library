@@ -15,7 +15,6 @@ jobs:
       - uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - run: npm update
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
@@ -28,4 +27,4 @@ jobs:
           REMOTE_USER: ${{ vars.REMOTE_USER }}
           EXCLUDE: "/dist/, /node_modules/"
           SCRIPT_AFTER: |
-            npm run prod && docker exec pdl-server sh -c "./scripts/release-task.sh"
+            npm update && npm run prod && docker exec pdl-server sh -c "./scripts/release-task.sh"
