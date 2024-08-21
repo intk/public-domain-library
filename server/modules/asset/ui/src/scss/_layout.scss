@@ -72,6 +72,10 @@ main,
     display: none;
     font-size: 42px;
 
+    @media (min-width: 1025px) and (max-width: 1061px) {
+      font-size: 36px;
+    }
+
     @media (min-width: map-get($breakpoints, 'md')) {
       display: block;
     }

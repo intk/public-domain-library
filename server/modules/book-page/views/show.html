@@ -3,8 +3,8 @@
 
 {% block main %}
   <div class="pdl-book">
-    {% area data.piece, 'imageArea' %}
-     <a class="pdl-book__link pdl-book__link--mobile" href="#formats">{{ __t('pdl:Start reading now') }}
+    <div class="pdl-book__image-wrapper">{% area data.piece, 'imageArea' %}</div>
+    <a class="pdl-book__link pdl-book__link--mobile" href="#formats">{{ __t('pdl:Start reading now') }}
       {% include "svg.html" %}
     </a>
 
@@ -19,10 +19,10 @@
 
     <div class="pdl-book__info pdl-book__info--top">
       {% if data.piece._author and data.piece._author[0] %}
-        <div class="pdl-book__author">
+        <a href="{{ data.piece._author[0]._url }}" class="pdl-book__author">
           {% area data.piece._author[0], 'imageArea' %}
           {{ data.piece._author[0].title }}
-        </div>
+        </a>
       {% endif %}
       <h1>{{ data.piece.title }}</h1>
     </div>

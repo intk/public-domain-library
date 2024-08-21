@@ -179,6 +179,9 @@
       left: 28px;
       padding: 32px;
       font-size: 16px;
+    }
+
+    @media (min-width: 1320px) {
       width: 350px;
     }
   }
@@ -193,18 +196,20 @@
       bottom: 80px;
     }
   }
+
   .pdl-author__credit-content {
     font-weight: 400;
   }
 }
 
 .pdl-author__books {
-  padding: 20px;
   font-size: 30px;
   font-weight: 500;
 
-  @media (min-width: map-get($breakpoints, 'md')) {
-    padding: 20px 31px;
+  .pdl-book-previews {
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin-left: 16px;
+    }
   }
 }
 

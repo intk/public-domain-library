@@ -10,9 +10,7 @@
   text-align: left;
 
   @media (min-width: map-get($breakpoints, 'sm')) {
-    grid-template:
-    "image description" auto
-    "books books" auto / 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .apos-area {
@@ -32,6 +30,13 @@
       font-size: 82px;
       font-weight: 450;
     }
+  }
+
+  .pdl-book__image-wrapper {
+    background-color: #F5F4F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .pdl-book__image {
@@ -56,12 +61,12 @@
     order: 1;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
-      height: 510px;
+      min-height: 510px;
       order: 0;
     }
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      height: 888px;
+      min-height: 888px;
     }
   }
 
@@ -264,6 +269,10 @@
       width: 156px;
     }
 
+    @media (min-width: map-get($breakpoints, 'md')) and (max-width: 1181px) {
+      width: 120px;
+    }
+
     svg {
       width: 20px;
       height: 16px;
@@ -339,13 +348,9 @@
 }
 
 .pdl-book__books {
-  padding: 20px;
   font-size: 30px;
   font-weight: 500;
 
-  @media (min-width: map-get($breakpoints, 'md')) {
-    padding: 6px 32px;
-  }
 
   h2 {
     font-size: 50px;
