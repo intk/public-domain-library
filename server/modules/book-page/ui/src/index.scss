@@ -8,6 +8,7 @@
   font-size: 30px;
   font-weight: 500;
   text-align: left;
+  background-color: #F5F4F0;
 
   @media (min-width: map-get($breakpoints, 'sm')) {
     grid-template-columns: 1fr 1fr;
@@ -27,7 +28,6 @@
   }
 
   .pdl-book__image-wrapper {
-    background-color: #F5F4F0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -212,6 +212,14 @@
     gap: 9px;
     font-size: 17px;
     align-items: center;
+    color: white;
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      fill: #7B7A78;
+      color: #7B7A78;
+    }
 
     @media (min-width: map-get($breakpoints, 'md')) {
       gap: 15px;
@@ -245,7 +253,7 @@
   }
 
   .pdl-book__format {
-    width: 96px;
+    width: 80px;
     border: 1px solid white;
     border-radius: 4px;
     display: flex;
