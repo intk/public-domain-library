@@ -13,12 +13,6 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .apos-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   h1 {
     font-size: 35.5px;
     font-weight: 400;
@@ -281,6 +275,10 @@
         width: 30px;
         height: 30px;
       }
+    }
+
+    &:hover svg g {
+      animation: hoverArrow 300ms ease;
     }
   }
 
