@@ -94,9 +94,19 @@
     }
     .pdl-book-preview__title {
       display: none;
+      // opacity: 0;
+      // max-height: 0;
+      // transition: opacity 0.3s 0.3s, max-height 0s 0.7s;
     }
     .pdl-book-preview__formats {
       display: flex;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        opacity: 1;
+        // transform: translateY(-21px);
+        transform: translateY(0px);
+        transition: opacity 0.3s 0.3s, transform 0.2s 0.3s;
+      }
     }
   }
 
@@ -126,6 +136,14 @@
     gap: 1px;
     font-size: 14px;
     font-weight: 400;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      opacity: 0;
+      display: flex;
+      // transform: translateY(-31px);
+      transform: translateY(-10px);
+      transition: all 0s;
+    }
   }
 
   .pdl-book__image {

@@ -432,9 +432,16 @@
       @media (min-width: map-get($breakpoints, 'md')) {
         width: 318px;
 
+        .pdl-book-preview__formats {
+          transform: translateY(-31px);
+        }
+
         &:hover {
           .pdl-book__image {
-            top: -33px;
+            top: -54px;
+          }
+          .pdl-book-preview__formats {
+            transform: translateY(-21px);
           }
         }
       }
