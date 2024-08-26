@@ -79,7 +79,9 @@
 
   @media (min-width: map-get($breakpoints, 'md')) {
     width: 245px;
-    margin: 15px;
+    margin: 0;
+    border: 15px solid transparent;
+    background-clip: padding-box;
   }
 
   &:hover {

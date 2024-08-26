@@ -410,7 +410,7 @@
   .pdl-books__container {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: normal;
     justify-content: center;
     row-gap: 65px;
     margin-bottom: 40px;
@@ -433,15 +433,15 @@
         width: 318px;
 
         .pdl-book-preview__formats {
-          transform: translateY(-31px);
+          transform: translateY(20px);
         }
 
         &:hover {
           .pdl-book__image {
-            top: -54px;
+            top: -20px;
           }
           .pdl-book-preview__formats {
-            transform: translateY(-21px);
+            transform: translateY(12px);
           }
         }
       }
