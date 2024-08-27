@@ -97,6 +97,13 @@ module.exports = {
           await localizeNewDocuments(self, req, doc)
         },
       },
+      beforeSave: {
+        async updateHighSearchText (req, doc) {
+          if (doc._author[0]?.title && !doc.highSearchText.includes(doc._author[0].title)) {
+            doc.highSearchText = doc.highSearchText + ' ' + doc._author[0].title
+          }
+        },
+      },
     }
   },
 }
