@@ -419,7 +419,7 @@
       row-gap: 67px;
     }
     @media (min-width: map-get($breakpoints, 'md')) {
-      row-gap: 22px;
+      row-gap: 4px;
     }
 
     .pdl-book-preview {
@@ -431,6 +431,7 @@
 
       @media (min-width: map-get($breakpoints, 'md')) {
         width: 318px;
+        max-height: 562px;
 
         .pdl-book-preview__formats {
           transform: translateY(20px);
@@ -453,11 +454,11 @@
       }
 
       .pdl-book-preview__view {
-        top: 101px;
+        top: -172px;
         left: 48px;
 
         @media (min-width: map-get($breakpoints, 'sm')) {
-          top: 141px;
+          top: -216px;
           left: 75px;
         }
 
