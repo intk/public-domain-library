@@ -420,6 +420,7 @@
     }
     @media (min-width: map-get($breakpoints, 'md')) {
       row-gap: 4px;
+      min-height: 650px;
     }
 
     .pdl-book-preview {
