@@ -128,6 +128,7 @@
   .pdl-book-preview__title {
     display: none;
     min-height: 66px;
+    pointer-events: none;
 
     @media (min-width: map-get($breakpoints, 'md')) {
       font-size: 19px;
