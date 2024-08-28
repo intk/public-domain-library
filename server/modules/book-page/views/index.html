@@ -3,10 +3,10 @@
 {% import '@apostrophecms/pager:macros.html' as pager with context %}
 
 {% block main %}
-  <div class="pdl-books">
+  <div class="pdl-books" data-books>
     <h1>{{ data.page.title }}</h1>
 
-    <div class="pdl-books__container">
+    <div class="pdl-books__container" data-books-container>
     {% for book in data.pieces %}
       {% render fragment.preview(book) %}
     {% endfor %}

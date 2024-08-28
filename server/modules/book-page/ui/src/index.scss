@@ -390,6 +390,12 @@
 }
 
 .pdl-books {
+  margin-bottom: 130px;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    margin-bottom: 100px;
+  }
+
   h1 {
     margin-top: 14px;
     margin-left: 20px;
@@ -419,8 +425,9 @@
       row-gap: 67px;
     }
     @media (min-width: map-get($breakpoints, 'md')) {
-      row-gap: 4px;
+      row-gap: 32px;
       min-height: 650px;
+      column-gap: 30px;
     }
 
     .pdl-book-preview {
@@ -433,6 +440,21 @@
       @media (min-width: map-get($breakpoints, 'md')) {
         width: 318px;
         max-height: 562px;
+        margin: 0;
+
+        // create spacing to force having at least 2 for the last row
+        &:nth-last-child(2) {
+          margin-right: 384px;
+        }
+        &:last-child {
+          margin-left: -384px;
+        }
+
+        // cancel spacing if only one book
+        &:only-child {
+          margin-left: 0;
+        }
+
 
         .pdl-book-preview__formats {
           transform: translateY(20px);

@@ -5,10 +5,10 @@
 {% block title %}{{ data.page.title }}{% endblock %}
 
 {% block main %}
-  <div class="pdl-books">
+  <div class="pdl-books" data-search>
   <h1>{{ __t('pdl:You searched for') }} "{{ data.query.q }}"</h1>
 
-  <div class="pdl-books__container">
+  <div class="pdl-books__container" data-search-container>
       {% for doc in data.docs %}
         {% render fragment.preview(doc) %}
       {% endfor %}
