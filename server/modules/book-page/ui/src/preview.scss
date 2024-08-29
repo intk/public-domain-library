@@ -96,10 +96,10 @@
       }
     }
     .pdl-book-preview__author {
-      display: none;
+      opacity: 0;
     }
     .pdl-book-preview__title {
-      display: none;
+      opacity: 0;
     }
     .pdl-book-preview__formats {
       display: flex;
@@ -107,7 +107,7 @@
       @media (min-width: map-get($breakpoints, 'md')) {
         opacity: 1;
         pointer-events: auto;
-        transform: translateY(0px);
+        transform: translateY(-100px);
         transition: opacity 0.3s 0.3s, transform 0.2s 0.3s;
       }
     }
@@ -116,6 +116,7 @@
   .pdl-book-preview__author {
     display: none;
     pointer-events: none;
+    opacity: 1;
 
     @media (min-width: map-get($breakpoints, 'md')) {
       font-size: 15px;
@@ -129,6 +130,7 @@
     display: none;
     min-height: 66px;
     pointer-events: none;
+    opacity: 1;
 
     @media (min-width: map-get($breakpoints, 'md')) {
       font-size: 19px;
@@ -150,7 +152,7 @@
       opacity: 0;
       pointer-events: none;
       display: flex;
-      transform: translateY(-10px);
+      transform: translateY(-120px);
       transition: all 0s;
     }
   }

@@ -442,30 +442,9 @@
         max-height: 562px;
         margin: 0;
 
-        // create spacing to force having at least 2 for the last row
-        &:nth-last-child(2) {
-          margin-right: 384px;
-        }
-        &:last-child {
-          margin-left: -384px;
-        }
-
-        // cancel spacing if only one book
-        &:only-child {
-          margin-left: 0;
-        }
-
-
-        .pdl-book-preview__formats {
-          transform: translateY(20px);
-        }
-
         &:hover {
           .pdl-book__image {
             top: -20px;
-          }
-          .pdl-book-preview__formats {
-            transform: translateY(12px);
           }
         }
       }
