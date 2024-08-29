@@ -31,7 +31,9 @@
       {{ __t('pdl:All formats') }}
       <div class="pdl-book__formats">
         {% for file in data.piece.files %}
+          {% if file.file and file.file._url %}
           <a class="pdl-book__format" href="{{ file.file._url }}">{{ file.file.extension | upper }}{% include "svg.html" %}</a>
+          {% endif %}
         {% endfor %}
       </div>
       <div class="pdl-book__credits">

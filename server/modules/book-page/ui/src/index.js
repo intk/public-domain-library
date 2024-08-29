@@ -28,24 +28,4 @@ export default () => {
       })
     }
   }
-
-  // // calculate the height of displayed books
-  // const books = document.querySelector('[data-books]')
-  // if (books && window.innerWidth > 1024) {
-  //   setTimeout(() => {
-  //     const booksContainer = document.querySelector('[data-books-container]')
-  //     if (booksContainer.offsetHeight > 650) {
-  //       const booksContainerHeight = booksContainer.offsetHeight + 229
-  //       books.style.height = `${booksContainerHeight}px`
-  //     }
-
-  //     window.addEventListener('resize', () => {
-  //       const booksContainer = document.querySelector('[data-books-container]')
-  //       if (booksContainer.offsetHeight > 650) {
-  //         const booksContainerHeight = booksContainer.offsetHeight + 229
-  //         books.style.height = `${booksContainerHeight}px`
-  //       }
-  //     })
-  //   }, 200)
-  // }
 }

@@ -29,10 +29,10 @@
       <a class="pdl-book-preview__view" href="{{ book._url }}" data-book-preview-view>{{ __t('pdl:View') }}</a>
     </div>
 
-      {% if book.files[1] %}
+      {% if book.files[1] and book.files[1].file and book.files[1].file._url %}
         <a class="pdl-book-preview__format pdl-book-preview__format--second" href="{{ book.files[1].file._url }}">{{ book.files[1].file.extension | upper }}</a>
       {% endif %}
-      {% if book.files[2] %}
+      {% if book.files[2] and book.files[2].file and book.files[2].file._url %}
         <a class="pdl-book-preview__format pdl-book-preview__format--third" href="{{ book.files[2].file._url }}">{{ book.files[2].file.extension | upper }}</a>
       {% endif %}
   </div>
