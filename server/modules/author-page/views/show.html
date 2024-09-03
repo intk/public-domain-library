@@ -14,9 +14,9 @@
 
           <div class="pdl-author__copyright-term">{{ data.piece.copyrightTerm }}</div>
 
-          {% if data.piece.copyrightTerm %}
+          {% if data.piece.copyrightNote %}
           <div class="pdl-author__copyright-info">i
-            <div class="pdl-author__copyright-content">{{ __t('pdl:copyrightContent', { copyrightYear: data.piece.copyrightTerm, deathYear: data.piece.copyrightTerm - 70 })}}</div>
+            <div class="pdl-author__copyright-content">{{ data.piece.copyrightNote }}</div>
           </div>
           {% endif %}
         </div>

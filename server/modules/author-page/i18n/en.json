@@ -1,3 +1,7 @@
 {
-  "copyrightContent": "The Artist died in {{ deathYear }} so his work is the public domain since {{ copyrightYear }} in his country of origin and other countries where the copyright terms is the Artist's life plus 70 years or fewer."
+  "copyrightContent": "Typical note expaining the artist died in \"year of death\" so his work is the public domain since \"year of copyright\" in his country of origin and other countries where the copyright terms is the artist's life plus 70 years or fewer.",
+  "Copyright Note": "Copyright Note",
+  "Death Year": "Death Year",
+  "Copyright Term": "Copyright Term",
+  "Year when work entered public domain": "Year when work entered public domain"
 }

@@ -1,5 +1,3 @@
-const { localizeNewDocuments } = require('../common')
-
 module.exports = {
   extend: '@apostrophecms/piece-type',
   options: {
@@ -92,11 +90,6 @@ module.exports = {
 
   handlers (self) {
     return {
-      afterInsert: {
-        async localizeNewBook (req, doc) {
-          await localizeNewDocuments(self, req, doc)
-        },
-      },
       beforeSave: {
         async updateHighSearchText (req, doc) {
           if (doc._author[0]?.title && !doc.highSearchText.includes(doc._author[0].title)) {

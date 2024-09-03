@@ -1,5 +1,3 @@
-const { localizeNewDocuments } = require('../common')
-
 module.exports = {
   extend: '@apostrophecms/piece-type',
   options: {
@@ -46,6 +44,12 @@ module.exports = {
         help: 'pdl:Year when work entered public domain',
         type: 'integer',
       },
+      copyrightNote: {
+        label: 'pdl:Copyright Note',
+        type: 'string',
+        textarea: true,
+        help: 'pdl:copyrightContent',
+      },
       color: {
         label: 'pdl:Color',
         type: 'color',
@@ -60,18 +64,8 @@ module.exports = {
     },
     group: {
       basics: {
-        fields: ['biographyRTE', 'imageArea', 'copyrightTerm', 'color'],
+        fields: ['biographyRTE', 'copyrightTerm', 'copyrightNote', 'color', 'imageArea'],
       },
     },
-  },
-
-  handlers (self) {
-    return {
-      afterInsert: {
-        async localizeNewAuthor (req, doc) {
-          await localizeNewDocuments(self, req, doc)
-        },
-      },
-    }
   },
 }
