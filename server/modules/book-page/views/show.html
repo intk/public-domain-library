@@ -3,7 +3,9 @@
 
 {% block main %}
   <div class="pdl-book">
-    <div class="pdl-book__image-wrapper">{% area data.piece, 'imageArea' %}</div>
+    <div class="pdl-book__image-wrapper">
+      {% area data.piece, 'imageArea' %}
+    </div>
     <a class="pdl-book__link pdl-book__link--mobile" href="#formats">{{ __t('pdl:Start reading now') }}
       {% include "svg.html" %}
     </a>

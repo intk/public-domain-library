@@ -27,12 +27,6 @@
     }
   }
 
-  .pdl-book__image-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .pdl-book__image {
     position: relative;
     object-fit: contain;
@@ -441,11 +435,14 @@
         width: 318px;
         max-height: 562px;
         margin: 0;
+      }
 
-        &:hover {
-          .pdl-book__image {
-            top: -20px;
-          }
+      .pdl-book__shadow {
+        top: 0;
+        height: calc(100% - 5px);
+
+        @media (min-width: map-get($breakpoints, 'sm')) {
+          height: calc(100% - 9px);
         }
       }
 
@@ -521,6 +518,35 @@
             width: 215px;
           }
         }
+      }
+    }
+  }
+}
+
+.pdl-book__image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .apos-area {
+    position: relative;
+  }
+  .pdl-book__shadow {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    height: calc(100% - 7px);
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      top: auto;
+    }
+
+    &:last-child {
+      left: 8px;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        left: 13px;
       }
     }
   }

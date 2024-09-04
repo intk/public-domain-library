@@ -1,6 +1,8 @@
 {% fragment preview(book) %}
 <div class="pdl-book-preview" data-book-preview>
-  {% area book, 'imageArea' %}
+  <div class="pdl-book__image-wrapper">
+    {% area book, 'imageArea' %}
+  </div>
   <div class="pdl-book-preview__author">{{ book._author[0].title }}</div>
   <div class="pdl-book-preview__title">{{ book.title }}</div>
   <div class="pdl-book-preview__formats">

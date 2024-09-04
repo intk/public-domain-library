@@ -89,6 +89,8 @@
   &:hover {
     .pdl-book__image {
       box-shadow: -3px 23px 23px 3px rgba(94, 94, 94, 0.4);
+    }
+    .pdl-book__image-wrapper {
       top: -10px;
 
       @media (min-width: map-get($breakpoints, 'md')) {
@@ -110,6 +112,15 @@
         transform: translateY(-100px);
         transition: opacity 0.3s 0.3s, transform 0.2s 0.3s;
       }
+    }
+  }
+
+  .pdl-book__image-wrapper .pdl-book__shadow {
+    top: 0;
+    height: calc(100% - 7.6px);
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      height: calc(100% - 7px);
     }
   }
 

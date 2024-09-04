@@ -28,4 +28,20 @@ export default () => {
       })
     }
   }
+
+  // display shadows over book image
+  const imageWrappers = document.querySelectorAll('.pdl-book__image-wrapper .apos-area')
+  for (const imageWrapper of imageWrappers) {
+    const shadow0 = document.createElement('img')
+    shadow0.src = apos.util.assetUrl('/modules/book-page/shadow0.svg')
+    shadow0.alt = 'shadow'
+    shadow0.classList.add('pdl-book__shadow')
+    imageWrapper.appendChild(shadow0)
+
+    const shadow1 = document.createElement('img')
+    shadow1.src = apos.util.assetUrl('/modules/book-page/shadow1.svg')
+    shadow1.alt = 'shadow'
+    shadow1.classList.add('pdl-book__shadow')
+    imageWrapper.appendChild(shadow1)
+  }
 }
