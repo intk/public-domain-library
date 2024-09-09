@@ -15,7 +15,9 @@
   }
 
   .pdl-pager-items__item {
+    position: relative;
     width: 36px;
+    height: 17px;
     cursor: pointer;
     border-radius: 4px;
     padding: 10.5px 1px;
@@ -23,7 +25,17 @@
     text-align: center;
     color: #878787;
 
+    a {
+      position: absolute;
+      display: block;
+      width: inherit;
+      height: inherit;
+      top: 0px;
+      padding: 10px 0;
+    }
+
     &:hover, &.is-active {
+      width: 34px;
       border: 1px solid black;
       color: black;
     }
