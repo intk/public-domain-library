@@ -117,10 +117,19 @@
 
   .pdl-book__image-wrapper .pdl-book__shadow {
     top: 0;
-    height: calc(100% - 7.6px);
+    height: 100%;
+    left: -3px;
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      height: calc(100% - 7px);
+      left: -1px;
+    }
+
+    &:last-child {
+      left: 3px;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        left: 10px;
+      }
     }
   }
 

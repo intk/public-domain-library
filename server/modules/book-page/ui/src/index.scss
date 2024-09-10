@@ -423,6 +423,14 @@
       min-height: 650px;
       column-gap: 30px;
     }
+    @media (min-width: 1710px) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    @media (min-width: 2405px) {
+      margin-left: 100px;
+      margin-right: 100px;
+    }
 
     .pdl-book-preview {
       width: 175px;
@@ -438,11 +446,14 @@
       }
 
       .pdl-book__shadow {
-        top: 0;
-        height: calc(100% - 5px);
+        height: 100%;
 
         @media (min-width: map-get($breakpoints, 'sm')) {
-          height: calc(100% - 9px);
+          height: 98.6%;
+        }
+
+        @media (min-width: map-get($breakpoints, 'md')) {
+          height: 98.9%;
         }
       }
 
@@ -464,8 +475,8 @@
         @media (min-width: map-get($breakpoints, 'md')) {
           top: auto;
           left: auto;
-          padding: 12px;
-          padding-top: 14px;
+          padding: 13px;
+          padding-top: 15px;
           font-size: 18px;
         }
       }
@@ -534,19 +545,24 @@
   }
   .pdl-book__shadow {
     position: absolute;
-    left: 0;
+    left: -3px;
     top: 50px;
-    height: calc(100% - 7px);
+    height: 98.3%;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
-      top: auto;
+      top: 0;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      left: 0;
+      height: 98.9%;
     }
 
     &:last-child {
       left: 8px;
 
       @media (min-width: map-get($breakpoints, 'md')) {
-        left: 13px;
+        left: 16px;
       }
     }
   }

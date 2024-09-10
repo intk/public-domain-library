@@ -4,7 +4,28 @@
 {% block main %}
   <div class="pdl-book">
     <div class="pdl-book__image-wrapper">
-      {% area data.piece, 'imageArea' %}
+      <div style="position: relative;">
+        {% set image = apos.image.first(data.piece.imageArea) %}
+        <img class="pdl-book__image pdl-image-widget" src="{{ image._urls['one-half'] }}" alt="{{ image._alt if image._alt or image.title }}">
+        <svg class="pdl-book__shadow" width="14" height="685" viewBox="0 0 14 685" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 3.00001C0 1.34315 1.34315 0 3 0H14V685H3C1.34315 685 0 683.657 0 682V3.00001Z" fill="url(#paint0_linear_865_14289)" fill-opacity="0.12"/>
+          <defs>
+            <linearGradient id="paint0_linear_865_14289" x1="0" y1="329.537" x2="8.15" y2="329.537" gradientUnits="userSpaceOnUse">
+              <stop/>
+              <stop offset="1" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg class="pdl-book__shadow" width="14" height="685" viewBox="0 0 14 685" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0H14V685H0V0Z" fill="url(#paint0_linear_865_14291)" fill-opacity="0.1"/>
+          <defs>
+            <linearGradient id="paint0_linear_865_14291" x1="0" y1="329.537" x2="10" y2="329.537" gradientUnits="userSpaceOnUse">
+              <stop/>
+              <stop offset="1" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
     </div>
     <a class="pdl-book__link pdl-book__link--mobile" href="#formats">{{ __t('pdl:Start reading now') }}
       {% include "svg.html" %}
@@ -22,7 +43,8 @@
     <div class="pdl-book__info pdl-book__info--top">
       {% if data.piece._author and data.piece._author[0] %}
         <a href="{{ data.piece._author[0]._url }}" class="pdl-book__author">
-          {% area data.piece._author[0], 'imageArea' %}
+          {% set image = apos.image.first(data.piece._author[0]) %}
+          <img class="pdl-author__image pdl-image-widget" src="{{ image._urls['one-sixth'] }}">
           {{ data.piece._author[0].title }}
         </a>
       {% endif %}
