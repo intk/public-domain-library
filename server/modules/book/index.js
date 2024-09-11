@@ -53,6 +53,15 @@ module.exports = {
         label: 'pdl:Color',
         type: 'color',
       },
+      fontColor: {
+        label: 'pdl:Font Color',
+        type: 'boolean',
+        toggle: {
+          true: 'White',
+          false: 'Black',
+        },
+        def: true,
+      },
       files: {
         type: 'array',
         label: 'pdl:Files',
@@ -83,7 +92,7 @@ module.exports = {
     },
     group: {
       basics: {
-        fields: ['_author', 'excerptRTE', 'imageArea', 'color', 'files', 'creditsRTE'],
+        fields: ['_author', 'excerptRTE', 'imageArea', 'color', 'fontColor', 'files', 'creditsRTE'],
       },
     },
   },

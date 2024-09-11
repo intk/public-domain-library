@@ -78,7 +78,6 @@
     quotes: '\201c' '\201d';
     font-weight: 400;
     text-align: left;
-    color: white;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
       font-size: 30px;
