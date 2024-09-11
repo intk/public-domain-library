@@ -414,6 +414,11 @@
     row-gap: 65px;
     margin-bottom: 40px;
 
+    @media (min-width: 600px) {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
     @media (min-width: map-get($breakpoints, 'sm')) {
       row-gap: 67px;
     }
