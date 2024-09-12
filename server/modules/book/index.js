@@ -76,6 +76,11 @@ module.exports = {
               type: 'attachment',
               fileGroup: 'office',
             },
+            fileFormat: {
+              label: 'pdl:File Format',
+              type: 'string',
+              help: 'If empty, the extension will be used',
+            },
           },
         },
       },
