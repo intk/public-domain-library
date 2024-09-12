@@ -19,6 +19,7 @@ module.exports = {
         extensions: [
           'pdf',
           'epub',
+          'kepub',
           'azw3',
         ],
         extensionMaps: {},
