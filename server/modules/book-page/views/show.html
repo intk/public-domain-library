@@ -43,7 +43,7 @@
       {% if data.piece._author and data.piece._author[0] %}
         <a href="{{ data.piece._author[0]._url }}" class="pdl-book__author">
           {% set image = apos.image.first(data.piece._author[0]) %}
-          <img class="pdl-author__image pdl-image-widget" src="{{ image._urls['one-sixth'] }}">
+          <img class="pdl-author__image pdl-image-widget" src="{{ image._urls['one-sixth'] }}" alt="author">
           {{ data.piece._author[0].title }}
         </a>
       {% endif %}
