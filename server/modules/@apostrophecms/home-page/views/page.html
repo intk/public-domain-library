@@ -5,11 +5,13 @@
 {% block main %}
   <section class="pdl-home">
     <h1 class="pdl-home__headline">
-      The best of human creativity, for free.
+      {{ data.page.backgroundText }}
     </h1>
-    {# {% area data.page, 'main' %} #}
     <div class="pdl-home__covers">
-      Text over
+      {% for book in data.page._coverBooks %}
+        {% set image = apos.image.first(book) %}
+        <img class="pdl-book__image pdl-image-widget pdl-home__cover pdl-home__cover--{{ loop.index }}" src="{{ image._urls['one-third'] }}" alt="{{ book.title }}">
+      {% endfor %}
     </div>
     <div style="background: black; color: white; width: 100%; text-align: center; height: 500px;">
       Other section

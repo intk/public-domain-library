@@ -2,7 +2,7 @@
 <div class="pdl-book-preview" data-book-preview>
   <div class="pdl-book__image-wrapper">
     {% set image = apos.image.first(book) %}
-    <img class="pdl-book__image pdl-image-widget" src="{{ image._urls['one-third'] }}" alt="{{ image._alt if image._alt or image.title }}">
+    <img class="pdl-book__image pdl-image-widget" src="{{ image._urls['one-third'] }}" alt="{{ book.title }}">
     <svg class="pdl-book__shadow" width="10" height="490" viewBox="0 0 10 490" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="10" height="490" fill="url(#paint0_linear_2344_125)" fill-opacity="0.3"/>
       <defs>
