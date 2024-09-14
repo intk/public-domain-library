@@ -8,19 +8,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
 
-// @media only screen and (max-device-width: 1366px) {
-//   .parallax-container {
-//     background-attachment: scroll;
-//   }
-// }
+  @media (max-width: map-get($breakpoints, 'md')) {
+    background-attachment: scroll;
+  }
+}
 
 .pdl-home__headline {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 365px;
   color: black;
   font-size: 35px;
   font-weight: 500;
@@ -29,70 +25,154 @@
   width: 80%;
 
   @media (min-width: map-get($breakpoints, 'sm')) {
+    top: 286px;
     font-size: 62.5px;
   }
   @media (min-width: map-get($breakpoints, 'md')) {
+    top: 50%;
     font-size: 112px;
   }
 }
 
 .pdl-home__covers {
   position: relative;
-  color: black;
-  font-size: 24px;
-  text-align: center;
-  margin-top: 60px;
   z-index: 2;
-  height: 1873px;
+  height: 560px;
   width: 100%;
 
+  @media (min-width: map-get($breakpoints, 'sm')) {
+    height: 532px;
+  }
+  @media (min-width: map-get($breakpoints, 'md')) {
+    height: 1873px;
+  }
+
   .pdl-home__cover {
-    width: 246px;
+    width: 140px;
     position: absolute;
+    pointer-events: none;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      width: 130px;
+    }
+    @media (min-width: map-get($breakpoints, 'md')) {
+      width: 246px;
+    }
 
     &--1 {
-      top: 28px;
-      left: 11.94%;
+      top: 4px;
+      left: 4.94%;
+
+      @media (min-width: map-get($breakpoints, 'sm')) {
+        top: -60px;
+        left: 11.94%;
+      }
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        top: 28px;
+        left: 11.94%;
+      }
     }
 
     &--2 {
-      top: 100px;
-      right: 25.41%;
+      top: 48px;
+      right: -4.59%;
+
+      @media (min-width: map-get($breakpoints, 'sm')) {
+        top: -25px;
+        right: 24.41%;
+      }
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        top: 100px;
+        right: 25.41%;
+      }
     }
 
     &--3 {
-      top: 503px;
-      left: 4.72%;
+      top: 250px;
+      left: -20.28%;
+
+      @media (min-width: map-get($breakpoints, 'sm')) {
+        top: 203px;
+        left: 2.72%;
+      }
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        top: 503px;
+        left: 4.72%;
+      }
     }
 
     &--4 {
-      top: 532px;
-      right: 4.72%;
+      top: 323px;
+      right: -0.28%;
+
+      @media (min-width: map-get($breakpoints, 'sm')) {
+        top: 213px;
+        right: 6.72%;
+      }
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        top: 532px;
+        right: 4.72%;
+      }
     }
 
     &--5 {
-      top: 685px;
-      left: 48.61%;
+      top: 490px;
+      left: 22.61%;
+
+      @media (min-width: map-get($breakpoints, 'sm')) {
+        top: 310px;
+        left: 47.61%;
+      }
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        top: 685px;
+        left: 48.61%;
+      }
     }
 
     &--6 {
-      top: 968px;
-      left: 22.98%;
+      display: none;
+
+      @media (min-width: map-get($breakpoints, 'sm')) {
+        display: block;
+        top: 465px;
+        left: 25.61%;
+      }
+      @media (min-width: map-get($breakpoints, 'md')) {
+        top: 968px;
+        left: 22.98%;
+      }
     }
 
     &--7 {
-      top: 1087px;
-      right: 15%;
+      display: none;
+      @media (min-width: map-get($breakpoints, 'md')) {
+        display: block;
+        top: 1087px;
+        right: 15%;
+      }
     }
 
     &--8 {
-      top: 1298px;
-      left: 1.94%;
+      display: none;
+      @media (min-width: map-get($breakpoints, 'md')) {
+        display: block;
+        top: 1298px;
+        left: 1.94%;
+      }
     }
 
     &--9 {
-      top: 1370px;
-      right: 44.93%;
+      display: none;
+      @media (min-width: map-get($breakpoints, 'md')) {
+        display: block;
+        top: 1370px;
+        right: 44.93%;
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% import 'book-page:fragment.html' as fragment %}
 
 {% block title %}{{ data.page.title }}{% endblock %}
 
@@ -9,11 +10,12 @@
     </h1>
     <div class="pdl-home__covers">
       {% for book in data.page._coverBooks %}
-        {% set image = apos.image.first(book) %}
-        <img class="pdl-book__image pdl-image-widget pdl-home__cover pdl-home__cover--{{ loop.index }}" src="{{ image._urls['one-third'] }}" alt="{{ book.title }}">
+        <div class="pdl-home__cover pdl-home__cover--{{ loop.index }}">
+          {% render fragment.preview(book, { light: true }) %}
+        </div>
       {% endfor %}
     </div>
-    <div style="background: black; color: white; width: 100%; text-align: center; height: 500px;">
+    <div style="background: black; color: white; width: 100%; text-align: center; height: 500px; z-index: 3">
       Other section
     </div>
   </section>
