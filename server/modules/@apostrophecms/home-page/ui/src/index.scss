@@ -16,7 +16,7 @@
 
 .pdl-home__headline {
   position: fixed;
-  top: 365px;
+  top: 260px;
   color: black;
   font-size: 35px;
   font-weight: 500;
@@ -25,11 +25,11 @@
   width: 80%;
 
   @media (min-width: map-get($breakpoints, 'sm')) {
-    top: 286px;
+    top: 175px;
     font-size: 62.5px;
   }
   @media (min-width: map-get($breakpoints, 'md')) {
-    top: 50%;
+    top: 315px;
     font-size: 112px;
   }
 }
@@ -60,7 +60,7 @@
     }
 
     &--1 {
-      top: 4px;
+      top: 18px;
       left: 4.94%;
 
       @media (min-width: map-get($breakpoints, 'sm')) {
@@ -76,7 +76,8 @@
 
     &--2 {
       top: 48px;
-      right: -4.59%;
+      // right: -4.59%;
+      left: 70.41%;
 
       @media (min-width: map-get($breakpoints, 'sm')) {
         top: -25px;
@@ -106,7 +107,8 @@
 
     &--4 {
       top: 323px;
-      right: -0.28%;
+      // right: -0.28%;
+      left: 64.72%;
 
       @media (min-width: map-get($breakpoints, 'sm')) {
         top: 213px;
