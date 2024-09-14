@@ -1,31 +1,47 @@
-.parallax-container {
+@import '../../../../asset/ui/src/scss/settings';
+
+.pdl-home {
   position: relative;
-  background-image: url("https://images.unsplash.com/photo-1519120944692-1a8d8cfc107f?ixlib=rb-1.2.1&amp;amp;amp;amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;amp;amp;amp;auto=format&amp;amp;amp;amp;fit=crop&amp;amp;amp;amp;w=872&amp;amp;amp;amp;q=80");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-
+  background-color: white;
   min-height: 100vh;
-  min-width: 100vw;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-@media only screen and (max-device-width: 1366px) {
-  .parallax-container {
-    background-attachment: scroll;
-  }
-}
+// @media only screen and (max-device-width: 1366px) {
+//   .parallax-container {
+//     background-attachment: scroll;
+//   }
+// }
 
-.text-overlay {
-  position: absolute;
+.pdl-home__headline {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
+  font-size: 35px;
+  font-weight: 500;
+  text-align: center;
+  z-index: 1;
+  width: 80%;
+
+  @media (min-width: map-get($breakpoints, 'sm')) {
+    font-size: 62.5px;
+  }
+  @media (min-width: map-get($breakpoints, 'md')) {
+    font-size: 112px;
+  }
+}
+
+.pdl-home__covers {
+  position: relative;
+  color: black;
   font-size: 24px;
   text-align: center;
+  margin-top: 60px;
+  z-index: 2;
+  height: 1873px;
 }
