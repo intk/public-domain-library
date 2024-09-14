@@ -1,11 +1,24 @@
 {% extends "layout.html" %}
 
+{% block title %}{{ data.page.title }}{% endblock %}
+
 {% block main %}
-  <section class="pdl-welcome">
-    <h1 class="pdl-welcome__headline">
-      Public Domain Library Homepage
+  <section class="pdl-home">
+    {# <h1 class="pdl-home__headline">
+      The best of human<br>creativity, for free.
     </h1>
     {% area data.page, 'main' %}
+    <div>
+      Text over
+    </div> #}
+    <div class="parallax-container">
+      <div class="text-overlay">
+        Your text here
+      </div>
+    </div>
+    <div class="parallax-container">
+      <div>Book 1</div>
+      <div>Book 2</div>
     </div>
   </section>
 {% endblock %}
