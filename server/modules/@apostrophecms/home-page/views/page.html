@@ -15,8 +15,16 @@
         </div>
       {% endfor %}
     </div>
-    <div style="background: black; color: white; width: 100%; text-align: center; height: 500px; z-index: 3">
-      Other section
+    <div class="pdl-home__about" id="home-about">
+      <div class="pdl-home__about-text">
+      Every year, new authors enter the public domain {% include "svg-blue.html" %} and their entire oeuvre becomes part of our shared cultural heritage. This is cause for celebration, and we invite you to the party.
+      {% include "svg-orange.html" %}
+      </div>
+      <a class="pdl-home__about-link" href="/{{ data.locale }}/about">
+        {{ __t('pdl:About Public Domain Library') }}
+        {% include "svg-arrow.html" %}
+      </a>
     </div>
+    <div class="pdl-home__" style="background: white; height: 500px; width: 100%;"></div>
   </section>
 {% endblock %}

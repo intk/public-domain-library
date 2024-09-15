@@ -176,3 +176,95 @@
     }
   }
 }
+
+.pdl-home__about {
+  background: black;
+  color: white;
+  width: 100%;
+  text-align: left;
+  z-index: 3;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    font-size: 84px;
+    padding-bottom: 33px;
+    padding-top: 97px;
+  }
+
+  &-text {
+    @media (min-width: map-get($breakpoints, 'md')) {
+      padding-left: 32px;
+      padding-right: 155px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &-link {
+    font-weight: 400;
+    font-size: 26px;
+    height: fit-content;
+    transition: all 0.3s;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 20px 24px;
+    color: white;
+    display: flex;
+    width: fit-content;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      padding: 20px 24px;
+      margin-left: 32px;
+    }
+
+    &:hover svg path {
+      animation: hoverArrowX 300ms ease;
+    }
+
+    @keyframes hoverArrowX {
+      0% {
+        transform: translateX(0)
+      }
+
+      50% {
+        transform: translateX(40px)
+      }
+
+      51% {
+        visibility: hidden;
+      }
+
+      52% {
+        transform: translateX(-25px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  #svg-orange {
+    fill: white;
+    position: absolute;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      width: 72px;
+      height: 96px;
+      padding-left: 14px;
+    }
+  }
+
+  #svg-blue {
+    position: relative;
+    fill: white;
+    width: 72px;
+    height: 58px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      width: 72px;
+      height: 58px;
+    }
+  }
+}
