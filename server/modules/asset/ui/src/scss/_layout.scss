@@ -50,7 +50,7 @@ main,
   align-items: center;
   justify-content: space-between;
   font-size: 38px;
-  z-index: 3;
+  z-index: 4;
 
   @media (min-width: map-get($breakpoints, 'md')) {
     height: 72px;
