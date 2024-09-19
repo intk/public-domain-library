@@ -40,12 +40,14 @@
   height: 560px;
   width: 100%;
   overflow: hidden;
+  display: flex;
 
   @media (min-width: map-get($breakpoints, 'sm')) {
     height: 532px;
   }
   @media (min-width: map-get($breakpoints, 'md')) {
     height: 1873px;
+    overflow: unset;
   }
 
   .pdl-home__cover {
@@ -178,6 +180,41 @@
   }
 }
 
+.pdl-home__discover {
+  background: black;
+  color: white;
+  padding: 15px 12px;
+  font-size: 18px;
+  border-radius: 4px;
+  position: sticky;
+  top: calc(100% - 80px);
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: baseline;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    top: calc(100% - 90px);
+  }
+
+  &:not(:hover) {
+    color: white;
+    svg path {
+      animation: notHoverArrow 300ms ease;
+    }
+  }
+
+  &:hover {
+    color: white;
+    svg path {
+      animation: hoverArrow 300ms ease;
+    }
+  }
+}
+
 .pdl-home__about {
   background: black;
   color: white;
@@ -186,7 +223,7 @@
   z-index: 3;
 
   font-size: 39px;
-  padding-top: 20px;
+  padding-top: 60px;
   padding-bottom: 22px;
 
   @media (min-width: map-get($breakpoints, 'sm')) {

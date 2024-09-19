@@ -237,11 +237,11 @@
 
   @keyframes hoverArrow {
     0% {
-      transform: translateY(0)
+      transform: translateY(0);
     }
 
     50% {
-      transform: translateY(40px)
+      transform: translateY(40px);
     }
 
     51% {
@@ -250,6 +250,28 @@
 
     52% {
       transform: translateY(-25px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes notHoverArrow {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-25px);
+    }
+
+    51% {
+      visibility: hidden;
+    }
+
+    52% {
+      transform: translateY(40px);
     }
 
     100% {

@@ -14,6 +14,10 @@
           {% render fragment.preview(book, { light: true }) %}
         </div>
       {% endfor %}
+      <a class="pdl-home__discover" href="#home-about">
+        {% include "svg-arrow-down.html" %}
+        {{ __t('pdl:Discover') }}
+      </a>
     </div>
     <div class="pdl-home__about" id="home-about">
       <div class="pdl-home__about-text">
@@ -22,7 +26,7 @@
       </div>
       <a class="pdl-home__about-link" href="/{{ data.locale }}/about">
         {{ __t('pdl:About Public Domain Library') }}
-        {% include "svg-arrow.html" %}
+        {% include "svg-arrow-right.html" %}
       </a>
     </div>
     <div class="pdl-home__" style="background: white; height: 500px; width: 100%;"></div>

@@ -1,5 +1,9 @@
 @import './_settings';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body, html {
   scrollbar-width: none;
 
