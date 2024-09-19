@@ -82,9 +82,9 @@ module.exports = {
     }
   },
 
-  init (self) {
-    self.apos.migration.add('localize-book-pages-slugs', async () => {
-      await self.ensureLocalizedPages()
-    })
-  },
+  // init (self) {
+  //   self.apos.migration.add('localize-book-pages-slugs', async () => {
+  //     await self.ensureLocalizedPages()
+  //   })
+  // },
 }

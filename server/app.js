@@ -25,5 +25,6 @@ require('apostrophe')({
     'author-page': {},
     book: {},
     'book-page': {},
+    'book-preview-widget': {},
   },
 })

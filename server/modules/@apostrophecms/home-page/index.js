@@ -19,6 +19,14 @@ module.exports = {
           },
         },
       },
+      areas: {
+        type: 'area',
+        options: {
+          widgets: {
+            'book-preview': {},
+          },
+        },
+      },
     },
     group: {
       basics: {

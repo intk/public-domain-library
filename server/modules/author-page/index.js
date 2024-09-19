@@ -69,9 +69,9 @@ module.exports = {
     }
   },
 
-  init (self) {
-    self.apos.migration.add('localize-author-pages-slugs', async () => {
-      await self.ensureLocalizedPages()
-    })
-  },
+  // init (self) {
+  //   self.apos.migration.add('localize-author-pages-slugs', async () => {
+  //     await self.ensureLocalizedPages()
+  //   })
+  // },
 }

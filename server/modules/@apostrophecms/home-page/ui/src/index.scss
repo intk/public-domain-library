@@ -354,3 +354,16 @@
     }
   }
 }
+
+.pdl-home__areas {
+  z-index: 3;
+  background-color: white;
+
+  .pdl-book-preview-widget:first-child {
+    margin-top: 20px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin-top: 60px;
+    }
+  }
+}

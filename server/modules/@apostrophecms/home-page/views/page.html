@@ -29,6 +29,8 @@
         {% include "svg-arrow-right.html" %}
       </a>
     </div>
-    <div class="pdl-home__" style="background: white; height: 500px; width: 100%;"></div>
+    <div class="pdl-home__areas">
+      {% area data.page, 'areas' %}
+    </div>
   </section>
 {% endblock %}
