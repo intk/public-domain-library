@@ -10,12 +10,12 @@ export default () => {
           const secondFormat = formatsList.querySelector('.pdl-book-preview__format--second')
           const thirdFormat = formatsList.querySelector('.pdl-book-preview__format--third')
 
-          const previewContainer = formatsList.parentElement
-          if (previewContainer.classList.contains('pdl-book-preview--big-space')) {
-            previewContainer.classList.remove('pdl-book-preview--big-space')
-          } else {
-            previewContainer.classList.add('pdl-book-preview--big-space')
-          }
+          // const previewContainer = formatsList.parentElement
+          // if (previewContainer.classList.contains('pdl-book-preview--big-space')) {
+          //   previewContainer.classList.remove('pdl-book-preview--big-space')
+          // } else {
+          //   previewContainer.classList.add('pdl-book-preview--big-space')
+          // }
           secondFormat.classList.toggle('pdl-book-preview__format--visible')
           thirdFormat.classList.toggle('pdl-book-preview__format--visible')
         })
@@ -35,26 +35,6 @@ export default () => {
           previewViewButton.classList.add('pdl-book-preview__view--visible')
         }
       })
-    }
-  }
-
-  const body = document.querySelector('body')
-  body.addEventListener('click', cancelPreviewSpacing)
-
-  function cancelPreviewSpacing () {
-    const previewContainers = document.querySelectorAll('.pdl-book-preview')
-    if (previewContainers?.length) {
-      for (const previewContainer of previewContainers) {
-        previewContainer.classList.remove('pdl-book-preview--big-space')
-
-        const displayList = previewContainer.querySelector('[data-book-formats-list]')
-        if (displayList) {
-          const secondFormat = previewContainer.querySelector('.pdl-book-preview__format--second')
-          const thirdFormat = previewContainer.querySelector('.pdl-book-preview__format--third')
-          secondFormat.classList.remove('pdl-book-preview__format--visible')
-          thirdFormat.classList.remove('pdl-book-preview__format--visible')
-        }
-      }
     }
   }
 }

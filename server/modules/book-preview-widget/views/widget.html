@@ -1,5 +1,5 @@
 {% import 'book-page:fragment.html' as fragment %}
 
-<div class="pdl-book-preview-widget">
+<div class="pdl-book-preview-widget" data-book-preview-widget>
   {% render fragment.previews(data.widget.title, data.widget._books) %}
 </div>
