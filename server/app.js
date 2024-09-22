@@ -26,5 +26,6 @@ require('apostrophe')({
     book: {},
     'book-page': {},
     'book-preview-widget': {},
+    'highlight-items-widget': {},
   },
 })

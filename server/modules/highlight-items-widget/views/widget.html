@@ -1,0 +1,41 @@
+<div class="pdl-highlight-widget" data-highlight-items-widget>
+  <div class="pdl-highlight-widget__items">
+  {% for item in data.widget.items %}
+    <div class="pdl-highlight-widget__item" style="background-color: {{ item.color }}" id="{{ item._id }}">
+
+      {% set image = apos.image.first(item.imageArea) %}
+      <img class="pdl-highlight-widget__image pdl-image-widget" src="{{ image._urls['one-half'] }}" alt="{{ image._alt if image._alt or image.title }}" width="{{ apos.attachment.getWidth(image) }}" height="{{ apos.attachment.getHeight(image) }}">
+
+      <div class="pdl-highlight-widget__container">
+        <h1>{{ item.title }}</h1>
+
+        {% if item.year %}
+          <div class="pdl-highlight-widget__date">
+            {% include "author-page:svg.html" %}
+
+            <div class="pdl-highlight-widget__year">{{ item.year }}</div>
+          </div>
+        {% endif %}
+
+        <div class="pdl-highlight-widget__description">{% area item, 'description' %}</div>
+
+        {% if item._page[0]._url %}
+          <a class="pdl-highlight-widget__link" href="{{ item._page[0]._url }}">
+            {{ __t('pdl:View all') }}
+            {% include "@apostrophecms/home-page:svg-arrow-right.html" %}
+          </a>
+        {% endif %}
+
+        {% if loop.length > 0 %}
+          <div class="pdl-highlight-widget__slider slider">
+            {% for navitem in data.widget.items %}
+              <div class="slider__navlink {% if item._id == navitem._id %} slider__navlink--active {% endif %}"></div>
+              {# <a class="slider__navlink {% if item._id == navitem._id %} slider__navlink--active {% endif %}" href="#{{ navitem._id }}" aria-label="{{ navitem._id }}"></a> #}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>

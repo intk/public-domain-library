@@ -24,6 +24,7 @@ module.exports = {
         options: {
           widgets: {
             'book-preview': {},
+            'highlight-items': {},
           },
         },
       },

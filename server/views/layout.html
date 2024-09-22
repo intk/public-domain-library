@@ -12,7 +12,7 @@
 {% import "locale-switcher:index.html" as localeSwitcher with context %}
 
 {% block beforeMain %}
-<div class="pdl-wrapper">
+<div class="pdl-wrapper {%- if data.user %} logged-in {% endif -%}">
   <header class="pdl-header">
     <a href="/" class="pdl-header__title">
       <canvas class="pdl-header__logo"></canvas>

@@ -10,12 +10,6 @@ export default () => {
           const secondFormat = formatsList.querySelector('.pdl-book-preview__format--second')
           const thirdFormat = formatsList.querySelector('.pdl-book-preview__format--third')
 
-          // const previewContainer = formatsList.parentElement
-          // if (previewContainer.classList.contains('pdl-book-preview--big-space')) {
-          //   previewContainer.classList.remove('pdl-book-preview--big-space')
-          // } else {
-          //   previewContainer.classList.add('pdl-book-preview--big-space')
-          // }
           secondFormat.classList.toggle('pdl-book-preview__format--visible')
           thirdFormat.classList.toggle('pdl-book-preview__format--visible')
         })
