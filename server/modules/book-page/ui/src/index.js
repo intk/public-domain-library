@@ -6,6 +6,7 @@ export default () => {
       const displayList = formatsList.querySelector('[data-book-formats-list]')
       if (displayList) {
         displayList.addEventListener('click', (evt) => {
+          evt.stopPropagation()
           const secondFormat = formatsList.querySelector('.pdl-book-preview__format--second')
           const thirdFormat = formatsList.querySelector('.pdl-book-preview__format--third')
 
