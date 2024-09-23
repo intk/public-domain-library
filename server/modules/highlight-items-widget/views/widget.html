@@ -7,7 +7,7 @@
       <img class="pdl-highlight-widget__image pdl-image-widget" src="{{ image._urls['one-half'] }}" alt="{{ image._alt if image._alt or image.title }}" width="{{ apos.attachment.getWidth(image) }}" height="{{ apos.attachment.getHeight(image) }}">
 
       <div class="pdl-highlight-widget__container">
-        <h1>{{ item.title }}</h1>
+        <div class="pdl-highlight-widget__title">{{ item.title }}</div>
 
         {% if item.year %}
           <div class="pdl-highlight-widget__date">

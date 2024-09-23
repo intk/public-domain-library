@@ -43,7 +43,7 @@
   display: flex;
 
   @media (min-width: map-get($breakpoints, 'sm')) {
-    height: 532px;
+    height: 510px;
   }
   @media (min-width: map-get($breakpoints, 'md')) {
     height: 1873px;
@@ -183,11 +183,11 @@
 .pdl-home__discover {
   background: black;
   color: white;
-  padding: 15px 12px;
+  padding: 12px;
   font-size: 18px;
   border-radius: 4px;
   position: sticky;
-  top: calc(100% - 80px);
+  top: calc(100% - 67px);
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
@@ -197,7 +197,8 @@
   align-items: center;
 
   @media (min-width: map-get($breakpoints, 'md')) {
-    top: calc(100% - 90px);
+    padding: 16px 12px;
+    top: calc(100% - 85px);
   }
 
   &:not(:hover) {
@@ -243,6 +244,7 @@
     padding-right: 15px;
     padding-bottom: 19px;
     letter-spacing: -1px;
+    line-height: 49px;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
       letter-spacing: 0;
@@ -256,6 +258,7 @@
       padding-left: 32px;
       padding-right: 155px;
       padding-bottom: 40px;
+      line-height: 82px;
     }
   }
 
@@ -280,6 +283,7 @@
       font-size: 26px;
       padding: 20px 24px;
       margin-left: 32px;
+      margin-top: 3px;
     }
 
     svg {

@@ -24,8 +24,15 @@ body { overflow: hidden; }
   flex-direction: row;
   overflow: hidden;
   width: 100%;
-  height: 767px;
+  height: auto;
   scroll-behavior: smooth;
+
+  @media (min-width: map-get($breakpoints, 'sm')) {
+    height: 380px;
+  }
+  @media (min-width: map-get($breakpoints, 'md')) {
+    height: 767px;
+  }
 }
 
 .pdl-highlight-widget__items {
@@ -71,39 +78,48 @@ body { overflow: hidden; }
     }
   }
 
-  h1 {
-    font-size: 36px;
+  .pdl-highlight-widget__title {
+    font-size: 63px;
     font-weight: 450;
+    line-height: 58px;
     text-align: left;
     margin: 0;
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      font-size: 82.5px;
+      font-size: 112px;
+      line-height: 101px;
     }
   }
 
   .pdl-highlight-widget__image {
     display: block;
     min-width: 50vw;
-    max-width: fit-content;
-    height: 100%;
+    height: 380px;
     mix-blend-mode: multiply;
     filter: grayscale(1);
     object-fit: cover;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      height: 100%;
+    }
   }
 
   .pdl-highlight-widget__container {
-    margin: 16px 20px 27px;
     display: flex;
     flex-direction: column;
-    position: relative;
-    height: 100%;
+    width: 92%;
+    height: calc(100% - 68px);
+    margin: 16px 20px 52px;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
+      width: calc(50% - 35px);
+      height: calc(100% - 35px);
       margin: 20px 20px 15px;
     }
 
     @media (min-width: map-get($breakpoints, 'md')) {
+      width: calc(50% - 65px);
+      height: calc(100% - 40px);
       margin: 20px 30px;
     }
   }
@@ -128,6 +144,13 @@ body { overflow: hidden; }
     font-size: 30px;
     font-weight: 500;
     text-align: left;
+    position: relative;
+    margin-top: 11px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin-top: 10px;
+      width: auto;
+    }
   }
 
   .pdl-highlight-widget__date {
@@ -135,7 +158,14 @@ body { overflow: hidden; }
     align-items: center;
     position: relative;
     left: -5px;
-    top: -5px;
+    top: 7px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      top: -5px;
+    }
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      top: 5px;
+    }
 
     svg {
       position: relative;
@@ -183,29 +213,45 @@ body { overflow: hidden; }
     gap: 9px;
     align-items: center;
     justify-content: center;
+    margin-top: 22px;
 
     @media (min-width: map-get($breakpoints, 'md')) {
       gap: 16px;
       font-size: 26px;
       padding: 20px 24px;
+      margin-top: 20px;
+    }
+
+    svg {
+      width: 12px;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        width: 24px;
+      }
     }
   }
 
   .pdl-highlight-widget__slider {
     cursor: pointer;
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
+    display: flex;
+    gap: 8px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      bottom: 40px;
+    }
 
     .slider__navlink {
       border: 1px solid black;
-      background-color: black;
+      background-color: transparent;
       border-radius: 2px;
       display: inline-block;
-      height: 10px;
-      width: 10px;
+      height: 11px;
+      width: 11px;
 
       &--active {
-        background-color: transparent;
+        background-color: black;
       }
     }
   }

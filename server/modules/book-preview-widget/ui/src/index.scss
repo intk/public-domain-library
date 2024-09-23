@@ -8,9 +8,14 @@
     margin-top: 0;
   }
   .pdl-book-previews {
-    margin-bottom: 10px;
+    margin-bottom: 24px;
   }
   .pdl-book-preview__title {
     min-height: 44px;
+  }
+  &:hover .pdl-book-preview__formats {
+    @media (min-width: map-get($breakpoints, 'md')) {
+      transform: translateY(-80px);
+    }
   }
 }

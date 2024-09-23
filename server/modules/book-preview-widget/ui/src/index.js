@@ -2,12 +2,12 @@ export default () => {
   apos.util.widgetPlayers['book-preview-widget'] = {
     selector: '[data-book-preview-widget]',
     player: function (el) {
-      addPreviewSpacing()
+      if (window.innerWidth < 1025) {
+        addPreviewSpacing()
 
-      window.addEventListener('resize', addPreviewSpacing)
+        // window.addEventListener('resize', addPreviewSpacing)
 
-      function addPreviewSpacing () {
-        if (screen.width < 1025) {
+        function addPreviewSpacing () {
           const formatsLists = el.querySelectorAll('.pdl-book-preview__formats')
           if (formatsLists?.length) {
             for (const formatsList of formatsLists) {
@@ -27,23 +27,23 @@ export default () => {
             }
           }
         }
-      }
 
-      const body = document.querySelector('body')
-      body.addEventListener('click', removePreviewSpacing)
+        const body = document.querySelector('body')
+        body.addEventListener('click', removePreviewSpacing)
 
-      function removePreviewSpacing () {
-        const previewContainers = document.querySelectorAll('.pdl-book-preview')
-        if (previewContainers?.length) {
-          for (const previewContainer of previewContainers) {
-            previewContainer.classList.remove('pdl-book-preview--big-space')
+        function removePreviewSpacing () {
+          const previewContainers = document.querySelectorAll('.pdl-book-preview')
+          if (previewContainers?.length) {
+            for (const previewContainer of previewContainers) {
+              previewContainer.classList.remove('pdl-book-preview--big-space')
 
-            const displayList = previewContainer.querySelector('[data-book-formats-list]')
-            if (displayList) {
-              const secondFormat = previewContainer.querySelector('.pdl-book-preview__format--second')
-              const thirdFormat = previewContainer.querySelector('.pdl-book-preview__format--third')
-              secondFormat.classList.remove('pdl-book-preview__format--visible')
-              thirdFormat.classList.remove('pdl-book-preview__format--visible')
+              const displayList = previewContainer.querySelector('[data-book-formats-list]')
+              if (displayList) {
+                const secondFormat = previewContainer.querySelector('.pdl-book-preview__format--second')
+                const thirdFormat = previewContainer.querySelector('.pdl-book-preview__format--third')
+                secondFormat.classList.remove('pdl-book-preview__format--visible')
+                thirdFormat.classList.remove('pdl-book-preview__format--visible')
+              }
             }
           }
         }
