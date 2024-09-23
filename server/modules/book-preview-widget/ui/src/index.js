@@ -25,6 +25,7 @@ export default () => {
           document.addEventListener('click', deleteClonedNodes)
         }, 500)
         container.addEventListener('wheel', deleteClonedNodes)
+        container.addEventListener('scroll', deleteClonedNodes)
 
         if (formatsLists?.length) {
           for (const formatsList of formatsLists) {
