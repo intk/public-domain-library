@@ -6,7 +6,6 @@ export default () => {
       const displayList = formatsList.querySelector('[data-book-formats-list]')
       if (displayList) {
         displayList.addEventListener('click', (evt) => {
-          evt.stopPropagation()
           const secondFormat = formatsList.querySelector('.pdl-book-preview__format--second')
           const thirdFormat = formatsList.querySelector('.pdl-book-preview__format--third')
 
@@ -22,8 +21,6 @@ export default () => {
   if (previews?.length) {
     for (const preview of previews) {
       preview.addEventListener('click', (evt) => {
-        evt.stopPropagation()
-
         const previewViewButton = preview.querySelector('[data-book-preview-view]')
         if (previewViewButton) {
           previewViewButton.classList.add('pdl-book-preview__view--visible')

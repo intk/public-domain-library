@@ -364,9 +364,12 @@
   background-color: white;
 
   .pdl-book-preview-widget {
-    margin-top: 42px;
+    margin-top: 0;
 
     @media (min-width: map-get($breakpoints, 'md')) {
+      margin-top: 22px;
+    }
+    @media (min-width: map-get($breakpoints, 'sm')) {
       margin-top: 0;
     }
 

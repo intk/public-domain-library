@@ -36,6 +36,7 @@ module.exports = {
           'title',
           'backgroundText',
           '_coverBooks',
+          'areas',
         ],
       },
     },
