@@ -26,12 +26,14 @@ body { overflow: hidden; }
   width: 100%;
   height: auto;
   scroll-behavior: smooth;
+  margin-bottom: 18px;
 
   @media (min-width: map-get($breakpoints, 'sm')) {
     height: 380px;
   }
   @media (min-width: map-get($breakpoints, 'md')) {
     height: 767px;
+    margin-bottom: 40px;
   }
 }
 
