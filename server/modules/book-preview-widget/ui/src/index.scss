@@ -20,6 +20,9 @@
   .pdl-book-preview__title {
     min-height: 44px;
   }
+  .pdl-book-previews__view-all {
+    margin-top: -5px;
+  }
   &:hover .pdl-book-preview__formats {
     @media (min-width: map-get($breakpoints, 'md')) {
       transform: translateY(-80px);

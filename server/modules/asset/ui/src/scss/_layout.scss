@@ -354,6 +354,7 @@ main,
 .pdl-footer {
   background-color: black;
   color: white;
+  z-index: 4;
 
   > * {
     padding: 19px;
