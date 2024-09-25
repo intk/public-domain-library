@@ -50,6 +50,7 @@
     mix-blend-mode: multiply;
     filter: grayscale(1);
     object-fit: cover;
+    transform: translate3d(0,0,0); // for safari 18 to apply mix-blend-mode
   }
 
   .pdl-author__container {
