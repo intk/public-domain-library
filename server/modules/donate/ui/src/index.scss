@@ -1,0 +1,38 @@
+.donation-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.donation-form-wrapper {
+  justify-content: center;
+  background: var(--Light, #f5f4f0);
+  display: flex;
+  min-width: 240px;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 576px;
+  padding: 32px;
+}
+
+.donation-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.donation-content {
+  border-radius: 4px;
+  background: var(--Light, #f5f4f0);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: start;
+  padding: 24px;
+}
+
+.donation-title {
+  color: #000;
+  font: 500 32px TASA Orbiter Display, -apple-system, Roboto, Helvetica, sans-serif;
+}
