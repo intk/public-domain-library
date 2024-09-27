@@ -1,5 +1,3 @@
-# version: '3.7'
-
 services:
   pdl-db:
     container_name: pdl-db
@@ -45,6 +43,7 @@ services:
       - ./server/public:/app/public
       - ./server/views:/app/views
       - ./server/package.json:/app/package.json
+      # - ./server/node_modules/apostrophe:/app/node_modules/apostrophe
     ports:
       - 3000:3000
     depends_on:
@@ -57,6 +56,7 @@ services:
       APOS_BASE_URL:
       APOS_CLUSTER_PROCESSES: 2
       WAIT_HOSTS: pdl-db:27017
+      STRIPE_SECRET_KEY:
     logging:
       options:
         max-file: '5'

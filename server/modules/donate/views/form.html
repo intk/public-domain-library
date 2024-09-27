@@ -1,30 +1,31 @@
 {% macro display() %}
-<section class="donation-container">
-  <div class="donation-form-wrapper">
-    <form class="donation-form">
-      <div class="donation-content">
-        <h2 class="donation-title">Donate and help us bring the beauty of literature to the digital age</h2>
-        <div class="donation-amount-wrapper">
-          <div class="donation-amount-buttons">
-            <button type="button" class="donation-amount-button">10$</button>
-            <button type="button" class="donation-amount-button">25$</button>
-            <button type="button" class="donation-amount-button">50$</button>
-            <button type="button" class="donation-amount-button">100$</button>
-            <label for="custom-amount" class="visually-hidden">Enter custom amount</label>
-            <input type="text" id="custom-amount" class="donation-amount-input" placeholder="other" aria-label="Enter custom amount">
+<section class="pdl-donate">
+  <div class="pdl-donate__form-wrapper">
+    <form class="pdl-donate__form" action="/api/v1/donate/checkout" method="POST">
+      <div class="pdl-donate__content">
+        <div class="pdl-donate__title">Donate and help us bring the beauty of literature to the digital age</div>
+        <div class="pdl-donate__amount-wrapper">
+          <div class="pdl-donate__amount-buttons">
+            <button type="button" class="pdl-donate__amount-button">10$</button>
+            <button type="button" class="pdl-donate__amount-button">25$</button>
+            <button type="button" class="pdl-donate__amount-button">50$</button>
+            <button type="button" class="pdl-donate__amount-button">100$</button>
+            <input type="text" id="custom-amount" class="pdl-donate__amount-input" placeholder="other" aria-label="Enter custom amount">
           </div>
         </div>
-        <div class="payment-methods">
+        <div class="pdl-donate__payment-methods">
           <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/38085ac749e067967e8f3237a08c849e911bb3919ce185aa05f18191d8ce358b?placeholderIfAbsent=true&apiKey=ecd141c711d143438ccde4f547992d26" alt="Payment method 1" class="payment-method-icon">
           <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b820284e583072bd348e136d9624b6377ae4b311a30c16955c4e0d4a6aafbf77?placeholderIfAbsent=true&apiKey=ecd141c711d143438ccde4f547992d26" alt="Payment method 2" class="payment-method-icon">
           <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e82e3451c7cb53c769e42d12a5032f1cecf1cdc5e5e6ec5671ccdfd13feda4b0?placeholderIfAbsent=true&apiKey=ecd141c711d143438ccde4f547992d26" alt="Payment method 3" class="payment-method-icon">
           <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/702878b1c54c5a0602d9972eb5f017810d35453be4178e317a8d101c7d1dd5bc?placeholderIfAbsent=true&apiKey=ecd141c711d143438ccde4f547992d26" alt="Payment method 4" class="payment-method-icon">
           <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7f7c8d273e3c9772462fcd12c3f30ae1c0ace2cf473a15f5fcca258df757c37?placeholderIfAbsent=true&apiKey=ecd141c711d143438ccde4f547992d26" alt="Payment method 5" class="payment-method-icon">
         </div>
-        <button type="submit" class="donate-button">Donate</button>
+        <button type="submit" class="pdl-donate__button">Donate</button>
       </div>
     </form>
   </div>
-  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8bd11d2ebdb2ea5ecd44a47f9b22ee9c21d36b6c223f389626de185e56d6049?placeholderIfAbsent=true&apiKey=ecd141c711d143438ccde4f547992d26" alt="Donation illustration" class="donation-image">
+  <div class="pdl-donate__image-wrapper">
+    <img src="{{ apos.asset.url('/modules/donate/donate.png') }}" alt="Donation illustration" class="pdl-donate__image">
+  </div>
 </section>
 {% endmacro %}

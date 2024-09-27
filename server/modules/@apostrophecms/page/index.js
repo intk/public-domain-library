@@ -18,6 +18,12 @@ module.exports = {
         title: 'Search',
         type: '@apostrophecms/search',
       },
+      {
+        slug: '/donate',
+        parkedId: 'donate',
+        title: 'Donate',
+        type: 'donate-page',
+      },
     ],
   },
 }

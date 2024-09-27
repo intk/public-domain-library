@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
-{% import 'book-page:fragment.html' as fragment %}
+{% import "book-page:fragment.html" as fragment %}
+{% import "donate:form.html" as donate %}
 
 {% block title %}{{ data.page.title }}{% endblock %}
 
@@ -32,5 +33,6 @@
     <div class="pdl-home__areas">
       {% area data.page, 'areas' %}
     </div>
+    <div class="pdl-home__donate">{{ donate.display() }}</div>
   </section>
 {% endblock %}

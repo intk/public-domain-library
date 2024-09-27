@@ -1,38 +1,122 @@
-.donation-container {
+.pdl-donate {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #f5f4f0;
+  height: 748px;
 }
 
-.donation-form-wrapper {
+.pdl-donate__form-wrapper {
   justify-content: center;
-  background: var(--Light, #f5f4f0);
   display: flex;
-  min-width: 240px;
+  width: 50%;
   flex-direction: column;
-  flex-grow: 1;
-  width: 576px;
-  padding: 32px;
+
+  .pdl-donate__form {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .pdl-donate__content {
+    border-radius: 4px;
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    justify-content: start;
+    gap: 26px;
+    margin-top: 8px;
+    margin-left: 8px;
+  }
+
+  .pdl-donate__title {
+    color: black;
+    font-weight: 450;
+    font-size: 32px;
+    max-width: 530px;
+    text-align: left;
+    line-height: 36px;
+  }
+
+  .pdl-donate__amount-buttons {
+    display: flex;
+    gap: 7px;
+  }
+
+  .pdl-donate__amount-button {
+    height: 53px;
+    width: 115px;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 500;
+
+    &:hover {
+      cursor: pointer;
+      background-color: black;
+      color: #f5f4f0;
+    }
+  }
+
+  .pdl-donate__amount-input {
+    height: 50px;
+    width: 115px;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+      border: 2px solid black;
+      height: 48px;
+      width: 113px;
+    }
+  }
+
+  ::placeholder {
+    text-align: center;
+  }
+
+  .pdl-donate__payment-methods {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
+  }
+
+  .pdl-donate__button {
+    padding: 18px;
+    font-size: 25px;
+    background-color: black;
+    color: white;
+    position: relative;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 0;
+    width: 100%;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #222;
+    }
+    // padding: 12px 12px;
+    // font-size: 17.5px;
+  }
 }
 
-.donation-form {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.donation-content {
-  border-radius: 4px;
-  background: var(--Light, #f5f4f0);
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: start;
-  padding: 24px;
-}
-
-.donation-title {
-  color: #000;
-  font: 500 32px TASA Orbiter Display, -apple-system, Roboto, Helvetica, sans-serif;
+.pdl-donate__image-wrapper {
+  .pdl-donate__image {
+    position: relative;
+    width: 574px;
+    right: 37px;
+    top: 28px;
+  }
 }
