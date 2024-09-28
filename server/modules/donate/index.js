@@ -19,20 +19,21 @@ module.exports = {
   },
   routes (self) {
     return {
-      post: {
-        async checkout (req, res) {
+      get: {
+        async checkout(req, res) {
           const session = await stripe.checkout.sessions.create({
             line_items: [
               {
-                price: '{{price_1Q3iQrKltrjEwtH42kErhdkJ}}',
+                price: 'price_1Q3iQrKltrjEwtH42kErhdkJ',
                 quantity: 1,
               },
             ],
             mode: 'payment',
-            success_url: '/donate/success',
-            cancel_url: '/donate/cancel',
+            success_url: `${process.env.APOS_BASE_URL}/donate/success`,
+            cancel_url: `${process.env.APOS_BASE_URL}/donate/cancel`,
             automatic_tax: { enabled: true },
           })
+          console.log('session', require('util').inspect(session, { colors: true, depth: 1 }))
 
           res.redirect(303, session.url)
         },
