@@ -60,6 +60,11 @@
       background-color: black;
       color: #f5f4f0;
     }
+
+    &--selected {
+      background-color: black;
+      color: #f5f4f0;
+    }
   }
 
   .pdl-donate__amount-input {
@@ -84,6 +89,18 @@
     text-align: center;
   }
 
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
   .pdl-donate__payment-methods {
     display: flex;
     align-items: center;
@@ -106,6 +123,15 @@
     &:hover {
       cursor: pointer;
       background-color: #222;
+    }
+
+    &--disabled {
+      background-color: #d3d3d3;
+      color: #a9a9a9;
+      &:hover {
+        cursor: not-allowed;
+        background-color: #d3d3d3;
+      }
     }
     // padding: 12px 12px;
     // font-size: 17.5px;
