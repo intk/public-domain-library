@@ -1,20 +1,12 @@
+const url = require('url')
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 module.exports = {
-  methods (self) {
-    return {
-      indexPage (req) {
-        req.notFound = true
-      },
-      showPage (req) {
-        self.setTemplate(req, req.params.slug)
-      },
-
-      dispatchAll () {
-        self.dispatch('/', self.indexPage)
-        self.dispatch('/:slug', self.showPage)
-      },
-    }
+  extend: '@apostrophecms/module',
+  options: {
+    i18n: {
+      ns: 'pdl',
+    },
   },
   routes (self) {
     return {
@@ -25,8 +17,13 @@ module.exports = {
             // Payement in succcess: 4242 4242 4242 4242
             // Authentication required: 4000 0025 0000 3155
             // Rejected payment: 4000 0000 0000 9995
-            if (!req.body.amount) {
-              return res.status(400).send('Amount is required')
+            if (!req.body.amount || req.body.amount < 0.6) {
+              return res.redirect(url.format({
+                pathname: '/donate/error',
+                query: {
+                  error: 'Minimum amount is $0.60',
+                },
+              }))
             }
 
             const session = await stripe.checkout.sessions.create({
@@ -52,7 +49,12 @@ module.exports = {
             res.redirect(303, session.url)
           } catch (error) {
             console.error('error', error)
-            res.status(500).send('An error occurred')
+            res.redirect(url.format({
+              pathname: '/donate/error',
+              query: {
+                error: 'Sorry, an error occurred.',
+              },
+            }))
           }
         },
       },

@@ -6,6 +6,9 @@ module.exports = {
         req.notFound = true
       },
       showPage (req) {
+        if (req.query.error) {
+          req.data.page.error = req.query.error
+        }
         self.setTemplate(req, req.params.slug)
       },
 

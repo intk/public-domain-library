@@ -7,7 +7,7 @@ export default () => {
       el.addEventListener('submit', (evt) => {
         const formData = new FormData(el)
         const data = Object.fromEntries(formData)
-        if (!data.amount) {
+        if (!data.amount || data.amount < 0.6) {
           evt.preventDefault()
         }
       })
@@ -37,7 +37,7 @@ export default () => {
         }
       })
       customAmount.addEventListener('input', () => {
-        if (customAmount.value && customAmount.value > 0) {
+        if (customAmount.value && customAmount.value >= 0.6) {
           submitButton.classList.remove('pdl-donate__button--disabled')
         } else {
           submitButton.classList.add('pdl-donate__button--disabled')
