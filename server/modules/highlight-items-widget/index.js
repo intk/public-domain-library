@@ -18,21 +18,8 @@ module.exports = {
             },
             description: {
               label: 'pdl:Description',
-              type: 'area',
-              options: {
-                max: 1,
-                widgets: {
-                  '@apostrophecms/rich-text': {
-                    styles: [
-                      {
-                        tag: 'span',
-                        label: 'Description',
-                        class: 'pdl-highlight-widget__description',
-                      },
-                    ],
-                  },
-                },
-              },
+              type: 'string',
+              textarea: true,
             },
             year: {
               label: 'pdl:Year',

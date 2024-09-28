@@ -17,7 +17,7 @@
           </div>
         {% endif %}
 
-        <div class="pdl-highlight-widget__description">{% area item, 'description' %}</div>
+        <div class="pdl-highlight-widget__description">{{ item.description }}</div>
 
         {% if item._page[0]._url %}
           <a class="pdl-highlight-widget__link" href="{{ item._page[0]._url }}">
@@ -26,11 +26,10 @@
           </a>
         {% endif %}
 
-        {% if loop.length > 0 %}
+        {% if loop.length > 1 %}
           <div class="pdl-highlight-widget__slider slider">
             {% for navitem in data.widget.items %}
               <div class="slider__navlink {% if item._id == navitem._id %} slider__navlink--active {% endif %}"></div>
-              {# <a class="slider__navlink {% if item._id == navitem._id %} slider__navlink--active {% endif %}" href="#{{ navitem._id }}" aria-label="{{ navitem._id }}"></a> #}
             {% endfor %}
           </div>
         {% endif %}
