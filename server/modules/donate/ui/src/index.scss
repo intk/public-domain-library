@@ -1,44 +1,78 @@
+@import '../../../asset/ui/src/scss/settings';
+
 .pdl-donate {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column-reverse;
   justify-content: space-evenly;
   align-items: center;
   background-color: #f5f4f0;
-  height: 748px;
+  height: 687px;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 748px;
+  }
 }
 
 .pdl-donate__form-wrapper {
   justify-content: center;
   display: flex;
-  width: 50%;
+  width: 100%;
   flex-direction: column;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    width: 50%;
+  }
 
   .pdl-donate__form {
     display: flex;
-    width: fit-content;
     flex-direction: column;
     justify-content: center;
+    width: inherit;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      width: fit-content;
+    }
   }
 
   .pdl-donate__content {
     border-radius: 4px;
     display: flex;
-    width: fit-content;
+    width: auto;
     flex-direction: column;
     justify-content: start;
-    gap: 26px;
-    margin-top: 8px;
-    margin-left: 8px;
+    margin: 0 20px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin: 0;
+      margin-left: 8px;
+      width: fit-content;
+    }
   }
 
   .pdl-donate__title {
     color: black;
     font-weight: 450;
-    font-size: 32px;
+    font-size: 18px;
     max-width: 530px;
     text-align: left;
-    line-height: 36px;
+    line-height: 21px;
+    letter-spacing: 0px;
+    margin-top: 40px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin-top: 7px;
+      font-size: 32px;
+      line-height: 36px;
+    }
+  }
+
+  .pdl-donate__amount-wrapper {
+    margin-top: 17px;
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin-top: 24px;
+    }
   }
 
   .pdl-donate__amount-buttons {
@@ -47,13 +81,18 @@
   }
 
   .pdl-donate__amount-button {
-    height: 53px;
+    height: 45px;
     width: 115px;
     border-radius: 4px;
     border: 1px solid black;
     background-color: transparent;
     font-size: 18px;
     font-weight: 500;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      height: 53px;
+      width: 115px;
+    }
 
     &:hover {
       cursor: pointer;
@@ -68,8 +107,8 @@
   }
 
   .pdl-donate__amount-input {
-    height: 50px;
-    width: 115px;
+    height: 41px;
+    width: 66px;
     border-radius: 4px;
     border: 1px solid black;
     background-color: transparent;
@@ -77,11 +116,21 @@
     font-weight: 500;
     text-align: center;
 
+    @media (min-width: map-get($breakpoints, 'md')) {
+      height: 50px;
+      width: 115px;
+    }
+
     &:focus {
       outline: none;
       border: 2px solid black;
-      height: 48px;
-      width: 113px;
+      height: 39px;
+      width: 64px;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        height: 48px;
+        width: 113px;
+      }
     }
   }
 
@@ -106,11 +155,17 @@
     align-items: center;
     justify-content: center;
     gap: 23px;
+    margin: 16px 0;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin: 17px 0;
+      padding-top: 6px;
+    }
   }
 
-  .pdl-donate__button {
-    padding: 18px;
-    font-size: 25px;
+  .pdl-donate__submit {
+    padding: 11px 11px 12px 11px;
+    font-size: 17.5px;
     background-color: black;
     color: white;
     position: relative;
@@ -119,6 +174,12 @@
     border-radius: 4px;
     border: 0;
     width: 100%;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      padding: 18px;
+      margin-top: 9px;
+      font-size: 25px;
+    }
 
     &:hover {
       cursor: pointer;
@@ -133,16 +194,19 @@
         background-color: #d3d3d3;
       }
     }
-    // padding: 12px 12px;
-    // font-size: 17.5px;
   }
 }
 
 .pdl-donate__image-wrapper {
   .pdl-donate__image {
     position: relative;
-    width: 574px;
-    right: 37px;
-    top: 28px;
+    width: 330px;
+    top: 30px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      width: 574px;
+      right: 37px;
+      top: 28px;
+    }
   }
 }
