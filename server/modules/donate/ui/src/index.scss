@@ -8,6 +8,11 @@
   background-color: #f5f4f0;
   height: 687px;
 
+  @media (min-width: map-get($breakpoints, 'sm')) {
+    flex-direction: row-reverse;
+    height: 401px
+  }
+
   @media (min-width: map-get($breakpoints, 'md')) {
     flex-direction: row;
     flex-wrap: wrap;
@@ -21,7 +26,7 @@
   width: 100%;
   flex-direction: column;
 
-  @media (min-width: map-get($breakpoints, 'md')) {
+  @media (min-width: map-get($breakpoints, 'sm')) {
     width: 50%;
   }
 
@@ -31,7 +36,7 @@
     justify-content: center;
     width: inherit;
 
-    @media (min-width: map-get($breakpoints, 'md')) {
+    @media (min-width: map-get($breakpoints, 'sm')) {
       width: fit-content;
     }
   }
@@ -61,6 +66,10 @@
     letter-spacing: 0px;
     margin-top: 40px;
 
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      margin-top: 0;
+    }
+
     @media (min-width: map-get($breakpoints, 'md')) {
       margin-top: 7px;
       font-size: 32px;
@@ -70,6 +79,11 @@
 
   .pdl-donate__amount-wrapper {
     margin-top: 17px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      margin-top: 20px;
+    }
+
     @media (min-width: map-get($breakpoints, 'md')) {
       margin-top: 24px;
     }
@@ -88,6 +102,11 @@
     background-color: transparent;
     font-size: 18px;
     font-weight: 500;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      height: 50px;
+      width: 63px;
+    }
 
     @media (min-width: map-get($breakpoints, 'md')) {
       height: 53px;
@@ -157,6 +176,10 @@
     gap: 23px;
     margin: 16px 0;
 
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      margin: 14px 0;
+    }
+
     @media (min-width: map-get($breakpoints, 'md')) {
       margin: 17px 0;
       padding-top: 6px;
@@ -202,6 +225,10 @@
     position: relative;
     width: 330px;
     top: 30px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      top: 10px;
+    }
 
     @media (min-width: map-get($breakpoints, 'md')) {
       width: 574px;
