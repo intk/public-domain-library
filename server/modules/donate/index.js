@@ -14,7 +14,7 @@ module.exports = {
         async checkout (req, res) {
           try {
             // Test card numbers
-            // Payement in succcess: 4242 4242 4242 4242
+            // Payment in succcess: 4242 4242 4242 4242
             // Authentication required: 4000 0025 0000 3155
             // Rejected payment: 4000 0000 0000 9995
             if (!req.body.amount || req.body.amount < 0.6) {

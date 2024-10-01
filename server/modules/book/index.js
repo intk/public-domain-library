@@ -90,14 +90,30 @@ module.exports = {
         options: {
           max: 1,
           widgets: {
-            '@apostrophecms/rich-text': {},
+            '@apostrophecms/rich-text': {
+              toolbar: [],
+              styles: [],
+            },
+          },
+        },
+      },
+      legalNoticeRTE: {
+        label: 'pdl:Legal Notice',
+        type: 'area',
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/rich-text': {
+              toolbar: [],
+              styles: [],
+            },
           },
         },
       },
     },
     group: {
       basics: {
-        fields: ['_author', 'excerptRTE', 'imageArea', 'color', 'fontColor', 'files', 'creditsRTE'],
+        fields: ['_author', 'excerptRTE', 'imageArea', 'color', 'fontColor', 'files', 'creditsRTE', 'legalNoticeRTE'],
       },
     },
   },

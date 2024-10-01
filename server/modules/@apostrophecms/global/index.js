@@ -98,18 +98,8 @@ module.exports = {
           },
         },
       },
-      bookLegalNotice: {
-        type: 'string',
-        textarea: true,
-      },
     },
     group: {
-      legal: {
-        label: 'Legal',
-        fields: [
-          'bookLegalNotice',
-        ],
-      },
       links: {
         label: 'Links',
         fields: [

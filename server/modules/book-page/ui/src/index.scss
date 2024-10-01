@@ -298,9 +298,11 @@
       margin-top: 0;
     }
   }
+
+
 }
 
-.pdl-legal-notice {
+.pdl-book__legal-notice {
   padding: 20px;
   padding-bottom: 18px;
   display: flex;
@@ -319,7 +321,7 @@
     padding: 32px;
   }
 
-  &__title {
+  &-title {
     font-size: 18px;
     font-weight: 500;
     text-align: left;
@@ -330,10 +332,14 @@
     }
   }
 
-  &__content {
+  &-content {
     font-size: 14px;
     font-weight: 400;
     text-align: left;
+
+    p {
+      margin-top: 0;
+    }
 
     @media (min-width: map-get($breakpoints, 'sm')) {
       padding-left: 20px;

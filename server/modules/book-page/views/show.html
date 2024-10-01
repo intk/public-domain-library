@@ -61,15 +61,19 @@
         {% endfor %}
       </div>
       <div class="pdl-book__credits">
-        {{ __t('pdl:Credits') }}
+        {% if data.piece.creditsRTE.items[0] %}
+          {{ __t('pdl:Credits') }}
+        {% endif %}
         {% area data.piece, 'creditsRTE' %}
       </div>
     </div>
   </div>
 
-  <div class="pdl-legal-notice">
-    <div class="pdl-legal-notice__title">{{ __t('pdl:Legal notice') }}</div>
-    <div  class="pdl-legal-notice__content">{{ data.global.bookLegalNotice }}</div>
+  <div class="pdl-book__legal-notice">
+    {% if data.piece.legalNoticeRTE.items[0] %}
+      <div class="pdl-book__legal-notice-title">{{ __t('pdl:Legal notice') }}</div>
+    {% endif %}
+    <div  class="pdl-book__legal-notice-content">{% area data.piece, 'legalNoticeRTE' %}</div>
   </div>
 
   <div class="pdl-book__books">
