@@ -5,6 +5,14 @@ module.exports = {
         name: 'default-page',
         label: 'Default',
       },
+      {
+        name: 'book-page',
+        label: 'Book',
+      },
+      {
+        name: 'author-page',
+        label: 'Author',
+      },
     ],
     park: [
       {

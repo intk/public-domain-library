@@ -24,5 +24,11 @@
   "About Public Domain Library": "About Public Domain Library",
   "Discover": "Discover",
   "Description": "Description",
-  "Year": "Year"
+  "Year": "Year",
+  "Text": "Text",
+  "Link Type": "Link Type",
+  "Page": "Page",
+  "Custom URL": "Custom URL",
+  "Will the link open a new browser tab?": "Will the link open a new browser tab?",
+  "Open in new tab": "Open in new tab"
 }

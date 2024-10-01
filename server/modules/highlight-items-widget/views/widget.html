@@ -19,9 +19,10 @@
 
         <div class="pdl-highlight-widget__description">{{ item.description }}</div>
 
-        {% if item._page[0]._url %}
-          <a class="pdl-highlight-widget__link" href="{{ item._page[0]._url }}">
-            {{ __t('pdl:View all') }}
+        {% if item.link and item.link._id %}
+          {% set link = item.link %}
+          <a class="pdl-highlight-widget__link" href="{{ link._linkPage[0]._url if link.linkType === 'page' else link.linkUrl }}" {%- if link.linkTarget[0] === '_blank' %} target="_blank" {%- endif %}>
+            {{ link.linkText }}
             {% include "@apostrophecms/home-page:svg-arrow-right.html" %}
           </a>
         {% endif %}
