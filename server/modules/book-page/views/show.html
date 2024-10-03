@@ -71,7 +71,7 @@
 
   <div class="pdl-book__legal-notice">
     {% if data.piece.legalNoticeRTE.items[0] %}
-      <div class="pdl-book__legal-notice-title">{{ __t('pdl:Legal notice') }}</div>
+      <div class="pdl-book__legal-notice-title">{{ data.piece.legalNoticeTitle or __t('pdl:Legal notice') }}</div>
     {% endif %}
     <div  class="pdl-book__legal-notice-content">{% area data.piece, 'legalNoticeRTE' %}</div>
   </div>

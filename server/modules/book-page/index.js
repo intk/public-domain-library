@@ -4,6 +4,9 @@ module.exports = {
   options: {
     label: 'pdl:Book Page',
     perPage: 12,
+    i18n: {
+      ns: 'pdl',
+    },
   },
 
   methods (self) {

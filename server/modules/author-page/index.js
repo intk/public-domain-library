@@ -6,7 +6,6 @@ module.exports = {
     perPage: 600,
     i18n: {
       ns: 'pdl',
-      browser: true,
     },
   },
 

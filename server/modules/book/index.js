@@ -97,8 +97,13 @@ module.exports = {
           },
         },
       },
+      legalNoticeTitle: {
+        label: 'pdl:Legal notice title',
+        type: 'string',
+        help: 'If empty, the title will be "Legal notice"',
+      },
       legalNoticeRTE: {
-        label: 'pdl:Legal Notice',
+        label: 'pdl:Legal notice content',
         type: 'area',
         options: {
           max: 1,
@@ -113,7 +118,7 @@ module.exports = {
     },
     group: {
       basics: {
-        fields: ['_author', 'excerptRTE', 'imageArea', 'color', 'fontColor', 'files', 'creditsRTE', 'legalNoticeRTE'],
+        fields: ['_author', 'excerptRTE', 'imageArea', 'color', 'fontColor', 'files', 'creditsRTE', 'legalNoticeTitle', 'legalNoticeRTE'],
       },
     },
   },
