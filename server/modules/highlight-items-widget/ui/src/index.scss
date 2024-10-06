@@ -29,9 +29,10 @@ body { overflow: hidden; }
   margin-bottom: 18px;
 
   @media (min-width: map-get($breakpoints, 'sm')) {
-    height: 380px;
+    max-height: 500px;
   }
   @media (min-width: map-get($breakpoints, 'md')) {
+    max-height: none;
     height: 767px;
     margin-bottom: 40px;
   }
@@ -236,12 +237,13 @@ body { overflow: hidden; }
 
   .pdl-highlight-widget__slider {
     cursor: pointer;
-    position: absolute;
-    bottom: 20px;
+    position: relative;
+    margin-top: 20px;
     display: flex;
     gap: 8px;
 
     @media (min-width: map-get($breakpoints, 'md')) {
+      position: absolute;
       bottom: 40px;
     }
 

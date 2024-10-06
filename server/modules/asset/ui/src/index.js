@@ -2,6 +2,12 @@ import { DotLottie } from '@lottiefiles/dotlottie-web'
 
 export default () => {
   apos.util.onReady(async () => {
+    const ua = window.navigator.userAgent
+    const iosDevice = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i) || (!!ua.match(/Macintosh/i) && !ua.match(/Chrome/i))
+    if (iosDevice) {
+      document.body.classList.add('pdl-ios-device')
+    }
+
     /********************************/
     /* start header logo animation */
     /*******************************/

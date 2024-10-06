@@ -37,6 +37,7 @@
 
     @media (min-width: map-get($breakpoints, 'sm')) {
       width: fit-content;
+      max-width: 50vw;
     }
   }
 
@@ -111,6 +112,8 @@
     border: 1px solid black;
     background-color: transparent;
     font-weight: 500;
+    color: black;
+    padding: 5px;
 
     @media (min-width: map-get($breakpoints, 'xs')) {
       width: 71px;
@@ -157,6 +160,10 @@
     @media (min-width: map-get($breakpoints, 'xs')) {
       font-size: 18px;
       width: 66px;
+      height: 41px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
       height: 46px;
     }
 
@@ -273,6 +280,14 @@
       width: 574px;
       right: 37px;
       top: 28px;
+    }
+  }
+}
+
+.pdl-ios-device {
+  @media (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'md')) {
+    .pdl-donate__amount-input {
+      height: 39px;
     }
   }
 }
