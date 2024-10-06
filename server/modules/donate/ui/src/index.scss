@@ -285,9 +285,9 @@
 }
 
 .pdl-ios-device {
-  @media (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'md')) {
+  @media (max-width: map-get($breakpoints, 'md')) {
     .pdl-donate__amount-input {
-      height: 39px;
+      height: 39px !important;
     }
   }
 }
