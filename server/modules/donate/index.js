@@ -36,7 +36,6 @@ module.exports = {
                     },
                     unit_amount: Math.round(parseFloat(req.body.amount) * 100),
                   },
-                  // price: 'price_1Q3iQrKltrjEwtH42kErhdkJ',
                   quantity: 1,
                 },
               ],
