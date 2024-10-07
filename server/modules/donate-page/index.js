@@ -4,12 +4,10 @@ module.exports = {
     add: {
       successSentence: {
         type: 'string',
-        label: 'Donate Sentence',
         textarea: true,
       },
       cancelSentence: {
         type: 'string',
-        label: 'Cancel Sentence',
         textarea: true,
       },
     },
