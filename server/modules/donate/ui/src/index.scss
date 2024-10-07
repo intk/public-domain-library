@@ -178,13 +178,6 @@
     &:focus {
       outline: none;
       border: 2px solid black;
-      height: 39px;
-      width: 64px;
-
-      @media (min-width: map-get($breakpoints, 'md')) {
-        height: 48px;
-        width: 113px;
-      }
     }
   }
 
