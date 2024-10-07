@@ -1,5 +1,25 @@
 module.exports = {
   extend: '@apostrophecms/page-type',
+  fields: {
+    add: {
+      successSentence: {
+        type: 'string',
+        label: 'Donate Sentence',
+        textarea: true,
+      },
+      cancelSentence: {
+        type: 'string',
+        label: 'Cancel Sentence',
+        textarea: true,
+      },
+    },
+    group: {
+      basics: {
+        label: 'Basics',
+        fields: ['successSentence', 'cancelSentence'],
+      },
+    },
+  },
   methods (self) {
     return {
       indexPage (req) {

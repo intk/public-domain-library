@@ -4,7 +4,7 @@
 {% block main %}
 <section class="pdl-books">
   <h1>
-    Donation cancelled
+    {{ data.page.cancelSentence or 'Donation cancelled'}}
   </h1>
 </section>
 {% endblock %}

@@ -4,7 +4,7 @@
 {% block main %}
 <section class="pdl-books">
   <h1>
-    {{ data.page.error }}
+    {{ data.page.error or 'Donate error page' }}
   </h1>
 </section>
 {% endblock %}

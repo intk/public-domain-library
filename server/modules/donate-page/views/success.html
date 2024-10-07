@@ -4,7 +4,7 @@
 {% block main %}
 <section class="pdl-books">
   <h1>
-    Succeeded! Thank you for your donation!
+    {{ data.page.successSentence or 'Succeeded! Thank you for your donation!'}}
   </h1>
 </section>
 {% endblock %}
