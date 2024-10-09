@@ -17,6 +17,12 @@
       display: none;
     }
   }
+
+  .pdl-book-preview {
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin-bottom: 25px;
+    }
+  }
   .pdl-book-preview__title {
     min-height: 44px;
   }
