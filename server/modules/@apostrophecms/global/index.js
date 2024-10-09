@@ -98,12 +98,21 @@ module.exports = {
           },
         },
       },
+      stripePublicKey: {
+        type: 'string',
+      },
     },
     group: {
       links: {
         label: 'Links',
         fields: [
           'headerNav', 'footerNav', 'footerLegal', 'social',
+        ],
+      },
+      stripe: {
+        label: 'Stripe',
+        fields: [
+          'stripePublicKey',
         ],
       },
     },

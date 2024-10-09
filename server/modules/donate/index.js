@@ -1,5 +1,4 @@
 const url = require('url')
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 module.exports = {
   extend: '@apostrophecms/module',
@@ -26,6 +25,7 @@ module.exports = {
               }))
             }
 
+            const stripe = require('stripe')(req.data.global.stripePublicKey)
             const session = await stripe.checkout.sessions.create({
               line_items: [
                 {
