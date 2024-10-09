@@ -6,18 +6,6 @@ body { overflow: hidden; }
   display: none;  /* Safari and Chrome */
 }
 
-.pdl-wrapper {
-  overflow: auto;
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  width: 100%;
-
-  &.logged-in {
-    top: 112px;
-  }
-}
-
 .pdl-highlight-widget {
   position: relative;
   display: flex;
@@ -52,14 +40,13 @@ body { overflow: hidden; }
 
 .pdl-highlight-widget__item {
   display: none;
-  // display: flex;
   flex-direction: column;
   gap: 0;
   height: auto;
   font-size: 30px;
   font-weight: 500;
   text-align: left;
-  width: 100vw;
+  width: 100%;
   animation-name: fade;
   animation-duration: 0.5s;
 
@@ -96,7 +83,7 @@ body { overflow: hidden; }
 
   .pdl-highlight-widget__image {
     display: block;
-    min-width: 50vw;
+    min-width: 50%;
     height: 380px;
     mix-blend-mode: multiply;
     filter: grayscale(1);

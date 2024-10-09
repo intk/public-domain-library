@@ -362,6 +362,7 @@
 .pdl-home__areas {
   z-index: 3;
   background-color: white;
+  width: 100%;
 
   .pdl-book-preview-widget {
     margin-top: 0;
@@ -386,5 +387,5 @@
 .pdl-home__donate {
   position: relative;
   z-index: 2;
-  width: 100vw;
+  width: 100%;
 }

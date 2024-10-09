@@ -44,13 +44,13 @@ module.exports = {
                     choices: [
                       {
                         label: 'pdl:Page',
-                        value: 'page'
+                        value: 'page',
                       },
                       {
                         label: 'pdl:Custom URL',
-                        value: 'custom'
-                      }
-                    ]
+                        value: 'custom',
+                      },
+                    ],
                   },
                   _linkPage: {
                     label: 'pdl:Page',
@@ -60,21 +60,21 @@ module.exports = {
                     builders: {
                       project: {
                         title: 1,
-                        _url: 1
-                      }
+                        _url: 1,
+                      },
                     },
                     if: {
-                      linkType: 'page'
+                      linkType: 'page',
                     },
-                    required: true
+                    required: true,
                   },
                   linkUrl: {
                     label: 'pdl:Custom URL',
                     type: 'url',
                     if: {
-                      linkType: 'custom'
+                      linkType: 'custom',
                     },
-                    required: true
+                    required: true,
                   },
                   linkTarget: {
                     label: 'pdl:Will the link open a new browser tab?',
@@ -82,12 +82,12 @@ module.exports = {
                     choices: [
                       {
                         label: 'pdl:Open in new tab',
-                        value: '_blank'
-                      }
-                    ]
+                        value: '_blank',
+                      },
+                    ],
                   },
-                }
-              }
+                },
+              },
             },
             imageArea: {
               label: 'pdl:Image',

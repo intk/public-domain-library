@@ -25,6 +25,23 @@ main {
   flex-grow: 1;
 }
 
+.pdl-wrapper {
+  overflow: auto;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+
+  &.logged-in {
+    top: 112px;
+  }
+}
+
+// preview mode: disable space for admin bar
+[data-apos-refreshable][data-resizable] .pdl-wrapper.logged-in {
+  top: 0px;
+}
+
 body {
   min-height: 100vh;
   // Nice system fonts.
