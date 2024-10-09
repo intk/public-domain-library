@@ -16,11 +16,11 @@ module.exports = {
             // Payment in succcess: 4242 4242 4242 4242
             // Authentication required: 4000 0025 0000 3155
             // Rejected payment: 4000 0000 0000 9995
-            if (!req.body.amount || req.body.amount < 0.6) {
+            if (!req.body.amount || req.body.amount < 0.5) {
               return res.redirect(url.format({
                 pathname: '/donate/error',
                 query: {
-                  error: 'Minimum amount is $0.60',
+                  error: 'Minimum amount is 0.50€',
                 },
               }))
             }
@@ -30,7 +30,7 @@ module.exports = {
               line_items: [
                 {
                   price_data: {
-                    currency: 'usd',
+                    currency: 'eur',
                     product_data: {
                       name: 'Public Domain Library Donation',
                     },

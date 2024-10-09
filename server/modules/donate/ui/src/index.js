@@ -7,7 +7,7 @@ export default () => {
       el.addEventListener('submit', (evt) => {
         const formData = new FormData(el)
         const data = Object.fromEntries(formData)
-        if (!data.amount || data.amount < 0.6) {
+        if (!data.amount || data.amount < 0.5) {
           evt.preventDefault()
         }
       })
@@ -27,7 +27,7 @@ export default () => {
             // If a different amount is clicked, set the input value
             customAmount.value = ''
             amount.classList.add('pdl-donate__amount-button--selected')
-            el.querySelector('input#amount').value = amount.textContent.split('$')[0]
+            el.querySelector('input#amount').value = amount.textContent.split('€')[0]
             submitButton.classList.remove('pdl-donate__submit--disabled')
           }
         })
@@ -41,7 +41,7 @@ export default () => {
         }
       })
       customAmount.addEventListener('input', () => {
-        if (customAmount.value && customAmount.value >= 0.6) {
+        if (customAmount.value && customAmount.value >= 0.5) {
           submitButton.classList.remove('pdl-donate__submit--disabled')
         } else {
           submitButton.classList.add('pdl-donate__submit--disabled')
