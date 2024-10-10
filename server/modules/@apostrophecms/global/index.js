@@ -101,6 +101,31 @@ module.exports = {
       stripePublicKey: {
         type: 'string',
       },
+      newsletterText: {
+        type: 'string',
+        textarea: true,
+        help: 'Text to display next to the newsletter signup form',
+      },
+      newsletterPlaceholder: {
+        type: 'string',
+        help: 'Placeholder text for the email input field',
+      },
+      newsletterSubmitText: {
+        type: 'string',
+        help: 'Text for the submit button',
+      },
+      newsletterNoticeRTE: {
+        type: 'area',
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/rich-text': {
+              className: 'pdl-newsletter__notice',
+            },
+          },
+        },
+        help: 'Text to display under the form',
+      },
     },
     group: {
       links: {
@@ -113,6 +138,12 @@ module.exports = {
         label: 'Stripe',
         fields: [
           'stripePublicKey',
+        ],
+      },
+      newsletter: {
+        label: 'Newsletter',
+        fields: [
+          'newsletterText', 'newsletterPlaceholder', 'newsletterSubmitText', 'newsletterNoticeRTE',
         ],
       },
     },

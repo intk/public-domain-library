@@ -69,7 +69,7 @@
       </div>
 
       {% for item in data.global.headerNav %}
-          <a href="{{ item._page[0]._url }}" class="pdl-nav__item">{{ item._page[0].title }}</a>
+        <a href="{{ item._page[0]._url }}" class="pdl-nav__item">{{ item._page[0].title }}</a>
       {% endfor %}
 
       <span class="pdl-nav__item">
@@ -120,6 +120,7 @@
 {% block main %}{% endblock %}
 
 {% block afterMain %}
+  {% include "newsletter:index.html" %}
   </main>
   <footer class="pdl-footer">
 

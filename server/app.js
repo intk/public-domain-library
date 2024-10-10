@@ -29,5 +29,6 @@ require('apostrophe')({
     'highlight-items-widget': {},
     donate: {},
     'donate-page': {},
+    newsletter: {},
   },
 })

@@ -1,0 +1,21 @@
+<section class="pdl-newsletter">
+  <div class="pdl-newsletter__text">
+    <div class="pdl-newsletter__heading">
+      {{ data.global.newsletterText or __t('pdl:Be the first to know about book releases.') }}
+      <img loading="lazy" src="{{ apos.asset.url('/modules/newsletter/newsletter.svg') }}" class="pdl-newsletter__icon" alt="icon" />
+    </div>
+  </div>
+  <form class="pdl-newsletter__form" action="https://app.kit.com/forms/7188099/subscriptions" method="POST">
+    <div class="pdl-newsletter__content">
+      <input type="email" id="email" name="email_address" class="pdl-newsletter__input" placeholder="{{ data.global.newsletterPlaceholder or __t('pdl:Email') }} *" aria-label="Email" required>
+      <button type="submit" class="pdl-newsletter__submit pdl-newsletter__submit--disabled">{{ data.global.newsletterSubmitText or __t('pdl:Subscribe') }}</button>
+    </div>
+    <div class="pdl-newsletter__validation"></div>
+    {% if data.global.newsletterNoticeRTE.items[0] %}
+      {% area data.global, 'newsletterNoticeRTE' %}
+    {% else %}
+      <p class="pdl-newsletter__notice">
+        You can unsubscribe at any time. For further details, review our <a href="/privacy-policy">Privacy Policy</a>.
+      </p>
+    {% endif %}
+</section>
