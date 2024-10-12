@@ -4,7 +4,8 @@
     <div class="pdl-highlight-widget__item" style="background-color: {{ item.color }}" id="{{ item._id }}">
 
       {% set image = apos.image.first(item.imageArea) %}
-      <img class="pdl-highlight-widget__image pdl-image-widget" src="{{ image._urls['one-half'] }}" alt="{{ image._alt if image._alt or image.title }}" width="{{ apos.attachment.getWidth(image) }}" height="{{ apos.attachment.getHeight(image) }}">
+      {% set focalPoint = apos.attachment.getFocalPoint(image) %}
+      <img class="pdl-highlight-widget__image pdl-image-widget" src="{{ image._urls['one-half'] }}" alt="{{ image._alt if image._alt or image.title }}" width="{{ apos.attachment.getWidth(image) }}" height="{{ apos.attachment.getHeight(image) }}" style="object-position: left {{ focalPoint.x }}% top {{ focalPoint.y }}%;">
 
       <div class="pdl-highlight-widget__container">
         <div class="pdl-highlight-widget__title">{{ item.title }}</div>
