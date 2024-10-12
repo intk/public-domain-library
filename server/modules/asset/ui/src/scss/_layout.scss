@@ -393,6 +393,10 @@ main,
     justify-content: space-between;
     gap: 6px;
 
+    @media (max-width: map-get($breakpoints, 'sm')) {
+      padding-top: 10px;
+    }
+
     @media (min-width: map-get($breakpoints, 'sm')) {
       gap: 51px;
     }

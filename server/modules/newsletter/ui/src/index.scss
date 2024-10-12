@@ -9,27 +9,54 @@
   font-weight: 500;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 70px 26px;
+  padding: 40px 20px 26px 20px;
+
+  @media (min-width: map-get($breakpoints, 'sm')) {
+    padding-bottom: 22px;
+  }
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    padding: 70px 26px;
+  }
 
   .pdl-newsletter__text {
     display: flex;
     min-width: 240px;
     flex-direction: column;
-    font-size: 82.5px;
+    font-size: 37px;
     font-weight: 450;
+    line-height: 36px;
     color: #000;
-    line-height: 80px;
     flex: 1;
     flex-basis: 0%;
-    padding: 0 73px 6px 5px;
+    padding: 0 93px 17px 1px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      padding: 0 73px 17px 1px;
+      font-size: 35px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      font-size: 82.5px;
+      line-height: 80px;
+      padding: 0 73px 6px 5px;
+    }
   }
 
   .pdl-newsletter__heading {
     align-self: flex-start;
+
+    @media (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'md')) {
+      padding-right: 5px;
+    }
   }
 
   .pdl-newsletter__icon {
-    width: 48px;
+    width: 22px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      width: 48px;
+    }
   }
 
   .pdl-newsletter__form {
@@ -43,6 +70,11 @@
 
   .pdl-newsletter__content {
     display: flex;
+    gap: 6px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      gap: 10px;
+    }
 
     @media (min-width: map-get($breakpoints, 'md')) {
       gap: 9px;
@@ -93,8 +125,11 @@
     padding: 12px;
     border: none;
     cursor: pointer;
-    min-width: 112px;
     font-size: 18px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      min-width: 112px;
+    }
   }
 
   .pdl-newsletter__notice {
@@ -102,7 +137,11 @@
     font-size: 14px;
     font-weight: 100;
     letter-spacing: 0.14px;
-    margin-top: 10px;
+    margin-top: -7px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin-top: 10px;
+    }
 
     a {
       color: #000;
