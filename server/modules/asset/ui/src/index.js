@@ -66,6 +66,10 @@ export default () => {
 
     if (openMobileNavButton) {
       openMobileNavButton.addEventListener('click', () => {
+        const previewMode = document.querySelector('[data-apos-refreshable][data-resizable]')
+        if (previewMode) {
+          mobileNav.style.top = '50px'
+        }
         mobileNav.classList.add('pdl-mobile-nav--open')
 
         // hide hamburger icon
