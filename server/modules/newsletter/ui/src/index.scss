@@ -1,7 +1,10 @@
 @import '../../../asset/ui/src/scss/settings';
 
+.pdl-home + .pdl-newsletter {
+  z-index: 1;
+}
+
 .pdl-newsletter {
-  z-index: 4;
   position: relative;
   align-items: flex-end;
   background-color: #fff;
