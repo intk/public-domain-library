@@ -218,61 +218,17 @@ The frontend code is always in the `index.js` file of the `src/ui/` folder of a 
 
 <a id="5-1-5"></a>
 
-#### 5.1.5 Custom components [&#x2B06;](#contents)
-
-Custom components can be found in `apos/modules/component`. Standard modules are traditionally declared in `apos/app.js` but these are defined in `apos/modules/component/modules.js`.
-
-These components are meant to be reused in the project.
+#### 5.1.5 Macros [&#x2B06;](#contents)
 
 If a component has a `view` folder with a Nunjucks template, it means it can be included in another template.
-<br>For example, the locale-switcher component is used in multiple pages. It is imported and used this way:
+<br>For example, the locale-switcher component is imported in the layout template:
 ```html
-{% import "component/locale-switcher:index.html" as localeSwitcher with context %}
+{% import "locale-switcher:index.html" as localeSwitcher with context %}
 ...
-{{ localeSwitcher.displayFlags(params) }}
+{{ localeSwitcher.display() }}
 ```
 
-It uses a [macro](https://mozilla.github.io/nunjucks/templating.html#macro) `displayFlags` and outputs a list of available languages for the app user.
-
-Another type of component is not using templates. For example, snackbar and pop-up.
-<br>As it is purely js, it will not be imported in a template, but rather in a front js file.
-<br>For example, here is how to display a pop-up:
-
-```js
-import displayPopup from '@/popup'
-...
-displayPopup('message to display', {
-  dismiss: { label: 'No' },
-  confirm: {
-    label: 'Yes',
-    action: () => {
-      // action when 'Yes' is clicked
-      // it could be a redirection on a different page
-      // or an HTTP request to the backend
-    },
-  },
-})
-```
-
-It is possible to import the pop-up with `@/popup` thanks an addition to the default Webpack configuration contained in Apostrophe.
-<br>It is done while declaring the component:
-
-```js
-// in apos/modules/component/modules.js
-'component/popup': {
-  webpack: {
-    extensions: {
-      popupAlias: {
-        resolve: {
-          alias: {
-            '@/popup': path.join(__dirname, './popup/public'),
-          },
-        },
-      },
-    },
-  },
-},
-```
+It uses a [macro](https://mozilla.github.io/nunjucks/templating.html#macro) `display` and outputs a list of available languages for the app user.
 
 <a id="5-1-6"></a>
 
@@ -299,18 +255,7 @@ options: {
 },
 ```
 
-To enable this draft/live workflow, a module has to be "localized". Example with the "author" module:
-
-```js
-options: {
-  alias: 'author',
-    label: 'Author',
-    pluralLabel: 'Authors',
-    localized: true,
-},
-```
-
-This means there will be the same number of documents in every defined locale. When creating a document in a module or a page, it is possible to "localize" in other defined locales, meaning it will be published (giving the "live" status).
+When creating a document in a module or a page, it is possible to "localize" in other defined locales, meaning it will be published (giving the "live" status).
 A localized document, when edited, is in draft. It has to be published to be public (when the user clicks on "Publish" in the document modal or programmatically). As a consequence, a document can be translated by a user who has the permission to edit.
 
 However, labels in the UI or our frontend code cannot be translated through the Apostrophe "localization" feature. Therefore, there are translation files in `apos/modules/@apostrophecms/i18n/i18n`. These are JSON files.
