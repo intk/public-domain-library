@@ -1,0 +1,19 @@
+.pdl-contact {
+  display: flex;
+
+  .pdl-contact__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+  .pdl-contact__heading {
+    font-size: 113px;
+    font-weight: 450;
+    margin-top: 50px;
+    margin-left: 32px;
+    margin-bottom: 48px;
+    letter-spacing: -1px;
+    text-align: left;
+  }
+}

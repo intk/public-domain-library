@@ -13,6 +13,10 @@ module.exports = {
         name: 'author-page',
         label: 'Author',
       },
+      {
+        name: 'contact-page',
+        label: 'Contact',
+      },
     ],
     park: [
       {
