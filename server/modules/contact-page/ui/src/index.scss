@@ -73,6 +73,7 @@
 
     @media (min-width: map-get($breakpoints, 'md')) {
       margin: auto;
+      margin-right: 0;
       width: 672px;
     }
   }
