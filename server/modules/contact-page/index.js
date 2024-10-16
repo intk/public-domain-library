@@ -22,6 +22,9 @@ module.exports = {
             messageLabel: {
               type: 'string',
             },
+            sendLabel: {
+              type: 'string',
+            },
           },
         },
       },
