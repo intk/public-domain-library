@@ -17,6 +17,8 @@ require('apostrophe')({
         className: 'pdl-video-widget',
       },
     },
+    '@apostrophecms/favicon': {},
+
     asset: {},
     'default-page': {},
     'icon-widget': {},
