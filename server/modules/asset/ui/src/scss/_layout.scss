@@ -142,6 +142,7 @@ main,
 
 .pdl-main {
   padding-top: 50px;
+  background-color: white;
 
   @media (min-width: map-get($breakpoints, 'md')) {
     padding-top: 72px;
