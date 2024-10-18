@@ -18,6 +18,14 @@ require('apostrophe')({
       },
     },
     '@apostrophecms/favicon': {},
+    '@apostrophecms/seo': {},
+    '@apostrophecms/global': {
+      options: {
+        seoGoogleAnalytics: true,
+        seoGoogleTagManager: true,
+        seoGoogleVerification: true,
+      },
+    },
 
     asset: {},
     'default-page': {},
