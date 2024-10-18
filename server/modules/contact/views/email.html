@@ -1,0 +1,28 @@
+{% block main %}
+<center style="width:100%;text-align:left;margin:0;padding:0;border:0;">
+  <table style="margin:20px auto;padding:0;border:0;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" width="600" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#fff">
+    <tbody>
+      <tr style="margin:0;padding:0;border:0;">
+        <td style="width:520px;font-family:Helvetica,Arial,'Helvetica Neue',sans-serif;font-size:22px;line-height:1.36;font-weight:bold;color:#353a5e;margin:0;padding:0;border:0;mso-table-lspace:0pt;mso-table-rspace:0pt;word-break:normal;border-collapse:collapse;">
+          Public Domain Library - New message
+        </td>
+      </tr>
+
+      <tr style="margin:0;padding:0;border:0;">
+        <td style="padding:15px 0 0 0;font-family:Helvetica,Arial,'Helvetica Neue',sans-serif;font-size:14px;line-height:20px;font-weight:normal;color:#353a5e;margin:0;border:0;mso-table-lspace:0pt;mso-table-rspace:0pt;word-break:normal;border-collapse:collapse;">
+          <p>
+            New email received from {{ data.body.name }} <b>{{ data.body.email }}</b><br><br>
+            Message:<br>{{ data.body.message | nlbr }}
+          </p>
+        </td>
+      </tr>
+
+      <tr style="margin:0;padding:0;border:0;">
+        <td style="padding:15px 0 0 0;margin:0;border:0;mso-table-lspace:0pt;mso-table-rspace:0pt;word-break:normal;border-collapse:collapse ;">
+          <a style="text-align:center;width:100%;background-color:#000;color:#ffffff;border-radius:4px;padding:18px;text-decoration:none;display:block;font-family:Arial;font-size:15px;margin:0 auto;border:0;" target="_blank" title="Go to site" href="https://publicdomainlibrary.org"><span style="margin:0;padding:0;border:0;">Go to Public Domain Library</span></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</center>
+{% endblock %}

@@ -13,7 +13,7 @@
   </div>
 
   <div class="pdl-contact__wrapper">
-    <form class="pdl-contact__form" action="/contact" method="post">
+    <form class="pdl-contact__form" action="/api/v1/contact/submit" method="POST">
       <div class="pdl-contact__form-group">
         <input type="text" id="name" name="name" class="pdl-contact__input" placeholder="{{ data.page.form.nameLabel }} *" required>
       </div>
@@ -23,9 +23,10 @@
       <div class="pdl-contact__form-group">
         <textarea id="message" name="message" class="pdl-contact__textarea" placeholder="{{ data.page.form.messageLabel }} *" required></textarea>
       </div>
-      <div class="pdl-contact__submit">{{ data.page.form.sendLabel }}</div>
+      <button type="submit" class="pdl-contact__submit">{{data.page.form.sendLabel }}</button>
     </form>
   </div>
 </section>
 {% endblock %}
+
 

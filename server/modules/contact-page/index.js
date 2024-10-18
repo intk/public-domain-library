@@ -25,6 +25,12 @@ module.exports = {
             sendLabel: {
               type: 'string',
             },
+            successLabel: {
+              type: 'string',
+            },
+            errorLabel: {
+              type: 'string',
+            },
           },
         },
       },
@@ -39,15 +45,18 @@ module.exports = {
   methods (self) {
     return {
       indexPage (req) {
-        self.setTemplate(req, 'index')
+        self.setTemplate(req, 'page')
       },
       showPage (req) {
-        req.notFound = true
+        if (req.query.error) {
+          req.data.page.error = req.query.error
+        }
+        self.setTemplate(req, 'submit')
       },
-      // dispatchAll () {
-      //   self.dispatch('/', self.indexPage)
-      //   self.dispatch('/:slug', self.showPage)
-      // },
+      dispatchAll () {
+        self.dispatch('/', self.indexPage)
+        self.dispatch('/:slug', self.showPage)
+      },
     }
   },
 }

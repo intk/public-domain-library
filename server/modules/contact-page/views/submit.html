@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}{{ data.page.title }}{% endblock %}
+
+{% block main %}
+<section class="pdl-contact">
+  <div class="pdl-contact__wrapper">
+    <h1 class="pdl-contact__heading">
+      {{ data.page.heading }}
+    </h1>
+    <div class="pdl-contact__paragraph">
+      {{ data.page.paragraph | safe }}
+    </div>
+  </div>
+
+  <div class="pdl-contact__wrapper">
+    <div class="pdl-contact__form">
+      <div class="pdl-contact__paragraph">
+        {{ data.page.form.errorLabel if data.page.error else data.page.form.successLabel }}
+      </div>
+      <div style="height: 40px;"></div>
+      <a href="/contact" type="submit" class="pdl-contact__submit">Send another message</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
