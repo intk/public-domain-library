@@ -4,7 +4,9 @@
 
 {% block main %}
   <section class="pdl-content">
+    {% if page.title != 'About' %}
     <h1 class="pdl-content__heading">{{ page.title }}</h1>
+    {% endif %}
     <div class="pdl-content__main">{% area page, 'main' %}</div>
     <div class="pdl-content__layout">
       <div class="pdl-content__column {%- if page.layout == '2' %} pdl-content__column--2-columns {% endif %}">

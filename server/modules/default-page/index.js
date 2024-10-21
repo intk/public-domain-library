@@ -45,7 +45,15 @@ module.exports = {
         options: {
           max: 1,
           widgets: {
-            '@apostrophecms/rich-text': {},
+            '@apostrophecms/rich-text': {
+              styles: [
+                {
+                  tag: 'span',
+                  label: 'Big Text',
+                  class: 'pdl-content__big-text',
+                },
+              ],
+            },
           },
         },
         if: {
