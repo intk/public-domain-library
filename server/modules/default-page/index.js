@@ -8,37 +8,65 @@ module.exports = {
       main: {
         type: 'area',
         options: {
+          max: 1,
           widgets: {
             '@apostrophecms/rich-text': {
-              toolbar: [
-                'styles',
-                '|',
-                'bold',
-                'italic',
-                'strike',
-                'link',
-                '|',
-                'bulletList',
-                'orderedList',
-              ],
               styles: [
                 {
-                  tag: 'p',
-                  label: 'Paragraph (P)',
-                },
-                {
-                  tag: 'h3',
-                  label: 'Heading 3 (H3)',
-                },
-                {
-                  tag: 'h4',
-                  label: 'Heading 4 (H4)',
+                  tag: 'span',
+                  label: 'Bigger Text',
+                  class: 'pdl-content__bigger-text',
                 },
               ],
             },
-            '@apostrophecms/image': {},
-            '@apostrophecms/video': {},
           },
+        },
+      },
+      layout: {
+        type: 'select',
+        label: 'Column Layout',
+        required: true,
+        choices: [
+          {
+            label: '1 column, 100%',
+            value: '1',
+          },
+          {
+            label: '2 columns, 50%',
+            value: '2',
+          },
+        ],
+        def: '1',
+      },
+      column1: {
+        label: 'Column One',
+        type: 'area',
+        contextual: true,
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/rich-text': {},
+          },
+        },
+        if: {
+          $or: [
+            { layout: '1' },
+            { layout: '2' },
+          ],
+        },
+      },
+      column2: {
+        label: 'Column Two',
+        type: 'area',
+        contextual: true,
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/rich-text': {},
+          },
+        },
+        if: {
+          layout: '2',
         },
       },
     },
@@ -47,7 +75,9 @@ module.exports = {
         label: 'Basics',
         fields: [
           'title',
-          'main',
+          'layout',
+          'column1',
+          'column2',
         ],
       },
     },

@@ -1,0 +1,66 @@
+@import '../../../asset/ui/src/scss/settings';
+
+.pdl-content {
+  padding: 14px 20px;
+  flex-direction: column;
+  gap: 38px;
+  margin-bottom: 6px;
+  background: white;
+
+  @media (min-width: map-get($breakpoints, 'sm')) {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    margin-bottom: 0;
+    justify-content: space-between;
+    gap: 70px;
+    padding: 32px;
+    padding-top: 68px;
+  }
+
+  .pdl-content__heading {
+    font-size: 63px;
+    font-weight: 450;
+    margin: 0;
+    margin-bottom: 32px;
+    letter-spacing: 0px;
+    text-align: left;
+
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      letter-spacing: -1px;
+      font-size: 113px;
+      margin-top: -12px;
+      margin-bottom: 38px;
+    }
+  }
+
+  .pdl-content__layout {
+    display: flex;
+    width: 100%
+  }
+
+  .pdl-content__column {
+    width: 100%;
+  }
+
+  .pdl-content__column--2-columns {
+    width: 50%;
+  }
+
+  .pdl-rich-text {
+    font-size: 17.5px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .pdl-content__bigger-text {
+    font-size: 20px;
+    font-weight: 450;
+    margin-bottom: 20px;
+  }
+}
