@@ -22,8 +22,7 @@
     </div>
     <div class="pdl-home__about" id="home-about">
       <div class="pdl-home__about-text">
-      Every year, new authors enter the public domain {% include "svg-blue.html" %} and their entire oeuvre becomes part of our shared cultural heritage. This is cause for celebration, and we invite you to the party.
-      {% include "svg-orange.html" %}
+      {{ data.page.aboutSentence.aboutTextPart1 }} {% include "svg-blue.html" %} {{ data.page.aboutSentence.aboutTextPart2 }} {% include "svg-orange.html" %}
       </div>
       <a class="pdl-home__about-link" href="/{{ data.locale }}/about">
         {{ __t('pdl:About Public Domain Library') }}
