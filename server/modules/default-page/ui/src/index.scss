@@ -38,7 +38,19 @@
   }
 
   .pdl-content__main {
-    margin-bottom: 60px;
+    margin-bottom: 31px;
+    margin-top: 5px;
+    line-height: 31px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      margin-bottom: 52px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin-bottom: 60px;
+      margin-top: 8px;
+      line-height: 60px;
+    }
   }
 
   .pdl-content__layout {
@@ -50,7 +62,7 @@
 
     @media (min-width: map-get($breakpoints, 'sm')) {
       flex-direction: row;
-      gpa: 0;
+      gap: 0;
     }
   }
 
@@ -64,6 +76,16 @@
     @media (min-width: map-get($breakpoints, 'sm')) {
       width: 50%;
     }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      & p:first-child {
+        margin-top: -7px !important;
+      }
+
+      &:first-child p {
+        padding-right: 100px;
+      }
+    }
   }
 
   .pdl-rich-text {
@@ -75,21 +97,43 @@
   }
 
   .pdl-content__big-text {
-    font-size: 64.5px;
+    font-size: 30.5px;
+    line-height: 30px;
     font-weight: 450;
     margin-bottom: 20px;
-    line-height: 80px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      font-size: 64.5px;
+      line-height: 62px;
+    }
   }
 
   .pdl-content__bigger-text {
-    font-size: 82.5px;
+    font-size: 36px;
     font-weight: 450;
     margin-bottom: 20px;
 
     &::after {
-      content: url("modules/default-page/icon.svg");
+      background-image: url("modules/default-page/icon.svg");
       position: relative;
-      margin-left: 10px;
+      margin-left: 5px;
+      display: inline-block;
+      height: 24px;
+      width: 36px;
+      background-size: 36px 24px;
+      background-repeat: no-repeat;
+      content: '';
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      font-size: 82.5px;
+
+      &::after {
+        margin-left: 10px;
+        height: 53px;
+        width: 66px;
+        background-size: 66px 53px;
+      }
     }
   }
 }
