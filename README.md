@@ -22,6 +22,7 @@
    5.3 [MongoDB](#5-3)<br>
 6. [Default user](#6)<br>
 7. [SSL certificate](#7)<br>
+8. [Save and restore locally DB and uploads](#8)<br>
 
 <a id="1"></a>
 
@@ -349,3 +350,14 @@ If there is no previous certificate:
 ### For renewal
 - `docker compose run --rm pdl-certbot renew`
 - `docker restart pdl-reverse-proxy`
+
+<a id="8"></a>
+## 8 Save and restore locally DB and uploads [&#x2B06;](#contents)
+
+On a local machine, in a terminal, run:
+- NOW=`(date +"%FT%H%M")`
+- mkdir -p db/backup/$NOW
+- ssh 3.11.64.174 "exec sh -c \"docker exec -i pdl-db sh -c 'mongodump --archive -u root -p $ROOT_PASSWORD' \" "> ./db/backup/$NOW/pdl.agz
+- rsync -avzh 3.11.64.174:/home/ubuntu/server/public/uploads/attachments server/public/uploads
+- docker-compose up -d
+- docker exec -i pdl-db sh -c 'mongorestore --archive' < db/backup/$NOW/pdl.agz
