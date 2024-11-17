@@ -15,21 +15,27 @@ module.exports = {
           add: {
             nameLabel: {
               type: 'string',
+              required: true,
             },
             emailLabel: {
               type: 'string',
+              required: true,
             },
             messageLabel: {
               type: 'string',
+              required: true,
             },
             sendLabel: {
               type: 'string',
+              required: true,
             },
             successLabel: {
               type: 'string',
+              required: true,
             },
             errorLabel: {
               type: 'string',
+              required: true,
             },
           },
         },

@@ -4,7 +4,7 @@ module.exports = {
     host: 'smtp.gmail.com',
     auth: {
       user: 'publicdomainlib@gmail.com',
-      pass: '20publicdomainlib24',
+      pass: 'qyfz ijsu wiza mzdx',
     },
   },
 }

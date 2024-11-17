@@ -14,6 +14,7 @@ server/public/css/master-*.less
 .env
 .DS_Store
 backup
+server/config/local.js
 
 # Logs
 logs
