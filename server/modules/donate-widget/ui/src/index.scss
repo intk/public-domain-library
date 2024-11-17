@@ -34,6 +34,7 @@
     flex-direction: column;
     justify-content: center;
     width: inherit;
+    max-width: none;
 
     @media (min-width: map-get($breakpoints, 'sm')) {
       width: fit-content;

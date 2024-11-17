@@ -355,9 +355,9 @@ If there is no previous certificate:
 ## 8 Save and restore locally DB and uploads [&#x2B06;](#contents)
 
 On a local machine, in a terminal, run:
-- NOW=`(date +"%FT%H%M")`
-- mkdir -p db/backup/$NOW
+- NOW=\`(date +"%FT%H%M")\`
+- mkdir -p ./db/backup/$NOW
 - ssh 3.11.64.174 "exec sh -c \"docker exec -i pdl-db sh -c 'mongodump --archive -u root -p $ROOT_PASSWORD' \" "> ./db/backup/$NOW/pdl.agz
 - rsync -avzh 3.11.64.174:/home/ubuntu/server/public/uploads/attachments server/public/uploads
 - docker-compose up -d
-- docker exec -i pdl-db sh -c 'mongorestore --archive' < db/backup/$NOW/pdl.agz
+- docker exec -i pdl-db sh -c 'mongorestore --archive -u root -p $ROOT_PASSWORD' < db/backup/$NOW/pdl.agz

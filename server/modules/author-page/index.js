@@ -9,6 +9,29 @@ module.exports = {
     },
   },
 
+  fields: {
+    add: {
+      area: {
+        type: 'area',
+        options: {
+          max: 2,
+          widgets: {
+            donate: {},
+            newsletter: {},
+          },
+        },
+      },
+    },
+    group: {
+      basics: {
+        label: 'pdl:Basics',
+        fields: [
+          'area',
+        ],
+      },
+    },
+  },
+
   methods (self) {
     return {
       async ensureLocalizedPages () {

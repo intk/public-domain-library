@@ -1,0 +1,173 @@
+@import '../../../asset/ui/src/scss/settings';
+
+.pdl-home + .pdl-newsletter {
+  z-index: 1;
+}
+
+.pdl-newsletter {
+  position: relative;
+  align-items: flex-end;
+  background-color: #fff;
+  display: flex;
+  font-weight: 500;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 40px 20px 26px 20px;
+
+  @media (min-width: map-get($breakpoints, 'sm')) {
+    padding: 40px 20px 22px 20px;
+  }
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    padding: 70px 26px 60px 26px;
+  }
+
+  .pdl-newsletter__text {
+    display: flex;
+    min-width: 240px;
+    flex-direction: column;
+    font-size: 37px;
+    font-weight: 450;
+    line-height: 36px;
+    color: #000;
+    flex: 1;
+    flex-basis: 0%;
+    padding: 0 68px 17px 1px;
+
+    @media (max-width: map-get($breakpoints, 'xs')) {
+      padding: 0 83px 17px 1px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      padding: 0 73px 17px 1px;
+      font-size: 35px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      font-size: 82.5px;
+      line-height: 80px;
+      padding: 0 73px 6px 5px;
+    }
+  }
+
+  .pdl-newsletter__heading {
+    align-self: flex-start;
+
+    @media (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'md')) {
+      padding-right: 5px;
+    }
+  }
+
+  .pdl-newsletter__icon {
+    width: 22px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      width: 48px;
+      position: relative;
+      left: -5px;
+    }
+  }
+
+  .pdl-newsletter__form {
+    display: flex;
+    min-width: 240px;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    flex-basis: 73px;
+  }
+
+  .pdl-newsletter__content {
+    display: flex;
+    gap: 6px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      gap: 10px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      gap: 12px;
+    }
+  }
+
+  .pdl-newsletter__input {
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #000;
+    justify-content: flex-start;
+    flex: 1;
+    flex-basis: 0%;
+    padding: 12px;
+    border: 0;
+    font-size: 17.5px;
+    font-weight: 500;
+    box-sizing: border-box;
+
+    @media (min-width: 410px) {
+      min-width: 240px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      text-indent: 5px;
+      height: 53px;
+      width: 567px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: #A9A9A9;
+      opacity: 1;
+      transition: all 0.3s;
+    }
+    &:hover::placeholder {
+      color: black;
+    }
+  }
+
+  .pdl-newsletter__submit {
+    align-self: stretch;
+    border-radius: 4px;
+    background-color: #000;
+    gap: 8px;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #222;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      width: 108px;
+      padding: 2px;
+    }
+  }
+
+  .pdl-newsletter__notice {
+    color: #000;
+    font-size: 14px;
+    font-weight: 100;
+    letter-spacing: 0.14px;
+    margin-top: -7px;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      margin-top: 10px;
+    }
+
+    a {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+}

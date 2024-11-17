@@ -56,7 +56,6 @@ services:
       APOS_BASE_URL:
       APOS_CLUSTER_PROCESSES: 2
       WAIT_HOSTS: pdl-db:27017
-      STRIPE_SECRET_KEY:
     logging:
       options:
         max-file: '5'

@@ -8,6 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transform: matrix(1, 0, 0, 1, 0, 0); // necessary for pdl-home__headline to have "position: fixed" without overflowing
 
   @media (max-width: map-get($breakpoints, 'md')) {
     background-attachment: scroll;
@@ -23,6 +24,7 @@
   text-align: center;
   z-index: 1;
   width: 80%;
+  will-change: transform;
 
   @media (min-width: map-get($breakpoints, 'sm')) {
     top: 175px;

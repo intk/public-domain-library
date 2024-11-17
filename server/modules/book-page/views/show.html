@@ -1,6 +1,5 @@
 {% extends "@apostrophecms/page:layout.html" %}
 {% import "fragment.html" as fragment %}
-{% import "donate:index.html" as donate with context %}
 
 {% block main %}
   <div class="pdl-book">
@@ -80,5 +79,5 @@
     {% render fragment.previews("pdl:More free books", data.latestBooks) %}
   </div>
 
-  <div class="pdl-book__donate">{{ donate.display() }}</div>
+  <div class="pdl-book__area">{% area data.page, 'area' %}</div>
 {% endblock %}

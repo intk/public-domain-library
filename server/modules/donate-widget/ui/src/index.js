@@ -1,5 +1,5 @@
 export default () => {
-  apos.util.widgetPlayers['data-donate-form'] = {
+  apos.util.widgetPlayers['donate-widget'] = {
     selector: '.pdl-donate__form',
     player: function (el) {
       const submitButton = el.querySelector('.pdl-donate__submit')

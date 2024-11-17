@@ -1,9 +1,10 @@
 const url = require('url')
 
 module.exports = {
-  extend: '@apostrophecms/module',
+  extend: '@apostrophecms/widget-type',
   options: {
     i18n: {
+      label: 'Donate',
       ns: 'pdl',
     },
   },

@@ -1,0 +1,33 @@
+<section class="pdl-donate" data-donate-form>
+  <div class="pdl-donate__form-wrapper">
+    <form class="pdl-donate__form" action="/api/v1/donate-widget/checkout" method="POST">
+      <div class="pdl-donate__content">
+        <div class="pdl-donate__title">
+          {{ data.global.donateText or __t("pdl:Donate and help us bring the beauty of literature to the digital age") }}
+        </div>
+        <div class="pdl-donate__amount-wrapper">
+          <div class="pdl-donate__amount-buttons">
+            <button type="button" class="pdl-donate__amount-button" id="amount-button-1">10€</button>
+            <button type="button" class="pdl-donate__amount-button" id="amount-button-2">25€</button>
+            <button type="button" class="pdl-donate__amount-button" id="amount-button-3">50€</button>
+            <button type="button" class="pdl-donate__amount-button" id="amount-button-4">100€</button>
+            <input type="number" min="0.6" step="0.01" id="custom-amount" class="pdl-donate__amount-input" placeholder="{{ __t('pdl:other') }}" aria-label="Enter custom amount">
+            <input type="hidden" id="amount" name="amount">
+          </div>
+        </div>
+        <div class="pdl-donate__payment-methods">
+          <img src="{{ apos.asset.url('/modules/donate-widget/apple-pay.svg') }}" alt="Payment method 1" class="pdl-donate__payment-method">
+          <img src="{{ apos.asset.url('/modules/donate-widget/google-pay.svg') }}" alt="Payment method 2" class="pdl-donate__payment-method">
+          <img src="{{ apos.asset.url('/modules/donate-widget/paypal.svg') }}" alt="Payment method 3" class="pdl-donate__payment-method">
+          <img src="{{ apos.asset.url('/modules/donate-widget/visa.svg') }}" alt="Payment method 4" class="pdl-donate__payment-method">
+          <img src="{{ apos.asset.url('/modules/donate-widget/mastercard.svg') }}" alt="Payment method 5" class="pdl-donate__payment-method">
+        </div>
+        <button type="submit" class="pdl-donate__submit pdl-donate__submit--disabled">{{ data.global.donateCTAText or __t("pdl:Donate") }}</button>
+        <div class="pdl-donate__validation"></div>
+      </div>
+    </form>
+  </div>
+  <div class="pdl-donate__image-wrapper">
+    <img src="{{ apos.asset.url('/modules/donate-widget/donate.png') }}" alt="Donation illustration" class="pdl-donate__image">
+  </div>
+</section>

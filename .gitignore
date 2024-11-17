@@ -13,6 +13,7 @@ server/modules/asset/ui/public/site.js
 server/public/css/master-*.less
 .env
 .DS_Store
+backup
 
 # Logs
 logs

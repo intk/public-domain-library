@@ -34,11 +34,27 @@ module.exports = {
           },
         },
       },
+      area: {
+        type: 'area',
+        options: {
+          max: 2,
+          widgets: {
+            donate: {},
+            newsletter: {},
+          },
+        },
+      },
     },
     group: {
       basics: {
         label: 'Basics',
         fields: ['title', 'heading', 'paragraph', 'form'],
+      },
+      area: {
+        label: 'Area',
+        fields: [
+          'area',
+        ],
       },
     },
   },

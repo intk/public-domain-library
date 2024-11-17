@@ -39,8 +39,9 @@ require('apostrophe')({
     'highlight-items-widget': {},
     contact: {},
     'contact-page': {},
-    donate: {},
     'donate-page': {},
+    'donate-widget': {},
     newsletter: {},
+    'newsletter-widget': {},
   },
 })

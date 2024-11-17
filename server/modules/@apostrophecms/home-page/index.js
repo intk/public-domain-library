@@ -38,6 +38,8 @@ module.exports = {
           widgets: {
             'book-preview': {},
             'highlight-items': {},
+            donate: {},
+            newsletter: {},
           },
         },
       },

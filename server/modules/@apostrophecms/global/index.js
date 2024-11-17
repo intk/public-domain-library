@@ -126,6 +126,14 @@ module.exports = {
         },
         help: 'Text to display under the form',
       },
+      donateText: {
+        type: 'string',
+        help: 'Text displayed above the donation form',
+      },
+      donateCTAText: {
+        type: 'string',
+        help: 'Text displayed on the donation button',
+      },
     },
     group: {
       links: {
@@ -144,6 +152,12 @@ module.exports = {
         label: 'Newsletter',
         fields: [
           'newsletterText', 'newsletterPlaceholder', 'newsletterSubmitText', 'newsletterNoticeRTE',
+        ],
+      },
+      donate: {
+        label: 'Donate',
+        fields: [
+          'donateText', 'donateCTAText',
         ],
       },
     },

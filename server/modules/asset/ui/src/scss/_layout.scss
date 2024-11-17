@@ -40,6 +40,7 @@ main {
 // preview mode: disable space for admin bar
 [data-apos-refreshable][data-resizable] .pdl-wrapper.logged-in {
   top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0); // allow "position: fixed" on .pdl-mobile-nav to be displayed correctly
 }
 
 body {
@@ -72,9 +73,11 @@ main,
   justify-content: space-between;
   font-size: 38px;
   z-index: 4;
+  overflow: hidden;
 
   @media (min-width: map-get($breakpoints, 'md')) {
     height: 72px;
+    overflow: visible;
   }
 }
 

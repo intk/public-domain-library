@@ -77,6 +77,16 @@ module.exports = {
           layout: '2',
         },
       },
+      area: {
+        type: 'area',
+        options: {
+          max: 2,
+          widgets: {
+            donate: {},
+            newsletter: {},
+          },
+        },
+      },
     },
     group: {
       basics: {
@@ -86,6 +96,12 @@ module.exports = {
           'layout',
           'column1',
           'column2',
+        ],
+      },
+      area: {
+        label: 'Area',
+        fields: [
+          'area',
         ],
       },
     },
