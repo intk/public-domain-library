@@ -1,6 +1,8 @@
 {# Automatically extends the right outer layout and also handles AJAX siutations #}
 {% extends data.outerLayout %}
 
+{% block locale %}{{ data.locale }}{% endblock %}
+
 {% set title = data.piece.title or data.page.title %}
 {% block title %}
   {{ title }}

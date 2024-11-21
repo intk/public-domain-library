@@ -24,7 +24,7 @@ module.exports = {
     },
     group: {
       basics: {
-        label: 'pdl:Basics',
+        label: 'Basics',
         fields: [
           'area',
         ],
