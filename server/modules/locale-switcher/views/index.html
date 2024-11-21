@@ -25,7 +25,7 @@
     </button>
     <ul class="pdl-locale-switcher__list" data-locale-list>
       {% for localization in data.localizations %}
-        {% if localization._url and not localization.current %}
+        {% if not localization.current %}
           <li class="pdl-locale-switcher__item">
             <a href="{{ localization._url or localization.homePageUrl }}">
               {{ localization.locale }}
