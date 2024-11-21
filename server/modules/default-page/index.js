@@ -48,7 +48,7 @@ module.exports = {
             '@apostrophecms/rich-text': {
               styles: [
                 {
-                  tag: 'span',
+                  tag: 'h1',
                   label: 'Big Text',
                   class: 'pdl-content__big-text',
                 },

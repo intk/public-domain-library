@@ -139,6 +139,7 @@
     right: -9px;
     text-align: center;
     position: relative;
+    cursor: pointer;
 
     &--hover {
       color: #7F7F7F;
@@ -146,7 +147,7 @@
 
     @media (min-width: map-get($breakpoints, 'md')) {
       top: -8px;
-      right: 4px;
+      right: 2px;
     }
   }
 
