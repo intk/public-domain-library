@@ -98,6 +98,7 @@ module.exports = {
         label: 'Basics',
         fields: [
           'title',
+          'hideTitle',
           'main',
           'layout',
           'column1',
