@@ -87,12 +87,18 @@ module.exports = {
           },
         },
       },
+      hideTitle: {
+        type: 'boolean',
+        label: 'Hide Title',
+        def: false,
+      },
     },
     group: {
       basics: {
         label: 'Basics',
         fields: [
           'title',
+          'main',
           'layout',
           'column1',
           'column2',

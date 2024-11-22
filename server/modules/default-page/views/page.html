@@ -4,7 +4,7 @@
 
 {% block main %}
   <section class="pdl-content">
-    {% if page.title != 'About' %}
+    {% if not page.hideTitle %}
     <h1 class="pdl-content__heading">{{ page.title }}</h1>
     {% endif %}
     <div class="pdl-content__main">{% area page, 'main' %}</div>
