@@ -4,8 +4,10 @@
     <div class="pdl-highlight-widget__item" style="background-color: {{ item.color }}" id="{{ item._id }}">
 
       {% set image = apos.image.first(item.imageArea) %}
-      {% set focalPoint = apos.attachment.getFocalPoint(image) %}
-      <img class="pdl-highlight-widget__image pdl-image-widget" src="{{ image._urls['one-half'] }}" alt="{{ image._alt if image._alt or image.title }}" width="{{ apos.attachment.getWidth(image) }}" height="{{ apos.attachment.getHeight(image) }}" style="object-position: left {{ focalPoint.x }}% top {{ focalPoint.y }}%;">
+      {% if image %}
+        {% set focalPoint = apos.attachment.getFocalPoint(image) %}
+        <img class="pdl-highlight-widget__image pdl-image-widget" src="{{ image._urls['one-half'] }}" alt="{{ image._alt if image._alt or image.title }}" width="{{ apos.attachment.getWidth(image) }}" height="{{ apos.attachment.getHeight(image) }}" style="object-position: left {{ focalPoint.x }}% top {{ focalPoint.y }}%;">
+      {% endif %}
 
       <div class="pdl-highlight-widget__container">
         <div class="pdl-highlight-widget__title">{{ item.title }}</div>
@@ -20,7 +22,7 @@
 
         <div class="pdl-highlight-widget__description">{{ item.description }}</div>
 
-        {% if item.link and item.link._id %}
+        {% if item.link and item.link.linkText %}
           {% set link = item.link %}
           <a class="pdl-highlight-widget__link" href="{{ link._linkPage[0]._url if link.linkType === 'page' else link.linkUrl }}" {%- if link.linkTarget[0] === '_blank' %} target="_blank" {%- endif %}>
             {{ link.linkText }}

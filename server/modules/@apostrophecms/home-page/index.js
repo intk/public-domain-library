@@ -19,23 +19,11 @@ module.exports = {
           },
         },
       },
-      aboutSentence: {
-        type: 'object',
-        fields: {
-          add: {
-            aboutTextPart1: {
-              type: 'string',
-            },
-            aboutTextPart2: {
-              type: 'string',
-            },
-          },
-        },
-      },
       areas: {
         type: 'area',
         options: {
           widgets: {
+            'text-with-icons': {},
             'book-preview': {},
             'highlight-items': {},
             donate: {},
@@ -51,7 +39,6 @@ module.exports = {
           'title',
           'backgroundText',
           '_coverBooks',
-          'aboutSentence',
           'areas',
         ],
       },

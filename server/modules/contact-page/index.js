@@ -47,6 +47,7 @@ module.exports = {
           widgets: {
             donate: {},
             newsletter: {},
+            'text-with-icons': {},
           },
         },
       },

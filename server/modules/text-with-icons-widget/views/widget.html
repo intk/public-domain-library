@@ -1,0 +1,23 @@
+{% set w = data.widget %}
+{% set textColor = 'white' if w.backgroundColor == 'black' else 'black' %}
+
+<div class="pdl-text-with-icons" {%- if data.page.type == '@apostrophecms/home-page' %} id="home-about" {%- endif %} style="background-color: {{ w.backgroundColor }}; color: {{ textColor }}">
+  <div class="pdl-text-with-icons__text">
+  {{ w.textPart1 }}
+  {% if w.showIconTextPart1 %} {% include "svg-blue.html" %} {% endif %}
+  {{ w.textPart2 }}
+  {% if w.showIconTextPart2 %} {% include "svg-orange.html" %} {% endif %}
+  </div>
+
+  {% if w.link and w.link.linkText %}
+    {% set link = w.link %}
+    <a class="pdl-text-with-icons__link" href="{{ link._linkPage[0]._url if link.linkType === 'page' else link.linkUrl }}" {%- if link.linkTarget[0] === '_blank' %} target="_blank" {%- endif %} style="border-color: {{ textColor }}; color: {{ textColor }}">
+      {{ link.linkText }}
+      {% if w.backgroundColor == 'black' %}
+        {% include "@apostrophecms/home-page:svg-arrow-right.html" %}
+      {% else %}
+        {% include "@apostrophecms/home-page:svg-arrow-right-black.html" %}
+      {% endif %}
+    </a>
+  {% endif %}
+</div>

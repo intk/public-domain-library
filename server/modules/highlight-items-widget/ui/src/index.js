@@ -22,10 +22,14 @@ export default () => {
           slides[i].style.display = 'none'
         }
         for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace('--active', '')
+          if (dots[i]?.className) {
+            dots[i].className = dots[i].className.replace('--active', '')
+          }
         }
         slides[slideIndex - 1].style.display = 'flex'
-        dots[slideIndex - 1].className += '--active'
+        if (slideIndex > 0 && dots.length && dots[slideIndex - 1]?.className) {
+          dots[slideIndex - 1].className += '--active'
+        }
       }
     },
   }

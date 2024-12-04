@@ -5,9 +5,13 @@
 
 {% block main %}
   <section class="pdl-home">
+    {% if data.page.backgroundText %}
     <h1 class="pdl-home__headline">
       {{ data.page.backgroundText }}
     </h1>
+    {% endif %}
+
+    {% if data.page._coverBooks.length %}
     <div class="pdl-home__covers">
       {% for book in data.page._coverBooks %}
         <div class="pdl-home__cover pdl-home__cover--{{ loop.index }}">
@@ -19,17 +23,12 @@
         {{ __t('pdl:Discover') }}
       </a>
     </div>
-    <div class="pdl-home__about" id="home-about">
-      <div class="pdl-home__about-text">
-      {{ data.page.aboutSentence.aboutTextPart1 }} {% include "svg-blue.html" %} {{ data.page.aboutSentence.aboutTextPart2 }} {% include "svg-orange.html" %}
-      </div>
-      <a class="pdl-home__about-link" href="/{{ data.locale }}/about">
-        {{ __t('pdl:About Public Domain Library') }}
-        {% include "svg-arrow-right.html" %}
-      </a>
-    </div>
+    {% endif %}
+
+    {% if data.page.areas.items[0] %}
     <div class="pdl-home__areas">
       {% area data.page, 'areas' %}
     </div>
+    {% endif %}
   </section>
 {% endblock %}

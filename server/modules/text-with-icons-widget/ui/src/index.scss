@@ -1,0 +1,144 @@
+@import '../../../asset/ui/src/scss/settings';
+
+.pdl-text-with-icons {
+  width: 100%;
+  text-align: left;
+  z-index: 3;
+
+  font-size: 39px;
+  padding-top: 60px;
+  padding-bottom: 22px;
+  margin-bottom: 25px;
+
+  @media (min-width: map-get($breakpoints, 'sm')) {
+    font-size: 51px;
+    padding-bottom: 20px;
+    padding-top: 67px;
+  }
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    font-size: 84px;
+    padding-bottom: 33px;
+    padding-top: 97px;
+    margin-bottom: 55px;
+  }
+
+  &__text {
+    padding-left: 22px;
+    padding-right: 18px;
+    padding-bottom: 19px;
+    letter-spacing: -1px;
+    line-height: 49px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      letter-spacing: 0;
+      padding-left: 20px;
+      padding-right: 18px;
+      padding-bottom: 17px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      letter-spacing: 0;
+      padding-left: 32px;
+      padding-right: 155px;
+      padding-bottom: 40px;
+      line-height: 82px;
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 19px;
+    height: fit-content;
+    transition: all 0.3s;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 10px;
+    margin-left: 22px;
+    color: white;
+    display: flex;
+    width: fit-content;
+    gap: 9px;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      gap: 16px;
+      font-size: 26px;
+      padding: 20px 24px;
+      margin-left: 32px;
+      margin-top: 3px;
+    }
+
+    svg {
+      width: 12px;
+
+      @media (min-width: map-get($breakpoints, 'md')) {
+        width: 24px;
+      }
+    }
+
+    &:hover svg path {
+      animation: hoverArrowX 300ms ease;
+    }
+
+    @keyframes hoverArrowX {
+      0% {
+        transform: translateX(0)
+      }
+
+      50% {
+        transform: translateX(40px)
+      }
+
+      51% {
+        visibility: hidden;
+      }
+
+      52% {
+        transform: translateX(-25px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  #svg-orange {
+    fill: white;
+    position: absolute;
+    width: 31px;
+    height: 46px;
+    padding-left: 6px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      width: 42px;
+      height: 59px;
+      padding-left: 9px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      width: 72px;
+      height: 96px;
+      padding-left: 14px;
+    }
+  }
+
+  #svg-blue {
+    position: relative;
+    fill: white;
+    width: 32px;
+    height: 25px;
+
+    @media (min-width: map-get($breakpoints, 'sm')) {
+      width: 42px;
+      height: 34px;
+    }
+
+    @media (min-width: map-get($breakpoints, 'md')) {
+      width: 72px;
+      height: 58px;
+    }
+  }
+}
