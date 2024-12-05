@@ -19,6 +19,7 @@ module.exports = {
             donate: {},
             newsletter: {},
             'text-with-icons': {},
+            separator: {},
           },
         },
       },

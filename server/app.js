@@ -43,6 +43,7 @@ require('apostrophe')({
     'donate-widget': {},
     newsletter: {},
     'newsletter-widget': {},
+    'separator-widget': {},
     'text-with-icons-widget': {},
   },
 })

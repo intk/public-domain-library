@@ -28,6 +28,7 @@ module.exports = {
             'highlight-items': {},
             donate: {},
             newsletter: {},
+            separator: {},
           },
         },
       },

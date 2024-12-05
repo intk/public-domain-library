@@ -1,0 +1,19 @@
+@import '../../../asset/ui/src/scss/settings';
+
+.separator {
+  width: 100%;
+  height: 25px;
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    height: 55px;
+  }
+
+  &--white {
+    background-color: white;
+  }
+
+  &--black {
+    background-color: black;
+  }
+}
+
