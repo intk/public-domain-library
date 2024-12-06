@@ -3,6 +3,7 @@ module.exports = {
     label: 'Home Page',
   },
   fields: {
+    remove: ['_seoCanonical'],
     add: {
       backgroundText: {
         type: 'string',

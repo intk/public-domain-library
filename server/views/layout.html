@@ -3,6 +3,14 @@
 
 {% block locale %}{{ data.locale }}{% endblock %}
 
+{% block startHead %}
+  {% for localization in data.localizations %}
+    {% if localization.aposLocale == 'en:published' %}
+      <link rel="canonical" href="{{ data.baseUrlWithPrefix }}/en{{ localization.slug }}" />
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+
 {% set title = data.piece.title or data.page.title %}
 {% block title %}
   {{ title }}

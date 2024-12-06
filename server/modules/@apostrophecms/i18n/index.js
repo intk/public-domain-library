@@ -1,6 +1,7 @@
 module.exports = {
   options: {
     defaultLocale: 'en',
+    redirectToFirstLocale: true,
     locales: {
       en: {
         label: 'English',
