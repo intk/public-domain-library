@@ -4,9 +4,18 @@
 {% block locale %}{{ data.locale }}{% endblock %}
 
 {% block startHead %}
+  {% set slug = '/' %}
   {% for localization in data.localizations %}
     {% if localization.aposLocale == 'en:published' %}
-      <link rel="canonical" href="{{ data.baseUrlWithPrefix }}/en{{ localization.slug }}" />
+      {% set slug = localization.slug %}
+    {% endif %}
+
+    {% if localization.current %}
+      {% if localization.aposLocale == 'en:published' %}
+      <link rel="canonical" href="{{ data.page._url }}" />
+      {% else %}
+      <link rel="alternate" href="{{ data.baseUrlWithPrefix }}/en{{ slug }}" hreflang="{{ localization.aposLocale.split(':')[0] }}" />
+      {% endif %}
     {% endif %}
   {% endfor %}
 {% endblock %}
