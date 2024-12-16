@@ -326,7 +326,7 @@
     gap: 20px;
     padding: 16px 32px;
     overflow-x: scroll;
-    width: calc(100% - 64px);;
+    width: calc(100% - 64px);
 
     @media (min-width: map-get($breakpoints, 'sm')) {
       gap: 0;

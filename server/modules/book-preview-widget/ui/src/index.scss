@@ -11,6 +11,7 @@
   .pdl-book-previews {
     padding-top: 16px;
     margin-bottom: 26px;
+    cursor: grab;
   }
   .pdl-book-preview__format--second, .pdl-book-preview__format--third {
     @media (max-width: map-get($breakpoints, 'md')) {
@@ -22,16 +23,18 @@
     @media (min-width: map-get($breakpoints, 'md')) {
       margin-bottom: 25px;
     }
+
+    &:hover .pdl-book-preview__formats {
+      @media (min-width: map-get($breakpoints, 'md')) {
+        transform: translateY(-80px);
+        transition: transform 0.3s;
+      }
+    }
   }
   .pdl-book-preview__title {
     min-height: 44px;
   }
   .pdl-book-previews__view-all {
     margin-top: -5px;
-  }
-  &:hover .pdl-book-preview__formats {
-    @media (min-width: map-get($breakpoints, 'md')) {
-      transform: translateY(-80px);
-    }
   }
 }
