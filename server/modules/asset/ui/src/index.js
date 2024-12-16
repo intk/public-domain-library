@@ -11,7 +11,7 @@ export default () => {
     const headerDotLottie = new DotLottie({
       autoplay: false,
       loop: true,
-      canvas: document.querySelector('.pdl-header__logo'),
+      canvas: document.querySelector('.pdl-header__logo--desktop'),
       data: headerJsonData,
     })
     headerTitle.addEventListener('mouseenter', () => {

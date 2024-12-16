@@ -81,8 +81,10 @@ main,
   }
 }
 
-.pdl-header__title {
-  display: none;
+.pdl-header__title--desktop {
+  display: flex;
+  visibility: hidden;
+  position: relative;
   align-items: center;
   margin-left: 25px;
 
@@ -106,12 +108,13 @@ main,
   }
 
   @media (min-width: map-get($breakpoints, 'md')) {
-    display: flex;
+    visibility: visible;
   }
 }
 
 .pdl-header__title--mobile {
   display: block;
+  position: absolute;
   margin-left: 12px;
 
   @media (min-width: map-get($breakpoints, 'md')) {

@@ -33,8 +33,8 @@
 {% block beforeMain %}
 <div class="pdl-wrapper {%- if data.user %} logged-in {% endif -%}">
   <header class="pdl-header">
-    <a href="/{{ data.locale }}" class="pdl-header__title">
-      <canvas class="pdl-header__logo"></canvas>
+    <a href="/{{ data.locale }}" class="pdl-header__title pdl-header__title--desktop">
+      <canvas class="pdl-header__logo pdl-header__logo--desktop"></canvas>
       <span>Public Domain Library</span>
     </a>
     <a href="/" class="pdl-header__title pdl-header__title--mobile">
