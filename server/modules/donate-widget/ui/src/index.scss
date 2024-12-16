@@ -181,6 +181,12 @@
       outline: none;
       border: 2px solid black;
     }
+
+    &:hover {
+      background-color: black;
+      color: white;
+      transition: all 0.3s;
+    }
   }
 
   ::placeholder {
