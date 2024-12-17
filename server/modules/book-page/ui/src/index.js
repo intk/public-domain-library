@@ -29,4 +29,39 @@ export default () => {
       })
     }
   }
+
+  let isDown = false
+  let startX
+  let scrollLeft
+  const container = document.querySelector('.pdl-book-previews__container')
+  const elements = container.querySelectorAll('.pdl-book-preview')
+  const elementsWrapper = container.querySelector('.pdl-book-previews')
+
+  container.addEventListener('mousedown', e => {
+    isDown = true
+    startX = e.pageX - container.offsetLeft
+    scrollLeft = container.scrollLeft
+  })
+
+  container.addEventListener('mouseup', e => {
+    isDown = false
+    elementsWrapper.style.cursor = 'grab'
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.pointerEvents = 'auto'
+    }
+  })
+
+  container.addEventListener('mousemove', e => {
+    if (!isDown) return
+    e.preventDefault()
+    const x = e.pageX - container.offsetLeft
+    const walk = (x - startX) * 2
+    container.scrollLeft = scrollLeft - walk
+
+    elementsWrapper.style.cursor = 'grabbing'
+
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.pointerEvents = 'none'
+    }
+  })
 }

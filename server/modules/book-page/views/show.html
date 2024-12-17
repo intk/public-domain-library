@@ -47,7 +47,7 @@
           {{ data.piece._author[0].title }}
         </a>
       {% endif %}
-      <h1>{{ data.piece.title }}</h1>
+      <h1>{{ data.piece.formattedTitle | safe | trim }}</h1>
     </div>
 
     <div class="pdl-book__info pdl-book__info--bottom" id="formats">

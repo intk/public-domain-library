@@ -20,6 +20,7 @@
     text-align: left;
     margin: 0;
     letter-spacing: 0.01px;
+    hyphens: manual;
 
     @media (min-width: map-get($breakpoints, 'md')) {
       font-size: 82px;
@@ -523,20 +524,16 @@
       }
 
       .pdl-book-preview__format--second, .pdl-book-preview__format--third {
-        width: 159px;
+        width: 157px;
 
         @media (min-width: map-get($breakpoints, 'sm')) {
-          width: 211px;
+          width: 209px;
         }
 
         @media (min-width: map-get($breakpoints, 'md')) {
-          width: 217px;
+          width: 214px;
           padding-left: 20px;
           font-size: 17px;
-
-          &:hover {
-            width: 215px;
-          }
         }
       }
     }

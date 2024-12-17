@@ -14,7 +14,6 @@ module.exports = {
       area: {
         type: 'area',
         options: {
-          max: 2,
           widgets: {
             donate: {},
             newsletter: {},
@@ -91,6 +90,17 @@ module.exports = {
       },
 
       async beforeShow (req) {
+        const splitTitle = req.data.piece?.title?.split(' ')
+        let formattedTitle = ''
+        for (let titleElement of splitTitle) {
+          if (titleElement.length > 10 && titleElement.endsWith('biography')) {
+            const splitWord = titleElement.split('biography')
+            titleElement = splitWord[0] + '&shy;' + 'biography'
+          }
+          formattedTitle += titleElement + ' '
+        }
+        req.data.piece.formattedTitle = formattedTitle
+
         const latestBooks = await self.apos.book.find(req, {}).limit(8).toArray() || []
 
         let currentPieceAlreadyPresent = false

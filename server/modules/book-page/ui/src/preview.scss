@@ -311,7 +311,6 @@
   .pdl-book-preview__view {
     border-radius: 4px;
     padding: 12px;
-    // padding-top: 12px;
     margin-left: 7px;
     color: black;
     position: absolute;
@@ -353,13 +352,13 @@
     display: none;
     background-color: black;
     color: white;
-    width: 126px;
+    width: 124px;
     padding: 12px 8px;
     gap: 1px;
     transition: color 0.3s, background-color 0.3s, transform 0.3s;
 
     @media (min-width: map-get($breakpoints, 'md')) {
-      width: 172px;
+      width: 170px;
     }
 
     &--first {
@@ -377,7 +376,6 @@
         &:hover {
           background-color: white;
           color: black;
-          width: 170px;
         }
       }
     }
@@ -391,7 +389,6 @@
         &:hover {
           background-color: white;
           color: black;
-          width: 170px;
         }
       }
     }
