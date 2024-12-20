@@ -1,6 +1,16 @@
 {% extends "layout.html" %}
 {% block title %}{{ data.page.title }}{% endblock %}
 
+{% block extraHead %}
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+    function onSubmit(token) {
+      console.log('token', token)
+      document.getElementById("demo-form").submit();
+    }
+  </script>
+{% endblock %}
+
 {% block main %}
 <section class="pdl-contact">
   <div class="pdl-contact__wrapper">
@@ -13,7 +23,7 @@
   </div>
 
   <div class="pdl-contact__wrapper">
-    <form class="pdl-contact__form" action="/api/v1/contact/submit" method="POST">
+    <form class="pdl-contact__form" id="contact-form" action="/api/v1/contact/submit" method="POST">
       <div class="pdl-contact__form-group">
         <input type="text" id="name" name="name" class="pdl-contact__input" placeholder="{{ data.page.form.nameLabel }} *" required>
       </div>
@@ -23,7 +33,7 @@
       <div class="pdl-contact__form-group">
         <textarea id="message" name="message" class="pdl-contact__textarea" placeholder="{{ data.page.form.messageLabel }} *" required></textarea>
       </div>
-      <button type="submit" class="pdl-contact__submit">{{ data.page.form.sendLabel }}</button>
+      <button type="submit" class="pdl-contact__submit g-recaptcha" data-sitekey="6LcpkpkqAAAAAMms5owrpsMiEcSX8hnN5AI3nS2Y" data-callback="onSubmit" data-action="submit">{{ data.page.form.sendLabel }}</button>
     </form>
   </div>
 </section>

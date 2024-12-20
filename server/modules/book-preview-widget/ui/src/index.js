@@ -14,6 +14,10 @@ export default () => {
 
       function cloneNodes (innerWidth) {
         const container = el.querySelector('.pdl-book-previews__container')
+        if (!container) {
+          return
+        }
+
         if (innerWidth < 1025) {
           const previews = el.querySelector('.pdl-book-previews')
           const formatsLists = el.querySelectorAll('.pdl-book-preview__formats')
