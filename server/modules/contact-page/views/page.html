@@ -36,7 +36,7 @@
         <textarea id="message" name="message" class="pdl-contact__textarea" placeholder="{{ data.page.form.messageLabel }} *" required></textarea>
       </div>
       <input type="hidden" name="locale" value="{{ data.locale }}">
-      <button type="submit" class="pdl-contact__submit g-recaptcha" data-sitekey="{{ data.global.stripePublicKey }}" data-callback="onSubmit" data-action="submit">{{ data.page.form.sendLabel }}</button>
+      <button type="submit" class="pdl-contact__submit g-recaptcha" data-sitekey="{{ data.global.recaptchaSiteKey }}" data-callback="onSubmit" data-action="submit">{{ data.page.form.sendLabel }}</button>
     </form>
   </div>
 </section>
