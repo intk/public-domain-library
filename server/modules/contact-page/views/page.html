@@ -5,7 +5,6 @@
   {% if not data.isDev %}
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
-      console.log('data.isDev', {{ data.isDev }});
       function onSubmit(token) {
         document.getElementById("contact-form").submit();
       }
