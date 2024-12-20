@@ -37,6 +37,10 @@ module.exports = {
               type: 'string',
               required: true,
             },
+            sendAgainLabel: {
+              type: 'string',
+              required: true,
+            },
           },
         },
       },

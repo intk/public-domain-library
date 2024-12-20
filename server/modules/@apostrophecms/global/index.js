@@ -101,6 +101,10 @@ module.exports = {
       stripePublicKey: {
         type: 'string',
       },
+      recaptchaSiteKey: {
+        type: 'string',
+        help: 'Site key for reCAPTCHA v3',
+      },
       newsletterText: {
         type: 'string',
         textarea: true,
@@ -146,6 +150,12 @@ module.exports = {
         label: 'Stripe',
         fields: [
           'stripePublicKey',
+        ],
+      },
+      recaptcha: {
+        label: 'Google reCAPTCHA',
+        fields: [
+          'recaptchaSiteKey',
         ],
       },
       newsletter: {

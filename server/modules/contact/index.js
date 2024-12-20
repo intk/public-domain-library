@@ -11,6 +11,7 @@ module.exports = {
     return {
       post: {
         async submit (req, res) {
+          const locale = req.body.locale || 'en'
           let contactUrl = 'contact'
           const options = {
             from: config.get('nodemailer.auth.user'),
@@ -22,10 +23,10 @@ module.exports = {
             await self.email(req, 'email.html', { body: req.body }, options)
             const referer = req.headers.referrer?.split('/') || []
             contactUrl = referer[referer.length - 1] || contactUrl
-            res.redirect(`/${contactUrl}/submit`)
+            res.redirect(`/${locale}/${contactUrl}/submit`)
           } catch (error) {
             console.error('error', error)
-            res.redirect(`/${contactUrl}/submit?error=true`)
+            res.redirect(`/${locale}/${contactUrl}/submit?error=true`)
           }
         },
       },

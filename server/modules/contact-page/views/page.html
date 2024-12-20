@@ -2,13 +2,15 @@
 {% block title %}{{ data.page.title }}{% endblock %}
 
 {% block extraHead %}
-  <script src="https://www.google.com/recaptcha/api.js"></script>
-  <script>
-    function onSubmit(token) {
-      console.log('token', token)
-      document.getElementById("contact-form").submit();
-    }
-  </script>
+  {% if not data.isDev %}
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      console.log('data.isDev', {{ data.isDev }});
+      function onSubmit(token) {
+        document.getElementById("contact-form").submit();
+      }
+    </script>
+  {% endif %}
 {% endblock %}
 
 {% block main %}
@@ -33,7 +35,8 @@
       <div class="pdl-contact__form-group">
         <textarea id="message" name="message" class="pdl-contact__textarea" placeholder="{{ data.page.form.messageLabel }} *" required></textarea>
       </div>
-      <button type="submit" class="pdl-contact__submit g-recaptcha" data-sitekey="6LcpkpkqAAAAAMms5owrpsMiEcSX8hnN5AI3nS2Y" data-callback="onSubmit" data-action="submit">{{ data.page.form.sendLabel }}</button>
+      <input type="hidden" name="locale" value="{{ data.locale }}">
+      <button type="submit" class="pdl-contact__submit g-recaptcha" data-sitekey="{{ data.global.stripePublicKey }}" data-callback="onSubmit" data-action="submit">{{ data.page.form.sendLabel }}</button>
     </form>
   </div>
 </section>
