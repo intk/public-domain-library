@@ -6,7 +6,7 @@
     </div>
   </div>
   {# TODO: add a js file to prevent default, do submission through AJAX and display result (success or failure) #}
-  <form class="pdl-newsletter__form" action="https://app.kit.com/forms/7188099/subscriptions" method="POST">
+  <form class="pdl-newsletter__form" action="https://app.kit.com/forms/7188099/subscriptions" method="POST" target="_blank">
     <div class="pdl-newsletter__content">
       <input type="email" id="email" name="email_address" class="pdl-newsletter__input" placeholder="{{ data.global.newsletterPlaceholder or __t('pdl:Email') }} *" aria-label="Email" required>
       <button class="pdl-newsletter__submit">{{ data.global.newsletterSubmitText or __t('pdl:Subscribe') }}</button>
