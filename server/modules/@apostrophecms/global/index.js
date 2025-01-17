@@ -105,6 +105,10 @@ module.exports = {
         type: 'string',
         help: 'Site key for reCAPTCHA v3',
       },
+      recaptchaSecretKey: {
+        type: 'string',
+        help: 'Secret key for reCAPTCHA v3',
+      },
       newsletterText: {
         type: 'string',
         textarea: true,
@@ -155,7 +159,7 @@ module.exports = {
       recaptcha: {
         label: 'Google reCAPTCHA',
         fields: [
-          'recaptchaSiteKey',
+          'recaptchaSiteKey', 'recaptchaSecretKey',
         ],
       },
       newsletter: {

@@ -20,10 +20,11 @@ module.exports = {
           }
 
           console.log('req.body[g-recaptcha-response] ====> ', req.body['g-recaptcha-response'])
+          console.log('req.data.global.recaptchaSecretKey ====> ', req.data.global.recaptchaSecretKey)
 
           try {
             const body = JSON.stringify({
-              secret: '6LdfWLoqAAAAAGIIJoyuu6_JCDycm7_kdiRtZ1-y',
+              secret: req.data.global.recaptchaSecretKey,
               response: req.body['g-recaptcha-response'],
             })
             const challenge = await fetch('https://www.google.com/recaptcha/api/siteverify', {
