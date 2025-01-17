@@ -12,7 +12,7 @@ module.exports = {
       post: {
         async submit (req, res) {
           const locale = req.body.locale || 'en'
-          const contactUrl = 'contact'
+          let contactUrl = 'contact'
           const options = {
             from: config.get('nodemailer.auth.user'),
             to: config.get('nodemailer.auth.user'),
