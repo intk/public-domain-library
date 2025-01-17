@@ -19,22 +19,18 @@ module.exports = {
             subject: 'Public Domain Library - New contact submission',
           }
 
-          console.log('req.body[g-recaptcha-response] ====> ', req.body['g-recaptcha-response'])
-          console.log('req.data.global.recaptchaSecretKey ====> ', req.data.global.recaptchaSecretKey)
-
           try {
-            const body = JSON.stringify({
-              secret: req.data.global.recaptchaSecretKey,
-              response: req.body['g-recaptcha-response'],
-            })
             const challenge = await fetch('https://www.google.com/recaptcha/api/siteverify', {
               method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body,
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: `secret=${req.data.global.recaptchaSecretKey}&response=${req.body['g-recaptcha-response']}`,
             })
-            console.log('challenge ====> ', await challenge.json())
+            const response = await challenge.json()
+
+            if (response.success === 'false') {
+              throw new Error('reCAPTCHA failed')
+            }
+
             await self.email(req, 'email.html', { body: req.body }, options)
             const referer = req.headers.referrer?.split('/') || []
             contactUrl = referer[referer.length - 1] || contactUrl
