@@ -2,14 +2,19 @@
 {% block title %}{{ data.page.title }}{% endblock %}
 
 {% block extraHead %}
-  {% if not data.isDev %}
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
-      function onSubmit(token) {
-        document.getElementById("contact-form").submit();
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+    function onSubmit(token) {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      if (!name || !email || !message) {
+        return;
       }
-    </script>
-  {% endif %}
+      document.getElementById("contact-form").submit();
+    }
+  </script>
 {% endblock %}
 
 {% block main %}
