@@ -12,6 +12,12 @@
       if (!name || !email || !message) {
         return;
       }
+
+      const messageLengthWithoutSpaces = message.replace(/\s/g, "").length;
+      if (messageLengthWithoutSpaces < 10) {
+        return;
+      }
+
       document.getElementById("contact-form").submit();
     }
   </script>
