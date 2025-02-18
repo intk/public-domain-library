@@ -8,9 +8,6 @@
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const message = document.getElementById("message").value;
-      const cfTurnstileResponses = document.getElementByNames("cf-turnstile-response");
-      const cfTurnstileResponse = cfTurnstileResponses[0].value;
-      console.log(cfTurnstileResponse);
 
       if (!name || !email || !message) {
         return;
