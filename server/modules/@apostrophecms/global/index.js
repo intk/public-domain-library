@@ -103,11 +103,11 @@ module.exports = {
       },
       recaptchaSiteKey: {
         type: 'string',
-        help: 'Site key for reCAPTCHA v3',
+        help: 'Site key for reCAPTCHA',
       },
       recaptchaSecretKey: {
         type: 'string',
-        help: 'Secret key for reCAPTCHA v3',
+        help: 'Secret key for reCAPTCHA',
       },
       newsletterText: {
         type: 'string',
@@ -157,7 +157,7 @@ module.exports = {
         ],
       },
       recaptcha: {
-        label: 'Google reCAPTCHA',
+        label: 'Cloudflare reCAPTCHA',
         fields: [
           'recaptchaSiteKey', 'recaptchaSecretKey',
         ],

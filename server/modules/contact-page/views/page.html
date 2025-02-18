@@ -8,6 +8,7 @@
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const message = document.getElementById("message").value;
+      // const cfTurnstileResponse = document.getElementById("cf-turnstile-response").value;
 
       if (!name || !email || !message) {
         return;
@@ -46,7 +47,8 @@
         <textarea id="message" name="message" class="pdl-contact__textarea" placeholder="{{ data.page.form.messageLabel }} *" required></textarea>
       </div>
       <input type="hidden" name="locale" value="{{ data.locale }}">
-      <button type="submit" class="pdl-contact__submit g-recaptcha" data-sitekey="{{ data.global.recaptchaSiteKey }}" data-callback="onSubmit" data-action="submit">{{ data.page.form.sendLabel }}</button>
+      <div class="cf-turnstile" data-sitekey="{{ data.global.recaptchaSiteKey }}"></div>
+      <button type="submit" class="pdl-contact__submit" data-sitekey="{{ data.global.recaptchaSiteKey }}" data-callback="onSubmit" data-action="submit">{{ data.page.form.sendLabel }}</button>
     </form>
   </div>
 </section>

@@ -11,6 +11,7 @@ module.exports = {
     return {
       post: {
         async submit (req, res) {
+          console.log('req.body', req.body)
           const locale = req.body.locale || 'en'
           let contactUrl = 'contact'
           const options = {
@@ -20,14 +21,16 @@ module.exports = {
           }
 
           try {
-            const challenge = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+            const challenge = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
               method: 'POST',
-              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-              body: `secret=${req.data.global.recaptchaSecretKey}&response=${req.body['g-recaptcha-response']}`,
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                secret: req.data.global.recaptchaSecretKey,
+                response: req.body['cf-turnstile-response'],
+              }),
             })
             const response = await challenge.json()
-
-            if (response.success === 'false') {
+            if (!response.success) {
               throw new Error('reCAPTCHA failed')
             }
 
