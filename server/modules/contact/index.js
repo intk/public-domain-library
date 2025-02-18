@@ -12,6 +12,8 @@ module.exports = {
       post: {
         async submit (req, res) {
           console.log('req.body', req.body)
+          console.log('req.data.global.recaptchaSecretKey', req.data.global.recaptchaSecretKey)
+          console.log('req.data.global.recaptchaSiteKey', req.data.global.recaptchaSiteKey)
           const locale = req.body.locale || 'en'
           let contactUrl = 'contact'
           const options = {

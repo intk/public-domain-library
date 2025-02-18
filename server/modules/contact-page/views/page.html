@@ -2,13 +2,15 @@
 {% block title %}{{ data.page.title }}{% endblock %}
 
 {% block extraHead %}
-  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
   <script>
     function onSubmit(token) {
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const message = document.getElementById("message").value;
-      // const cfTurnstileResponse = document.getElementById("cf-turnstile-response").value;
+      const cfTurnstileResponses = document.getElementByNames("cf-turnstile-response");
+      const cfTurnstileResponse = cfTurnstileResponses[0].value;
+      console.log(cfTurnstileResponse);
 
       if (!name || !email || !message) {
         return;
