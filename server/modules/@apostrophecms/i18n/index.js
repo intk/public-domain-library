@@ -42,6 +42,10 @@ module.exports = {
           return next()
         }
 
+        if (req.originalUrl.includes('/api/v1')) {
+          return next()
+        }
+
         if (req.originalUrl.includes(req.locale)) {
           return next()
         }
