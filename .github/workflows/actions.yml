@@ -27,4 +27,4 @@ jobs:
           REMOTE_USER: ${{ vars.REMOTE_USER }}
           EXCLUDE: "/dist/, /node_modules/"
           SCRIPT_AFTER: |
-            bash ./server/scripts/deploy.sh
+            npm run prod && docker exec pdl-server sh -c "./scripts/release-task.sh"
