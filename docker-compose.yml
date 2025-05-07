@@ -32,7 +32,6 @@ services:
 
 
   pdl-server:
-    container_name: pdl-server
     build: server
     init: true
     volumes:
@@ -44,8 +43,8 @@ services:
       - ./server/views:/app/views
       - ./server/package.json:/app/package.json
       # - ./server/node_modules/apostrophe:/app/node_modules/apostrophe
-    ports:
-      - 3000:3000
+    expose:
+      - 3000
     depends_on:
       - pdl-db
     environment:
