@@ -19,6 +19,7 @@ require('apostrophe')({
     },
     '@apostrophecms/favicon': {},
     '@apostrophecms/seo': {},
+    '@apostrophecms/sitemap': {},
     '@apostrophecms/global': {
       options: {
         seoGoogleAnalytics: true,
