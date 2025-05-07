@@ -17,7 +17,7 @@ zero_downtime_deploy() {
   new_container_ip=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $new_container_id)
   curl --silent --include --retry-connrefused --retry 30 --retry-delay 1 --fail http://$new_container_ip:3000/ || exit 1
   NODE_ENV=production docker compose -p library --compatibility build
-  docker exec $container_id sh -c "./scripts/release-task.sh"
+  docker exec $new_container_id sh -c "./scripts/release-task.sh"
 
   # start routing requests to the new container (as well as the old)
   reload_nginx
