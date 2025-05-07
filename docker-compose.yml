@@ -32,7 +32,6 @@ services:
 
 
   pdl-server:
-    container_name: pdl-server
     build: server
     init: true
     volumes:
