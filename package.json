@@ -9,7 +9,7 @@
   },
   "author": "falkodev",
   "scripts": {
-    "prod": "NODE_ENV=production docker compose -p tako --compatibility build && NODE_ENV=production docker compose -p library --compatibility up -d",
+    "prod": "NODE_ENV=production docker compose -p library --compatibility build && NODE_ENV=production docker compose -p library --compatibility up -d",
     "dev": "docker compose kill && NODE_ENV=development docker compose up -d && NODE_ENV=development docker logs pdl-server -f"
   }
 }
