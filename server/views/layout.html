@@ -26,6 +26,20 @@
   {% if not title %}
     {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
   {% endif %}
+
+  {# Twitter Card meta tags using Open Graph data #}
+  {% if data.piece %}
+    <meta name="twitter:card" content="summary_large_image" />
+    {% if data.piece.openGraphTitle %}
+    <meta name="twitter:title" content="{{ data.piece.openGraphTitle }}" />
+    {% endif %}
+    {% if data.piece.openGraphDescription %}
+    <meta name="twitter:description" content="{{ data.piece.openGraphDescription }}" />
+    {% endif %}
+    {% if data.piece._openGraphImage and data.piece._openGraphImage[0] %}
+    <meta name="twitter:image" content="{{ data.piece._openGraphImage[0].attachment._urls.max }}" />
+    {% endif %}
+  {% endif %}  
 {% endblock %}
 
 {% import "locale-switcher:index.html" as localeSwitcher with context %}
