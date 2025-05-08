@@ -18,6 +18,7 @@ require('apostrophe')({
       },
     },
     '@apostrophecms/favicon': {},
+    '@apostrophecms/open-graph': {},
     '@apostrophecms/seo': {},
     '@apostrophecms/sitemap': {},
     '@apostrophecms/global': {
