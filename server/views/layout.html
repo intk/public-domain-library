@@ -12,9 +12,9 @@
 
     {% if localization.current %}
       {% if localization.aposLocale == 'en:published' %}
-      <link rel="canonical" href="{{ data.page._url }}" />
+      <link rel="canonical" href="{{ data.piece._url if data.piece else data.page._url }}" />
       {% else %}
-      <link rel="alternate" href="{{ data.baseUrlWithPrefix }}/en{{ slug }}" hreflang="{{ localization.aposLocale.split(':')[0] }}" />
+      <link rel="alternate" href="{{ data.baseUrlWithPrefix }}/en{{ slug }}" hreflang="en" />
       {% endif %}
     {% endif %}
   {% endfor %}
