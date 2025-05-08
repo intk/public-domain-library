@@ -22,6 +22,8 @@
   {# Twitter Card meta tags using Open Graph data #}
   {% if data.piece %}
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@publicdomainbib" />
+    <meta name="twitter:url" content="{{ data.piece._url }}" />
     {% if data.piece.openGraphTitle %}
     <meta name="twitter:title" content="{{ data.piece.openGraphTitle }}" />
     {% endif %}
