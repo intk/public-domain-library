@@ -18,14 +18,6 @@
       {% endif %}
     {% endif %}
   {% endfor %}
-{% endblock %}
-
-{% set title = data.piece.title or data.page.title %}
-{% block title %}
-  {{ title }}
-  {% if not title %}
-    {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
-  {% endif %}
 
   {# Twitter Card meta tags using Open Graph data #}
   {% if data.piece %}
@@ -39,7 +31,15 @@
     {% if data.piece._openGraphImage and data.piece._openGraphImage[0] %}
     <meta name="twitter:image" content="{{ data.piece._openGraphImage[0].attachment._urls.max }}" />
     {% endif %}
-  {% endif %}  
+  {% endif %}
+{% endblock %}
+
+{% set title = data.piece.title or data.page.title %}
+{% block title %}
+  {{ title }}
+  {% if not title %}
+    {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
+  {% endif %}
 {% endblock %}
 
 {% import "locale-switcher:index.html" as localeSwitcher with context %}
