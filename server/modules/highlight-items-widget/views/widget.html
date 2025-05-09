@@ -6,7 +6,13 @@
       {% set image = apos.image.first(item.imageArea) %}
       {% if image %}
         {% set focalPoint = apos.attachment.getFocalPoint(image) %}
-        <img class="pdl-highlight-widget__image pdl-image-widget" src="{{ image._urls['one-half'] }}" alt="{{ image._alt if image._alt or image.title }}" width="{{ apos.attachment.getWidth(image) }}" height="{{ apos.attachment.getHeight(image) }}" style="object-position: left {{ focalPoint.x }}% top {{ focalPoint.y }}%;">
+        <img class="pdl-highlight-widget__image pdl-image-widget" 
+             src="{{ image._urls['two-thirds'] }}" 
+             srcset="{{ image._urls['two-thirds'] }} 1x, {{ image._urls['full'] }} 2x"
+             alt="{{ image._alt if image._alt or image.title }}" 
+             width="{{ image._urls['two-thirds'].width }}" 
+             height="{{ image._urls['two-thirds'].height }}" 
+             style="object-position: left {{ focalPoint.x }}% top {{ focalPoint.y }}%;">
       {% endif %}
 
       <div class="pdl-highlight-widget__container">
