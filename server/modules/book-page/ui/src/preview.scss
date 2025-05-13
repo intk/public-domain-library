@@ -410,3 +410,24 @@
     }
   }
 }
+
+.pdl-pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    gap: 8px;
+    font-size: 18px;
+  }
+}
+
+.pdl-pager a, .pdl-pager span {
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: inherit;
+  text-align: center;
+}
