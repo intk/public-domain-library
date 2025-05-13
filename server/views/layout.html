@@ -18,11 +18,16 @@
       {% endif %}
     {% endif %}
   {% endfor %}
-
+  {% if data.page.updatedAt %}
+    <meta name="last-modified"       content="{{ data.page.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
+    <meta http-equiv="last-modified" content="{{ data.page.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
+    <meta property="og:updated_time" content="{{ data.page.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">    
+  {% endif %}
   {# Twitter Card meta tags using Open Graph data #}
   {% if data.piece %}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@publicdomainbib" />
+    <meta name="twitter:site" content="@publicdomainbib rui" />
+    <meta name="twitter:creator" content="@publicdomainbib" />
     <meta name="twitter:url" content="{{ data.piece._url }}" />
     {% if data.piece.openGraphTitle %}
     <meta name="twitter:title" content="{{ data.piece.openGraphTitle }}" />
