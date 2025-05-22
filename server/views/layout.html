@@ -33,17 +33,50 @@
       {% endif %}
       "inLanguage": "{{ data.locale }}",
       "url": "{{ data.piece._url }}",
-      {% if data.piece.files %}
-      "bookFormat": [
+      "workExample": [
         {% for file in data.piece.files %}
           {% if file.file and file.file._url %}
-          "{{ file.fileFormat | upper or file.file.extension | upper }}"{% if not loop.last %},{% endif %}
+          {
+            "@type": "Book",
+            "bookFormat": "https://schema.org/EBook",
+            "potentialAction": {
+              "@type": "ReadAction",
+              "target": "{{ file.file._url }}"
+            },
+            "encodingFormat": "{{ file.fileFormat | upper or file.file.extension | upper }}"
+          }{% if not loop.last %},{% endif %}
           {% endif %}
         {% endfor %}
       ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "{{ data.piece._url }}",
+        "isAccessibleForFree": true
+      },
+      {% if data.piece.excerptRTE and data.piece.excerptRTE.items %}
+      "description": "{{ data.piece.excerptRTE.items[0].content | striptags | escape }}",
       {% endif %}
+      {% if data.piece._openGraphImage and data.piece._openGraphImage[0] %}
+      "image": "{{ data.piece._openGraphImage[0].attachment._urls.max }}",
+      {% endif %}
+      "publisher": {
+        "@type": "Organization",
+        "name": "Public Domain Library"
+      },
+      "genre": ["Public Domain", "Classic Literature"],
+      "license": "https://creativecommons.org/publicdomain/mark/1.0/",
       "dateModified": "{{ data.piece.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}",
-      "datePublished": "{{ data.piece.createdAt | date('YYYY-MM-DDTHH:mm:ssZ') }}"
+      "datePublished": "{{ data.piece.createdAt | date('YYYY-MM-DDTHH:mm:ssZ') }}",
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "{{ data.piece._url }}"
+      },
+      "keywords": ["public domain", "classic literature", "free ebook"],
+      "accessibilityFeature": ["readingOrder", "unlocked", "displayTransformability"],
+      "accessMode": ["textual", "visual"]
     }
     </script>
   {% endif %}
