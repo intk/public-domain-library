@@ -18,10 +18,40 @@
       {% endif %}
     {% endif %}
   {% endfor %}
+
+  {% if data.piece %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "{{ data.piece.title }}",
+      {% if data.piece._author and data.piece._author[0] %}
+      "author": {
+        "@type": "Person",
+        "name": "{{ data.piece._author[0].title }}"
+      },
+      {% endif %}
+      "inLanguage": "{{ data.locale }}",
+      "url": "{{ data.piece._url }}",
+      {% if data.piece.files %}
+      "bookFormat": [
+        {% for file in data.piece.files %}
+          {% if file.file and file.file._url %}
+          "{{ file.fileFormat | upper or file.file.extension | upper }}"{% if not loop.last %},{% endif %}
+          {% endif %}
+        {% endfor %}
+      ],
+      {% endif %}
+      "dateModified": "{{ data.piece.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}",
+      "datePublished": "{{ data.piece.createdAt | date('YYYY-MM-DDTHH:mm:ssZ') }}"
+    }
+    </script>
+  {% endif %}
+
   {% if data.page.updatedAt %}
-    <meta name="last-modified"       content="{{ data.page.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
-    <meta http-equiv="last-modified" content="{{ data.page.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
-    <meta property="og:updated_time" content="{{ data.page.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">    
+    <meta name="last-modified"       content="{{ data.piece.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
+    <meta http-equiv="last-modified" content="{{ data.piece.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
+    <meta property="og:updated_time" content="{{ data.piece.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
   {% endif %}
   {# Twitter Card meta tags using Open Graph data #}
   {% if data.piece %}
