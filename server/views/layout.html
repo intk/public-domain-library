@@ -1,4 +1,4 @@
-{# Automatically extends the right outer layout and also handles AJAX siutations #}
+{# Automatically extends the right outer layout and also handles AJAX situations #}
 {% extends data.outerLayout %}
 
 {% block locale %}{{ data.locale }}{% endblock %}
@@ -25,6 +25,7 @@
       "@context": "https://schema.org",
       "@type": "Book",
       "name": "{{ data.piece.title }}",
+      "isAccessibleForFree": true,
       {% if data.piece._author and data.piece._author[0] %}
       "author": {
         "@type": "Person",
@@ -53,8 +54,7 @@
         "price": "0",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "{{ data.piece._url }}",
-        "isAccessibleForFree": true
+        "url": "{{ data.piece._url }}"
       },
       {% if data.piece.excerptRTE and data.piece.excerptRTE.items %}
       "description": "{{ data.piece.excerptRTE.items[0].content | striptags | escape }}",
