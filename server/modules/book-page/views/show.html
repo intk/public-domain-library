@@ -6,9 +6,9 @@
     <div class="pdl-book__image-wrapper">
       <div style="position: relative;">
         {% set image = apos.image.first(data.piece.imageArea) %}
-        <img 
-          class="pdl-book__image pdl-image-widget" 
-          src="{{ image._urls['two-thirds'] }}" 
+        <img
+          class="pdl-book__image pdl-image-widget"
+          src="{{ image._urls['two-thirds'] }}"
           srcset="{{ image._urls['two-thirds'] }} 1x, {{ image._urls['full'] }} 2x"
           alt="{{ image._alt if image._alt or image.title }}"
           width="{{ image._urls['two-thirds'].width }}"
@@ -75,16 +75,16 @@
     </div>
   </div>
 
+  {% if data.piece.legalNoticeRTE.items[0] %}
   <div class="pdl-book__legal-notice">
-    {% if data.piece.legalNoticeRTE.items[0] %}
-      <div class="pdl-book__legal-notice-title">{{ data.piece.legalNoticeTitle or __t('pdl:Legal notice') }}</div>
-    {% endif %}
+    <div class="pdl-book__legal-notice-title">{{ data.piece.legalNoticeTitle or __t('pdl:Legal notice') }}</div>
     <div  class="pdl-book__legal-notice-content">{% area data.piece, 'legalNoticeRTE' %}</div>
   </div>
+  {% endif %}
+
+  <div class="pdl-book__area">{% area data.page, 'area' %}</div>
 
   <div class="pdl-book__books">
     {% render fragment.previews("pdl:More free books", data.latestBooks) %}
   </div>
-
-  <div class="pdl-book__area">{% area data.page, 'area' %}</div>
 {% endblock %}
