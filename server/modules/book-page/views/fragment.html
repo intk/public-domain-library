@@ -5,7 +5,7 @@
     <img class="pdl-book__image pdl-image-widget"
          src="{{ image._urls['one-half'] }}"
          srcset="{{ image._urls['one-half'] }} 1x, {{ image._urls['full'] }} 2x"
-         alt="[Rui] {{ image._alt if image._alt else image.title }}"
+         alt="{{ image._alt if image._alt else image.title }}"
          width="{{ image._urls['one-half'].width }}"
          height="{{ image._urls['one-half'].height }}">
     <svg class="pdl-book__shadow" width="10" height="490" viewBox="0 0 10 490" fill="none" xmlns="http://www.w3.org/2000/svg">
