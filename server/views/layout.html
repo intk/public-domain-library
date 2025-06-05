@@ -19,7 +19,7 @@
     {% endif %}
   {% endfor %}
 
-  {% if data.piece %}
+  {% if data.piece and data.piece.type == 'book' %}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
