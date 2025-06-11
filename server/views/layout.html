@@ -86,6 +86,29 @@
     <meta name="robots" content="noindex,follow">
   {% endif %}
 
+  {# Standard SEO meta tags #}
+  {% set seoTitle = data.piece.seoTitle or data.page.seoTitle %}
+  {% if not seoTitle %}
+    {% if data.piece and data.piece.type == 'book' %}
+      {% if data.piece._author and data.piece._author[0] %}
+        {% set customTitle = data.piece.title + " by " + data.piece._author[0].title + __t('book-page:Free download formats') %}
+        {% set seoTitle = customTitle | truncate(70, false, '') %}
+      {% else %}
+        {% set seoTitle = data.piece.title or data.page.title %}
+      {% endif %}
+    {% else %}
+      {% set seoTitle = data.piece.title or data.page.title %}
+    {% endif %}
+  {% endif %}
+  {% if seoTitle %}
+    <meta name="title" content="{{ seoTitle }}">
+  {% endif %}
+
+  {% set seoDescription = (data.piece.seoDescription or data.page.seoDescription) or (data.piece.excerptRTE.items[0].content | striptags | truncate(160) if data.piece.excerptRTE and data.piece.excerptRTE.items) %}
+  {% if seoDescription %}
+    <meta name="description" content="{{ seoDescription | striptags | escape }}">
+  {% endif %}
+
   {% if data.page.updatedAt %}
     <meta name="last-modified"       content="{{ data.piece.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
     <meta http-equiv="last-modified" content="{{ data.piece.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
@@ -94,20 +117,25 @@
   {# Twitter Card meta tags using Open Graph data #}
   {% if data.piece %}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@publicdomainbib rui" />
+    <meta name="twitter:site" content="@publicdomainbib" />
     <meta name="twitter:creator" content="@publicdomainbib" />
     <meta name="twitter:url" content="{{ data.piece._url }}" />
-    {% if data.piece.openGraphTitle %}
-    <meta name="twitter:title" content="{{ data.piece.openGraphTitle }}" />
+    {% set ogTitle = data.piece.openGraphTitle or seoTitle %}
+    {% if ogTitle %}
+    <meta name="twitter:title" content="{{ ogTitle }}" />
+    <meta property="og:title" content="{{ ogTitle }}" />
     {% endif %}
-    {% if data.piece.openGraphDescription %}
-    <meta name="twitter:description" content="{{ data.piece.openGraphDescription }}" />
+    {% set ogDescription = data.piece.openGraphDescription or seoDescription %}
+    {% if ogDescription %}
+    <meta name="twitter:description" content="{{ ogDescription | striptags | escape }}" />
+    <meta property="og:description" content="{{ ogDescription | striptags | escape }}" />
     {% endif %}
     {% if data.piece._openGraphImage and data.piece._openGraphImage[0] %}
     <meta name="twitter:image" content="{{ data.piece._openGraphImage[0].attachment._urls.max }}" />
     {% endif %}
   {% endif %}
 {% endblock %}
+
 
 {% set title = data.piece.title or data.page.title %}
 {% block title %}
