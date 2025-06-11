@@ -96,6 +96,9 @@
       {% else %}
         {% set seoTitle = data.piece.title or data.page.title %}
       {% endif %}
+    {% elif data.piece and data.piece.type == 'author' %}
+      {% set customTitle = data.piece.title + __t('book-page:Free download formats') + " - Public Domain Library" %}
+      {% set seoTitle = customTitle | truncate(70, false, '') %}
     {% else %}
       {% set seoTitle = data.piece.title or data.page.title %}
     {% endif %}
