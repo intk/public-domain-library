@@ -86,26 +86,23 @@
     <meta name="robots" content="noindex,follow">
   {% endif %}
 
-  {# Standard SEO meta tags #}
-  {% set seoTitle = data.piece.seoTitle or data.page.seoTitle %}
-  {% if not seoTitle %}
-    {% if data.piece and data.piece.type == 'book' %}
-      {% if data.piece._author and data.piece._author[0] %}
-        {% set customTitle = data.piece.title + " by " + data.piece._author[0].title + __t('book-page:Free download formats') %}
-        {% set seoTitle = customTitle | truncate(70, false, '') %}
-      {% else %}
-        {% set seoTitle = data.piece.title or data.page.title %}
-      {% endif %}
+    {# Custom meta title for books and authors #}
+  {% if not (data.piece.seoTitle or data.page.seoTitle) %}
+    {% if data.piece and data.piece.type == 'book' and data.piece._author and data.piece._author[0] %}
+      {% set customTitle = data.piece.title + " by " + data.piece._author[0].title + __t('pdl:Free download formats') %}
+      <meta name="title" content="{{ customTitle | truncate(70, false, '') }}">
+      {% set seoTitle = customTitle | truncate(70, false, '') %}
     {% elif data.piece and data.piece.type == 'author' %}
-      {% set customTitle = data.piece.title + __t('book-page:Free download formats') + " - Public Domain Library" %}
+      {% set customTitle = data.piece.title + __t('pdl:Free download formats') + " - " + __t('pdl:Site name') %}
+      <meta name="title" content="{{ customTitle | truncate(70, false, '') }}">
       {% set seoTitle = customTitle | truncate(70, false, '') %}
     {% else %}
       {% set seoTitle = data.piece.title or data.page.title %}
     {% endif %}
+  {% else %}
+    {% set seoTitle = data.piece.seoTitle or data.page.seoTitle %}
   {% endif %}
-  {% if seoTitle %}
-    <meta name="title" content="{{ seoTitle }}">
-  {% endif %}
+
 
   {% set seoDescription = (data.piece.seoDescription or data.page.seoDescription) or (data.piece.excerptRTE.items[0].content | striptags | truncate(160) if data.piece.excerptRTE and data.piece.excerptRTE.items) %}
   {% if seoDescription %}
@@ -140,10 +137,9 @@
 {% endblock %}
 
 
-{% set title = data.piece.title or data.page.title %}
 {% block title %}
-  {{ title }}
-  {% if not title %}
+  {{ seoTitle or (data.piece.title or data.page.title) }}
+  {% if not (seoTitle or data.piece.title or data.page.title) %}
     {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
   {% endif %}
 {% endblock %}
