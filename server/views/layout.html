@@ -81,6 +81,11 @@
     </script>
   {% endif %}
 
+  {# Add noindex for search results pages #}
+  {% if data.page.type == '@apostrophecms/search' %}
+    <meta name="robots" content="noindex,follow">
+  {% endif %}
+
   {% if data.page.updatedAt %}
     <meta name="last-modified"       content="{{ data.piece.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
     <meta http-equiv="last-modified" content="{{ data.piece.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
