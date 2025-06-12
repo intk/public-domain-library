@@ -3,6 +3,21 @@
 
 {% block locale %}{{ data.locale }}{% endblock %}
 
+{% block title %}
+  {% if data.piece and data.piece.type == 'book' %}
+    {% set bookTitle = data.piece.title %}
+    {% set authorTitle = data.piece._author and data.piece._author[0] and data.piece._author[0].title or '' %}
+    {% set fullTitle = bookTitle ~ (authorTitle and ' by ' ~ authorTitle or '') ~ __t('pdl:Free download formats') %}
+    {{ fullTitle | truncate(70, false, '') }}
+  {% elseif data.piece and data.piece.type == 'author' %}
+    {% set authorTitle = data.piece.title %}
+    {% set fullTitle = authorTitle ~ __t('pdl:Free download formats') ~ ' - ' ~ __t('pdl:Site name') %}
+    {{ fullTitle | truncate(70, false, '') }}
+  {% else %}
+    {{ data.page.title }}
+  {% endif %}
+{% endblock %}
+
 {% block startHead %}
   {% set slug = '/' %}
   {% for localization in data.localizations %}
@@ -86,29 +101,6 @@
     <meta name="robots" content="noindex,follow">
   {% endif %}
 
-    {# Custom meta title for books and authors #}
-  {% if not (data.piece.seoTitle or data.page.seoTitle) %}
-    {% if data.piece and data.piece.type == 'book' and data.piece._author and data.piece._author[0] %}
-      {% set customTitle = data.piece.title + " by " + data.piece._author[0].title + __t('pdl:Free download formats') %}
-      <meta name="title" content="{{ customTitle | truncate(70, false, '') }}">
-      {% set seoTitle = customTitle | truncate(70, false, '') %}
-    {% elif data.piece and data.piece.type == 'author' %}
-      {% set customTitle = data.piece.title + __t('pdl:Free download formats') + " - " + __t('pdl:Site name') %}
-      <meta name="title" content="{{ customTitle | truncate(70, false, '') }}">
-      {% set seoTitle = customTitle | truncate(70, false, '') %}
-    {% else %}
-      {% set seoTitle = data.piece.title or data.page.title %}
-    {% endif %}
-  {% else %}
-    {% set seoTitle = data.piece.seoTitle or data.page.seoTitle %}
-  {% endif %}
-
-
-  {% set seoDescription = (data.piece.seoDescription or data.page.seoDescription) or (data.piece.excerptRTE.items[0].content | striptags | truncate(160) if data.piece.excerptRTE and data.piece.excerptRTE.items) %}
-  {% if seoDescription %}
-    <meta name="description" content="{{ seoDescription | striptags | escape }}">
-  {% endif %}
-
   {% if data.page.updatedAt %}
     <meta name="last-modified"       content="{{ data.piece.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
     <meta http-equiv="last-modified" content="{{ data.piece.updatedAt | date('YYYY-MM-DDTHH:mm:ssZ') }}">
@@ -136,24 +128,16 @@
   {% endif %}
 {% endblock %}
 
-
-{% block title %}
-  {{ seoTitle or (data.piece.title or data.page.title) }}
-  {% if not (seoTitle or data.piece.title or data.page.title) %}
-    {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
-  {% endif %}
-{% endblock %}
-
 {% import "locale-switcher:index.html" as localeSwitcher with context %}
 
 {% block beforeMain %}
 <div class="pdl-wrapper {%- if data.user %} logged-in {% endif -%}">
   <header class="pdl-header">
-    <a href="/{{ data.locale }}" class="pdl-header__title pdl-header__title--desktop">
+    <a href="/{{ data.locale }}/" class="pdl-header__title pdl-header__title--desktop">
       <canvas class="pdl-header__logo pdl-header__logo--desktop"></canvas>
       <span>Public Domain Library</span>
     </a>
-    <a href="/" class="pdl-header__title pdl-header__title--mobile">
+    <a href="/{{ data.locale }}/" class="pdl-header__title pdl-header__title--mobile">
       <svg class="pdl-header__logo pdl-header__logo--mobile" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 1000 871.1" style="enable-background:new 0 0 1000 871.1;" xml:space="preserve">
         <style type="text/css">
